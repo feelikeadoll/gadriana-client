@@ -8,7 +8,7 @@ import Services from "./pages/Services";
 
 function App() {
   return (
-    <div className="font-avenir">
+    <div className="font-avenir bg-white text-black">
       <Header />
 
       <Routes>
