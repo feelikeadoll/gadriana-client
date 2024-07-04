@@ -26,7 +26,8 @@ function Header() {
             </NavLink>
             <a
               href="https://www.instagram.com/gadrianastudio/"
-              className="ml-10 text-lg"
+              target="_blank"
+              className="ml-10"
             >
               <svg
                 fill="#000000"
@@ -35,13 +36,13 @@ function Header() {
                 viewBox="0 0 64 64"
                 xmlns="http://www.w3.org/2000/svg"
                 stroke="#000000"
-                stroke-width="0.64"
+                strokeWidth="0.64"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   <title></title>
