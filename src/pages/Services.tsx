@@ -53,6 +53,10 @@ function Services() {
           </section>
         </div>
       </div>
+      <div className="w-full flex mb-32">
+        <div className="w-1/2 h-128 bg-servicesImg1 bg-cover bg-center"></div>
+        <div className="w-1/2 h-128 bg-servicesImg2 bg-cover bg-center"></div>
+      </div>
     </div>
   );
 }

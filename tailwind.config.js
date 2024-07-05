@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         aboutImg: "url('/src/assets/about-img.jpg')",
+        servicesImg1: "url('/src/assets/services-img1.jpg')",
+        servicesImg2: "url('/src/assets/services-img2.jpg')",
       },
       spacing: {
         128: "1100px",
