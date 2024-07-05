@@ -1,10 +1,14 @@
 import AboutTitle from "../assets/section titles/about.png";
+import ClientsTitle from "../assets/section titles/clients.png";
 
 function About() {
   return (
     <div className="w-full">
-      <div className="max-w-7xl flex justify-between items-center mx-auto">
-        <div className="flex-col mt-32 w-full">
+      <section
+        id="about"
+        className="max-w-7xl flex justify-between items-center mx-auto"
+      >
+        <div className="flex-col mt-32 mb-16 w-full">
           <img
             src={AboutTitle}
             alt="Gadriana Creative Studio - About"
@@ -21,8 +25,21 @@ function About() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-full h-128 my-16 bg-aboutImg bg-cover bg-center"></div>
+      </section>
+      <div className="w-full h-128 bg-aboutImg bg-cover bg-center"></div>
+      <section
+        id="clients"
+        className="max-w-7xl flex justify-between items-center mx-auto"
+      >
+        <div className="flex-col mt-32 w-full">
+          <img
+            src={ClientsTitle}
+            alt="Gadriana Creative Studio - Clients"
+            className="my-8 h-28"
+          />
+          <div>{/* TO DO: Clients logos slide */}</div>
+        </div>
+      </section>
     </div>
   );
 }
