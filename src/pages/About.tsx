@@ -1,5 +1,4 @@
 import AboutTitle from "../assets/section titles/about.png";
-import Image from "../assets/about-img.jpg";
 
 function About() {
   return (
@@ -23,9 +22,7 @@ function About() {
           </div>
         </div>
       </div>
-      <div className="w-full py-16">
-        <img src={Image} alt="" className="" />
-      </div>
+      <div className="w-full h-128 my-16 bg-aboutImg bg-cover bg-center"></div>
     </div>
   );
 }
