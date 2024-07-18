@@ -7,9 +7,14 @@ module.exports = {
         aboutImg: "url('/src/assets/about-img.jpg')",
         servicesImg1: "url('/src/assets/services-img1.jpg')",
         servicesImg2: "url('/src/assets/services-img2.jpg')",
+        before: "linear-gradient(to left, rgba(255, 255, 255, 0), white);",
+        after: "linear-gradient(to right, rgba(255, 255, 255, 0), white);",
       },
+
       spacing: {
         128: "1100px",
+        wlogos: "1653px",
+        hlogos: "95px",
       },
     },
     fontFamily: {
