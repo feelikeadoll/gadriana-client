@@ -11,7 +11,7 @@ function Services() {
           <img
             src={ServicesTitle}
             alt="Gadriana Creative Studio - About"
-            className="my-8 h-28"
+            className="my-8 max-h-28"
           />
           <section
             id="photograpy"
