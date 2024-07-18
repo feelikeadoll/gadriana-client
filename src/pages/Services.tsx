@@ -5,7 +5,7 @@ function Services() {
     <div className="w-full">
       <div
         id="services"
-        className="max-w-7xl flex justify-between items-center mx-auto"
+        className="max-w-7xl mx-6 lg:mx-4 xl:mx-0  flex justify-between items-center mx-auto"
       >
         <div className="flex-col mt-32 mb-16 w-full">
           <img
