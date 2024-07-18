@@ -6,3 +6,16 @@
   font-family: "Avenir Light";
   src: url("../fonts/Avenir\ Light.ttf");
 }
+
+@keyframes slide {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-1653px);
+  }
+}
+
+#logos-slide {
+  animation: 20s slide infinite linear;
+}

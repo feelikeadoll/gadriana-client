@@ -1,27 +1,9 @@
-import { useEffect, useRef, useState } from "react";
 import AboutTitle from "../assets/section titles/about.png";
 import ClientsTitle from "../assets/section titles/clients.png";
 
+import ClientsLogos from "../assets/clients-all.jpg";
+
 function About() {
-  const [position, setPosition] = useState<number>(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const containerWidth = containerRef.current?.clientWidth || 0;
-    const interval = setInterval(() => {
-      setPosition((prevPosition) => {
-        const newPosition = prevPosition + 2;
-        if (newPosition >= containerWidth) {
-          return 0;
-        } else {
-          return newPosition;
-        }
-      });
-    }, 20);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="w-full">
       <section
@@ -59,13 +41,15 @@ function About() {
           />
         </div>
       </section>
-      <div ref={containerRef} className="relative w-full h-60 mb-20">
-        <p
-          className="absolute inset-y-28 right-0 text-3xl"
-          style={{ right: `${position}px` }}
-        >
-          Test
-        </p>
+      <div
+        id="logos"
+        className="w-full relative overflow-hidden flex items-center h-60 mb-20"
+      >
+        <div id="logos-slide" className="flex items-center">
+          <img src={ClientsLogos} className="w-wlogos h-hlogos min-w-wlogos" />
+          <img src={ClientsLogos} className="w-wlogos h-hlogos min-w-wlogos" />
+          <img src={ClientsLogos} className="w-wlogos h-hlogos min-w-wlogos" />
+        </div>
       </div>
     </div>
   );
