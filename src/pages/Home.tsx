@@ -7,6 +7,7 @@ function Home() {
             We're a Barcelona-based creative studio for beauty + wellness
             brands.
           </h1>
+
           <div className="mb-20">TO DO: images flex grid</div>
         </div>
       </div>
