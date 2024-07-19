@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 function Footer() {
   return (
     <div className="w-full">
-      <div className="max-w-7xl flex justify-between items-center mx-auto">
+      <div className="max-w-7xl px-6 lg:px-4 xl:px-0 flex justify-between items-center mx-auto">
         <div className="w-full flex flex-col items-center justify-center">
           <hr className="border-black border-1 w-full" />
           <div className="my-12 mb-24 flex justify-between w-full">
@@ -58,13 +58,13 @@ function Footer() {
                     viewBox="0 0 64 64"
                     xmlns="http://www.w3.org/2000/svg"
                     stroke="#000000"
-                    stroke-width="0.64"
+                    strokeWidth="0.64"
                   >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g
                       id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></g>
                     <g id="SVGRepo_iconCarrier">
                       <title></title>

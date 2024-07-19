@@ -5,7 +5,7 @@ import Logo from "../assets/gadriana-logo.png";
 function Header() {
   return (
     <div className="w-full fixed bg-white z-50">
-      <div className="max-w-7xl flex justify-between items-center mx-auto">
+      <div className="max-w-7xl px-6 lg:px-4 xl:px-0 flex justify-between items-center mx-auto">
         <div className="my-6 w-full flex items-center justify-between">
           <Link to="/">
             <img
