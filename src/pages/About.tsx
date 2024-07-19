@@ -17,9 +17,12 @@ function About() {
             className="my-8 max-h-28"
           />
           <div className="w-full flex flex-col items-end">
-            <div className="w-3/4 text-4xl leading-relaxed">
-              <p className="pt-8">We're a creative studio based in Barcelona</p>
-              <p className="pb-8">for beauty + wellness brands.</p>
+            <div className="w-full md:w-11/12 lg:w-3/4 text-4xl leading-relaxed">
+              <p className="pt-8">
+                We're a creative studio based in Barcelona{" "}
+                <br className="hidden md:block" />
+                for beauty + wellness brands.
+              </p>
               <p className="py-8">
                 We direct, create, style, retouch and perfect images and videos
                 to help you reach your audience in a visually impact manner.
@@ -28,7 +31,7 @@ function About() {
           </div>
         </div>
       </section>
-      <div className="w-full h-128 bg-aboutImg bg-cover bg-center"></div>
+      <div className="w-full h-96 md:h-600 lg:h-800 xl:h-128 bg-aboutImg bg-cover bg-center"></div>
       <section
         id="clients"
         className="max-w-7xl px-6 lg:px-4 xl:px-0 flex justify-between items-center mx-auto"
