@@ -1,10 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
 
 import Logo from "../assets/gadriana-logo.png";
+import { useState } from "react";
+import Navbar from "./Navbar";
 
 function Header() {
+  const [displayNavbar, setDisplayNavbar] = useState<string>("hidden");
+
+  const openNavbar = (): void => {
+    setDisplayNavbar("block");
+  };
+  const closeNavbar = (): void => {
+    setDisplayNavbar("hidden");
+  };
+
   return (
-    <div className="w-full fixed bg-white z-50">
+    <div className="w-full fixed bg-white z-40">
+      <Navbar displayNavbar={displayNavbar} closeNavbar={closeNavbar} />
       <div className="max-w-7xl px-6 lg:px-4 xl:px-0 flex justify-between items-center mx-auto">
         <div className="my-6 w-full flex items-center justify-between">
           <Link to="/">
@@ -15,19 +27,19 @@ function Header() {
             />
           </Link>
           <div className="flex items-center">
-            <NavLink to="/about" className="ml-10 text-lg">
+            <NavLink to="/about" className="hidden md:block ml-10 text-lg">
               About
             </NavLink>
-            <NavLink to="/services" className="ml-10 text-lg">
+            <NavLink to="/services" className="hidden md:block ml-10 text-lg">
               Services
             </NavLink>
-            <NavLink to="" className="ml-10 text-lg">
+            <NavLink to="" className="hidden md:block ml-10 text-lg">
               Contact
             </NavLink>
             <a
               href="https://www.instagram.com/gadrianastudio/"
               target="_blank"
-              className="ml-10"
+              className="hidden md:block ml-10"
             >
               <svg
                 fill="#000000"
@@ -52,6 +64,20 @@ function Header() {
                 </g>
               </svg>
             </a>
+            <button
+              onClick={openNavbar}
+              className="md:hidden btn btn-circle btn-ghost"
+            >
+              <svg
+                className="swap-off fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 512 512"
+              >
+                <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
