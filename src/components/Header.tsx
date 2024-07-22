@@ -81,7 +81,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <hr className="border-black border-1" />
+      <hr className="border-black border-t-1" />
     </div>
   );
 }

@@ -5,7 +5,7 @@ function Footer() {
     <div className="w-full">
       <div className="max-w-7xl px-6 flex justify-between items-center mx-auto">
         <div className="w-full flex flex-col items-center justify-center">
-          <hr className="border-black border-1 w-full" />
+          <hr className="border-black border-t-1 w-full" />
           <div className="my-12 mb-24 flex justify-between w-full">
             <div className="flex flex-col">
               <NavLink to="/about" className="my-2">
@@ -77,7 +77,7 @@ function Footer() {
               </div>
             </div>
           </div>
-          <hr className="border-black border-1 w-full" />
+          <hr className="border-black border-t-1 w-full" />
           <p className="mb-12 mt-10 text-sm tracking-wider">©2024 GADRIANA.</p>
         </div>
       </div>
