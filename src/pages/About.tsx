@@ -8,7 +8,7 @@ function About() {
     <div className="w-full">
       <section
         id="about"
-        className="max-w-7xl px-6 lg:px-4 xl:px-0  flex justify-between items-center mx-auto"
+        className="max-w-7xl px-6 flex justify-between items-center mx-auto"
       >
         <div className="flex-col mt-32 mb-16 w-full">
           <img
@@ -34,7 +34,7 @@ function About() {
       <div className="w-full h-96 md:h-600 lg:h-800 xl:h-128 bg-aboutImg bg-cover bg-center"></div>
       <section
         id="clients"
-        className="max-w-7xl px-6 lg:px-4 xl:px-0 flex justify-between items-center mx-auto"
+        className="max-w-7xl px-6 flex justify-between items-center mx-auto"
       >
         <div className="flex-col mt-32 w-full">
           <img
