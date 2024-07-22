@@ -77,7 +77,7 @@ function Footer() {
               </div>
             </div>
           </div>
-          <hr className="border-black border-t-1 w-full" />
+          <hr className="border-black border-t-0.5 w-full" />
           <p className="mb-12 mt-10 text-sm tracking-wider">©2024 GADRIANA.</p>
         </div>
       </div>
