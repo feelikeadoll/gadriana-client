@@ -14,7 +14,7 @@ function About() {
           <img
             src={AboutTitle}
             alt="Gadriana Creative Studio - About"
-            className="my-8 max-h-28"
+            className="my-8 max-h-16 sm:max-h-20 md:max-h-28"
           />
           <div className="w-full flex flex-col items-end">
             <div className="w-full md:w-11/12 lg:w-3/4 text-3xl md:text-3.5xl lg:text-4xl leading-relaxed">
@@ -40,7 +40,7 @@ function About() {
           <img
             src={ClientsTitle}
             alt="Gadriana Creative Studio - Clients"
-            className="my-8 max-h-28"
+            className="my-8 max-h-16 sm:max-h-20 md:max-h-28"
           />
         </div>
       </section>
