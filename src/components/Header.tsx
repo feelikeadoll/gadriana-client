@@ -23,17 +23,17 @@ function Header() {
             <img
               src={Logo}
               alt="Gadriana Creative Product Photography Studio located Barcelona"
-              className="w-56"
+              className="w-52"
             />
           </Link>
           <div className="flex items-center">
-            <NavLink to="/about" className="hidden md:block ml-10 text-lg">
+            <NavLink to="/about" className="hidden md:block ml-10 text-md">
               About
             </NavLink>
-            <NavLink to="/services" className="hidden md:block ml-10 text-lg">
+            <NavLink to="/services" className="hidden md:block ml-10 text-md">
               Services
             </NavLink>
-            <NavLink to="" className="hidden md:block ml-10 text-lg">
+            <NavLink to="" className="hidden md:block ml-10 text-md">
               Contact
             </NavLink>
             <a
