@@ -24,13 +24,30 @@ function Navbar(props: NavbarProps) {
           </svg>
         </button>
         <nav className="p-8 mt-12 flex flex-col">
-          <NavLink to="/about" className="mt-4 text-lg">
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive
+                ? "mt-2 p-1 px-2 text-lg rounded bg-zinc-300"
+                : "mt-2 p-1 px-2 text-lg rounded hover:bg-zinc-300"
+            }
+          >
             About
           </NavLink>
-          <NavLink to="/services" className="mt-4 text-lg">
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              isActive
+                ? "mt-2 p-1 px-2 text-lg rounded bg-zinc-300"
+                : "mt-2 p-1 px-2 text-lg rounded hover:bg-zinc-300"
+            }
+          >
             Services
           </NavLink>
-          <NavLink to="" className="mt-4 text-lg">
+          <NavLink
+            to=""
+            className="mt-2 p-1 px-2 text-lg rounded hover:bg-zinc-300 active:bg-zinc-300"
+          >
             Contact
           </NavLink>
         </nav>
