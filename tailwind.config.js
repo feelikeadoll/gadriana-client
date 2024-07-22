@@ -10,7 +10,16 @@ module.exports = {
         before: "linear-gradient(to left, rgba(255, 255, 255, 0), white);",
         after: "linear-gradient(to right, rgba(255, 255, 255, 0), white);",
       },
-
+      fontSize: {
+        sm: "0.8rem",
+        base: "1rem",
+        xl: "1.25rem",
+        "2xl": "1.563rem",
+        "3xl": "1.953rem",
+        "3.5xl": "2.2rem",
+        "4xl": "2.441rem",
+        "5xl": "3.052rem",
+      },
       spacing: {
         600: "600px",
         800: "800px",

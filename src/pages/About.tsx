@@ -17,7 +17,7 @@ function About() {
             className="my-8 max-h-28"
           />
           <div className="w-full flex flex-col items-end">
-            <div className="w-full md:w-11/12 lg:w-3/4 text-4xl leading-relaxed">
+            <div className="w-full md:w-11/12 lg:w-3/4 text-3xl md:text-3.5xl lg:text-4xl leading-relaxed">
               <p className="pt-8">
                 We're a creative studio based in Barcelona{" "}
                 <br className="hidden md:block" />
