@@ -25,17 +25,6 @@ function Navbar(props: NavbarProps) {
         </button>
         <nav className="p-8 mt-12 flex flex-col">
           <NavLink
-            to="/about"
-            onClick={props.closeNavbar}
-            className={({ isActive }) =>
-              isActive
-                ? "mt-2 p-1 px-2 text-lg rounded bg-zinc-300"
-                : "mt-2 p-1 px-2 text-lg rounded hover:bg-zinc-300"
-            }
-          >
-            About
-          </NavLink>
-          <NavLink
             to="/services"
             onClick={props.closeNavbar}
             className={({ isActive }) =>
@@ -46,6 +35,18 @@ function Navbar(props: NavbarProps) {
           >
             Services
           </NavLink>
+          <NavLink
+            to="/about"
+            onClick={props.closeNavbar}
+            className={({ isActive }) =>
+              isActive
+                ? "mt-2 p-1 px-2 text-lg rounded bg-zinc-300"
+                : "mt-2 p-1 px-2 text-lg rounded hover:bg-zinc-300"
+            }
+          >
+            About
+          </NavLink>
+
           <NavLink
             to=""
             onClick={props.closeNavbar}

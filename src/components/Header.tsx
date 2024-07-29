@@ -27,11 +27,11 @@ function Header() {
             />
           </Link>
           <div className="flex items-center">
-            <NavLink to="/about" className="hidden md:block ml-10 text-md">
-              About
-            </NavLink>
             <NavLink to="/services" className="hidden md:block ml-10 text-md">
               Services
+            </NavLink>
+            <NavLink to="/about" className="hidden md:block ml-10 text-md">
+              About
             </NavLink>
             <NavLink to="" className="hidden md:block ml-10 text-md">
               Contact
