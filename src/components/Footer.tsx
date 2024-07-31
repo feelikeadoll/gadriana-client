@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 function Footer() {
   return (
     <div className="w-full">
-      <div className="max-w-7xl px-6 flex justify-between items-center mx-auto">
+      <div className="px-6 flex justify-between items-center mx-auto">
         <div className="w-full flex flex-col items-center justify-center">
           <hr className="border-black border-t-1 w-full" />
           <div className="my-12 mb-24 flex justify-between w-full">

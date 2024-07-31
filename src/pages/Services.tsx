@@ -1,18 +1,11 @@
-import ServicesTitle from "../assets/section titles/services.png";
-
 function Services() {
   return (
     <div className="w-full">
       <div
         id="services"
-        className="max-w-7xl px-6 flex justify-between items-center mx-auto"
+        className="px-6 flex justify-between items-center mx-auto"
       >
         <div className="flex-col mt-32 mb-16 w-full">
-          <img
-            src={ServicesTitle}
-            alt="Gadriana Creative Studio - About"
-            className="my-8 max-h-16 sm:max-h-20 md:max-h-28"
-          />
           <section
             id="photograpy"
             className="w-full mt-16 md:mt-28 mb-20 flex flex-col md:flex-row justify-between"

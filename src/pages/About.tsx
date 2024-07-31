@@ -1,4 +1,3 @@
-import AboutTitle from "../assets/section titles/about.png";
 import ClientsTitle from "../assets/section titles/clients.png";
 
 import ClientsLogos from "../assets/clients-all.jpg";
@@ -8,14 +7,9 @@ function About() {
     <div className="w-full">
       <section
         id="about"
-        className="max-w-7xl px-6 flex justify-between items-center mx-auto"
+        className="px-6 flex justify-between items-center mx-auto"
       >
         <div className="flex-col mt-32 mb-16 w-full">
-          <img
-            src={AboutTitle}
-            alt="Gadriana Creative Studio - About"
-            className="my-8 max-h-16 sm:max-h-20 md:max-h-28"
-          />
           <div className="w-full flex flex-col items-end">
             <div className="w-full md:w-11/12 lg:w-3/4 text-3xl md:text-3.5xl lg:text-4xl leading-relaxed">
               <p className="pt-8">
@@ -36,7 +30,7 @@ function About() {
         id="clients"
         className="max-w-7xl px-6 flex justify-between items-center mx-auto"
       >
-        <div className="flex-col mt-32 w-full">
+        <div className="flex flex-col items-center mt-32 w-full">
           <img
             src={ClientsTitle}
             alt="Gadriana Creative Studio - Clients"
