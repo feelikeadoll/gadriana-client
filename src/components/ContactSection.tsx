@@ -1,6 +1,6 @@
 import ContactForm from "./ContactForm";
 
-import GetInTouch from "../assets/section titles/contact.png";
+import Collaborate from "../assets/section titles/collaborate.png";
 
 function ContactSection() {
   return (
@@ -13,9 +13,9 @@ function ContactSection() {
         <div className="w-full px-6 pt-28 pb-14 flex justify-between">
           <div className="w-1/2 text-lg md:text-xl">
             <img
-              src={GetInTouch}
+              src={Collaborate}
               alt="Gadriana Studio Barcelona - Get in touch via Contact form"
-              className="w-60 pb-6"
+              className="w-72 pb-4"
             />
             <p className="mb-2">
               Have a project in mind? <br />
