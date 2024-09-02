@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import BackToTopButton from "./components/BackToTopButton";
+import ContactSection from "./components/ContactSection";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       </Routes>
 
       <BackToTopButton />
+      <ContactSection />
       <Footer />
     </div>
   );
