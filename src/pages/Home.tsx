@@ -42,7 +42,7 @@ function Home() {
             brands.
           </h1>
 
-          <div className="w-full mb-20 flex justify-center">
+          <div className="w-full flex justify-center">
             <div className="columns-1 md:columns-2 lg:columns-3 gap-36">
               <img src={img1} className="my-10" alt="" />
               <img src={img2} className="my-10 mx-10" alt="" />

@@ -40,7 +40,7 @@ function About() {
       </section>
       <div
         id="logos"
-        className="w-full relative overflow-hidden flex items-center h-60 mb-20
+        className="w-full relative overflow-hidden flex items-center h-60 mb-10
         before:absolute before:top-0 before:w-20 md:before:w-60 before:h-full before:content-no before:z-20
         before:left-0 before:bg-before
         after:absolute after:top-0 after:w-20 md:after:w-60 after:h-full after:content-no after:z-20

@@ -46,7 +46,7 @@ function Services() {
           </section>
         </div>
       </div>
-      <div className="w-full flex flex-col md:flex-row mb-32">
+      <div className="w-full flex flex-col md:flex-row mb-20">
         <div className="md:w-1/2 h-600 lg:h-800 xl:h-128 bg-servicesImg1 bg-cover bg-center"></div>
         <div className="md:w-1/2 h-600 lg:h-800 xl:h-128 bg-servicesImg2 bg-cover bg-center"></div>
       </div>
