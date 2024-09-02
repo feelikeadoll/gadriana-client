@@ -43,8 +43,8 @@ function Header() {
               className="hidden md:block ml-10"
             >
               <svg
-                width="38px"
-                height="38px"
+                width="26px"
+                height="26px"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
