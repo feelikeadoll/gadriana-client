@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 import Logo from "../assets/gadriana-logo.png";
 import { useState } from "react";
@@ -33,9 +34,9 @@ function Header() {
             <NavLink to="/about" className="hidden md:block ml-10 text-md">
               About
             </NavLink>
-            <NavLink to="" className="hidden md:block ml-10 text-md">
+            <HashLink to="#contact" className="hidden md:block ml-10 text-md">
               Contact
-            </NavLink>
+            </HashLink>
             <a
               href="https://www.instagram.com/gadrianastudio/"
               target="_blank"
