@@ -27,6 +27,10 @@ module.exports = {
         wlogos: "1653px",
         hlogos: "95px",
       },
+      boxShadow: {
+        btn: "#000 0px 9px;",
+        "btn-click": "#000 0 3px;",
+      },
     },
     fontFamily: {
       avenir: ["Avenir Light", "sans-serif"],
