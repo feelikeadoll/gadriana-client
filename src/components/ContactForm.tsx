@@ -80,7 +80,7 @@ function ContactForm() {
           />
         </label>
         <label className="input input-bordered rounded-none border-black flex items-center gap-2 my-2">
-          E-Mail
+          E-mail
           <input
             required
             type="text"
