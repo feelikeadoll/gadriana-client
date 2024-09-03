@@ -13,7 +13,7 @@ interface FormData {
 function ContactForm() {
   const form = createRef<HTMLFormElement>();
 
-//   const [isSubmitting, setIsSubmitting] = useState<boolean>( false);
+  //   const [isSubmitting, setIsSubmitting] = useState<boolean>( false);
 
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -122,16 +122,16 @@ function ContactForm() {
         </label>
         <div className="flex justify-center my-2">
           {/* {isSubmitting ? (
-            <button className="translate-y-1.5 btn bg-neutral-200 text-black text-base w-48 h-14 rounded-full shadow-btn-click tracking-widest">
+            <button className="translate-y-1.5 bg-neutral-200 text-black text-base w-48 h-14 rounded-full shadow-btn-click tracking-widest">
               SENDING
             </button>
           ) : ( */}
-            <button
-              type="submit"
-              className="btn bg-white border-1 border-black text-black text-base w-48 h-14 rounded-full shadow-btn tracking-widest"
-            >
-              SEND
-            </button>
+          <button
+            type="submit"
+            className="bg-white border-1 border-black text-black hover:bg-neutral-200 hover:border-0 text-base w-48 h-14 rounded-full shadow-btn tracking-widest"
+          >
+            SEND
+          </button>
           {/* )} */}
         </div>
       </form>
