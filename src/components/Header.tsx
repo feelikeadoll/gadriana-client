@@ -19,12 +19,12 @@ function Header() {
     <div className="w-full fixed bg-white z-40">
       <Navbar displayNavbar={displayNavbar} closeNavbar={closeNavbar} />
       <div className="px-6 flex justify-between items-center mx-auto">
-        <div className="my-6 w-full flex items-center justify-between">
+        <div className="my-4 lg:my-6 w-full flex items-end md:items-center justify-between">
           <Link to="/">
             <img
               src={Logo}
               alt="Gadriana Creative Product Photography Studio located Barcelona"
-              className="w-52"
+              className="w-44 md:w-52"
             />
           </Link>
           <div className="flex items-center">
