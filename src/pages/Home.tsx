@@ -36,7 +36,7 @@ function Home() {
   return (
     <div className="w-full">
       <div className="pt-20 bg-homeGif w-full h-96 md:h-screen bg-cover bg-center">
-        <h1 className="w-1/2 mx-6 md:mx-12 pt-20 md:pt-32 lg:pt-40 text-2xl md:text-3.5xl lg:text-4xl md:w-11/12 md:w-3/4 lg:w-2/3">
+        <h1 className="w-1/2 mx-6 md:mx-12 pt-16 sm:pt-20 md:pt-32 lg:pt-40 text-2xl md:text-3.5xl lg:text-4xl md:w-11/12 md:w-3/4 lg:w-2/3">
           We're a creative studio <br className="hidden md:block" />
           for beauty + wellness brands.
         </h1>
