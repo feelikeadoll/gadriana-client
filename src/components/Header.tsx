@@ -31,9 +31,6 @@ function Header() {
             <NavLink to="/services" className="hidden md:block ml-10 text-md">
               Services
             </NavLink>
-            <NavLink to="/about" className="hidden md:block ml-10 text-md">
-              About
-            </NavLink>
             <HashLink to="#contact" className="hidden md:block ml-10 text-md">
               Contact
             </HashLink>
