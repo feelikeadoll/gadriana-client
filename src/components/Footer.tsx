@@ -75,7 +75,6 @@ function Footer() {
                     </g>
                   </svg>
                 </a>
-                <a href="mailto:studio@gadriana.com"></a>
               </div>
             </div>
           </div>
