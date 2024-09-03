@@ -56,7 +56,7 @@ function Navbar(props: NavbarProps) {
               Contact
             </HashLink>
           </nav>
-          <div className="flex mb-12">
+          <div className="flex mb-20">
             <a
               href="https://www.instagram.com/gadrianastudio/"
               target="_blank"
