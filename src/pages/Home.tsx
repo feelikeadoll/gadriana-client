@@ -36,7 +36,7 @@ function Home() {
   return (
     <div className="w-full">
       <div className="bg-homeGif w-full h-96 md:h-screen bg-cover bg-center">
-        <h1 className="mx-12 pt-40 text-3.5xl md:text-4xl lg:text-5xl md:w-11/12 md:w-3/4 lg:w-2/3">
+        <h1 className="mx-12 pt-40 text-3.5xl md:text-4xl md:w-11/12 md:w-3/4 lg:w-2/3">
           We're a creative studio
           <br />
           for beauty + wellness brands.
@@ -46,7 +46,7 @@ function Home() {
 
       <div className="px-6 flex justify-between items-center mx-auto">
         <div className="flex flex-col items-center mb-32">
-          <h2 className="w-7/12 text-3.5xl text-center my-32">
+          <h2 className="w-7/12 text-3xl text-center my-32">
             We create stunning imagery and videos <br />
             that help our clients captivate their audience
             <br />
