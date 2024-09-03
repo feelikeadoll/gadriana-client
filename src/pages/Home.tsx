@@ -35,7 +35,7 @@ import img33 from "../assets/homepage grid/33.jpg";
 function Home() {
   return (
     <div className="w-full">
-      <div className="bg-homeGif w-full h-96 md:h-screen bg-cover bg-center">
+      <div className="pt-20 bg-homeGif w-full h-96 md:h-screen bg-cover bg-center">
         <h1 className="mx-12 pt-40 text-3.5xl md:text-4xl md:w-11/12 md:w-3/4 lg:w-2/3">
           We're a creative studio
           <br />
