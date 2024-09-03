@@ -1,3 +1,5 @@
+import HelloImg from "../assets/section titles/hello.png";
+
 function Services() {
   return (
     <div className="w-full">
@@ -6,6 +8,33 @@ function Services() {
         className="px-6 flex justify-between items-center mx-auto"
       >
         <div className="flex-col mt-32 mb-16 w-full">
+          <section
+            id="about"
+            className="px-6 flex justify-between items-center mx-auto"
+          >
+            <div className="flex-col mt-32 mb-16 w-full">
+              <div className="w-full flex flex-col items-center">
+                <div className="w-full md:w-11/12 lg:w-3/4 text-3xl md:text-3.5xl lg:text-4xl leading-relaxed">
+                  <p className="pt-8">
+                    <img
+                      src={HelloImg}
+                      className="w-52 mb-12 mr-4 inline-block"
+                      alt=""
+                    />
+                    We're a creative studio
+                  </p>
+                  <p className="-mt-8">
+                    based in Barcelona for beauty + wellness brands.
+                  </p>
+                  <p className="py-8">
+                    We direct, create, style, build, style, retouch and perfect
+                    still images and motions to help consumer brands create
+                    impactful digital content.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
           <section
             id="photograpy"
             className="w-full mt-16 md:mt-28 mb-20 flex flex-col md:flex-row justify-between"
