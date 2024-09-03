@@ -13,13 +13,13 @@ function About() {
           <div className="w-full flex flex-col items-end">
             <div className="w-full md:w-11/12 lg:w-3/4 text-3xl md:text-3.5xl lg:text-4xl leading-relaxed">
               <p className="pt-8">
-                We're a creative studio based in Barcelona{" "}
-                <br className="hidden md:block" />
-                for beauty + wellness brands.
+                We're a creative studio <br className="hidden md:block" />
+                based in Barcelona for beauty + wellness brands.
               </p>
               <p className="py-8">
-                We direct, create, style, retouch and perfect images and videos
-                to help you reach your audience in a visually impact manner.
+                We direct, create, style, build, style, retouch and perfect
+                still images and motions to help consumer brands create
+                impactful digital content.
               </p>
             </div>
           </div>
