@@ -62,7 +62,7 @@ function Services() {
             </div>
           </section>
           <section id="services" className="mt-40 flex flex-col items-center">
-            <img src={OurServices} className="h-16" alt="" />
+            <img src={OurServices} className="h-14" alt="" />
             <div
               id="photograpy"
               className="w-full mt-6 md:mt-10 mb-20 flex flex-col md:flex-row justify-between"
@@ -112,7 +112,7 @@ function Services() {
             id="clients"
             className="w-full flex flex-col items-center mt-40"
           >
-            <img src={OurClients} className="h-16 mb-4" alt="" />
+            <img src={OurClients} className="h-14 mb-4" alt="" />
             <div
               id="logos"
               className="w-full relative overflow-hidden flex items-center h-60
