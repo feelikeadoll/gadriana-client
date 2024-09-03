@@ -1,4 +1,5 @@
-import { useState, ChangeEvent, FormEvent, createRef } from "react";
+import { useState, ChangeEvent, createRef } from "react";
+// import { useState, ChangeEvent, FormEvent, createRef } from "react";
 // import emailjs from "@emailjs/browser";
 
 interface FormData {
@@ -12,7 +13,7 @@ interface FormData {
 function ContactForm() {
   const form = createRef<HTMLFormElement>();
 
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+//   const [isSubmitting, setIsSubmitting] = useState<boolean>( false);
 
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -120,18 +121,18 @@ function ContactForm() {
           />
         </label>
         <div className="flex justify-center my-2">
-          {isSubmitting ? (
+          {/* {isSubmitting ? (
             <button className="translate-y-1.5 btn bg-neutral-200 text-black text-base w-48 h-14 rounded-full shadow-btn-click tracking-widest">
               SENDING
             </button>
-          ) : (
+          ) : ( */}
             <button
               type="submit"
               className="btn bg-white border-1 border-black text-black text-base w-48 h-14 rounded-full shadow-btn tracking-widest"
             >
               SEND
             </button>
-          )}
+          {/* )} */}
         </div>
       </form>
     </div>
