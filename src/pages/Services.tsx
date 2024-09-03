@@ -1,5 +1,9 @@
 import HelloImg from "../assets/section titles/hello.png";
 
+import Services1 from "../assets/services-img1.jpg";
+import Services2 from "../assets/services-img2.mp4";
+import Services3 from "../assets/services-img3.jpg";
+
 function Services() {
   return (
     <div className="w-full">
@@ -33,6 +37,20 @@ function Services() {
                   </p>
                 </div>
               </div>
+            </div>
+          </section>
+          <section id="images" className="px-12 w-full flex justify-center">
+            <div className="columns-1 md:columns-3 gap-20">
+              <img src={Services1} alt="" />
+              <video
+                className="video-element"
+                src={Services2}
+                autoPlay
+                muted
+                loop
+                controls={false}
+              />
+              <img src={Services3} alt="" />
             </div>
           </section>
           <section
