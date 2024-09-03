@@ -35,13 +35,23 @@ import img33 from "../assets/homepage grid/33.jpg";
 function Home() {
   return (
     <div className="w-full">
-      <div className="px-6 flex justify-between items-center mx-auto">
-        <div className="flex-col my-32">
-          <h1 className="my-12 text-3.5xl md:text-4xl md:w-11/12 md:w-3/4 lg:w-2/3 leading-relaxed">
-            We're a Barcelona-based creative studio for beauty + wellness
-            brands.
-          </h1>
+      <div className="bg-homeGif w-full h-96 md:h-screen bg-cover bg-center">
+        <h1 className="mx-12 pt-40 text-3.5xl md:text-4xl lg:text-5xl md:w-11/12 md:w-3/4 lg:w-2/3">
+          We're a creative studio
+          <br />
+          for beauty + wellness brands.
+        </h1>
+      </div>
+      <hr className="border-black border-t-1" />
 
+      <div className="px-6 flex justify-between items-center mx-auto">
+        <div className="flex flex-col items-center mb-32">
+          <h2 className="w-7/12 text-3.5xl text-center my-32">
+            We create stunning imagery and videos <br />
+            that help our clients captivate their audience
+            <br />
+            in a visually impactful manner.
+          </h2>
           <div className="w-full flex justify-center">
             <div className="columns-1 md:columns-2 lg:columns-3 gap-36">
               <img src={img1} className="my-10" alt="" />

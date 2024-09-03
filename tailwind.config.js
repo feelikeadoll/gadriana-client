@@ -9,6 +9,7 @@ module.exports = {
         servicesImg2: "url('/src/assets/services-img2.jpg')",
         before: "linear-gradient(to left, rgba(255, 255, 255, 0), white);",
         after: "linear-gradient(to right, rgba(255, 255, 255, 0), white);",
+        homeGif: "url('/src/assets/gadriana_home.gif')",
       },
       fontSize: {
         sm: "0.8rem",
