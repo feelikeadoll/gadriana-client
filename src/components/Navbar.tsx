@@ -56,11 +56,11 @@ function Navbar(props: NavbarProps) {
               Contact
             </HashLink>
           </nav>
-          <div className="flex mb-20">
+          <div className="flex mb-32">
             <a
               href="https://www.instagram.com/gadrianastudio/"
               target="_blank"
-              className="ml-2"
+              className="mx-2"
             >
               <svg
                 width="38px"
@@ -89,7 +89,7 @@ function Navbar(props: NavbarProps) {
             <a
               href="https://www.pinterest.es/gadrianastudio/"
               target="_blank"
-              className="ml-2"
+              className="mx-2"
             >
               <svg
                 width="36px"
