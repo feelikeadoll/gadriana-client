@@ -33,79 +33,69 @@ import img32 from "../assets/homepage grid/32.jpg";
 import img33 from "../assets/homepage grid/33.jpg";
 
 function HomeImgGrid() {
+  const mediaItems = [
+    { type: "image", src: img1 },
+    { type: "image", src: img2 },
+    { type: "video", src: img3 },
+    { type: "image", src: img4 },
+    { type: "image", src: img5 },
+    { type: "image", src: img6 },
+    { type: "video", src: img7 },
+    { type: "image", src: img8 },
+    { type: "image", src: img9 },
+    { type: "image", src: img10 },
+    { type: "image", src: img11 },
+    { type: "image", src: img12 },
+    { type: "image", src: img13 },
+    { type: "image", src: img14 },
+    { type: "image", src: img15 },
+    { type: "video", src: img16 },
+    { type: "image", src: img17 },
+    { type: "image", src: img18 },
+    { type: "video", src: img19 },
+    { type: "image", src: img20 },
+    { type: "image", src: img21 },
+    { type: "image", src: img22 },
+    { type: "image", src: img23 },
+    { type: "image", src: img24 },
+    { type: "image", src: img25 },
+    { type: "image", src: img26 },
+    { type: "image", src: img27 },
+    { type: "image", src: img28 },
+    { type: "image", src: img29 },
+    { type: "image", src: img30 },
+    { type: "image", src: img31 },
+    { type: "image", src: img32 },
+    { type: "image", src: img33 },
+  ];
+
   return (
     <div className="w-full flex justify-center">
       <div className="columns-1 md:columns-2 lg:columns-3 gap-36">
-        <img src={img1} className="my-10" alt="" />
-        <img src={img2} className="my-10 mx-10" alt="" />
-        <video
-          className="video-element my-10"
-          src={img3}
-          autoPlay
-          muted
-          loop
-          playsInline
-          webkit-playsinline="true"
-          controls={false}
-        />
-        <img src={img4} className="my-10 mx-10" alt="" />
-        <img src={img5} className="my-10" alt="" />
-        <img src={img6} className="my-10 mx-10" alt="" />
-        <video
-          className="video-element my-10"
-          src={img7}
-          autoPlay
-          muted
-          loop
-          playsInline
-          webkit-playsinline="true"
-          controls={false}
-        />
-        <img src={img8} className="my-10 mx-10" alt="" />
-        <img src={img9} className="my-10" alt="" />
-        <img src={img10} className="my-10 mx-10" alt="" />
-        <img src={img11} className="my-10" alt="" />
-        <img src={img12} className="my-10 mx-10" alt="" />
-        <img src={img13} className="my-10" alt="" />
-        <img src={img14} className="my-10 mx-10" alt="" />
-        <img src={img15} className="my-10" alt="" />
-        <video
-          className="video-element my-10 mx-10"
-          src={img16}
-          autoPlay
-          muted
-          loop
-          playsInline
-          webkit-playsinline="true"
-          controls={false}
-        />
-        <img src={img17} className="my-10" alt="" />
-        <img src={img18} className="my-10 mx-10" alt="" />
-        <video
-          className="video-element my-10"
-          src={img19}
-          autoPlay
-          muted
-          loop
-          playsInline
-          webkit-playsinline="true"
-          controls={false}
-        />
-        <img src={img19} className="my-10 mx-10" alt="" />
-        <img src={img20} className="my-10" alt="" />
-        <img src={img21} className="my-10 mx-10" alt="" />
-        <img src={img22} className="my-10" alt="" />
-        <img src={img23} className="my-10 mx-10" alt="" />
-        <img src={img24} className="my-10" alt="" />
-        <img src={img25} className="my-10 mx-10" alt="" />
-        <img src={img26} className="my-10" alt="" />
-        <img src={img27} className="my-10 mx-10" alt="" />
-        <img src={img28} className="my-10" alt="" />
-        <img src={img29} className="my-10 mx-10" alt="" />
-        <img src={img30} className="my-10" alt="" />
-        <img src={img31} className="my-10 mx-10" alt="" />
-        <img src={img32} className="my-10" alt="" />
-        <img src={img33} className="my-10 mx-10" alt="" />
+        {mediaItems.map((item, index) => {
+          const marginClass = index % 2 === 0 ? "my-10" : "my-10 mx-10";
+
+          if (item.type === "image") {
+            return (
+              <img key={index} src={item.src} className={marginClass} alt="" />
+            );
+          } else if (item.type === "video") {
+            return (
+              <video
+                key={index}
+                className={`video-element ${marginClass}`}
+                src={item.src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                webkit-playsinline="true"
+                controls={false}
+              />
+            );
+          }
+          return null;
+        })}
       </div>
     </div>
   );
