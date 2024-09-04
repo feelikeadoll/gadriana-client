@@ -61,7 +61,7 @@ function Services() {
                 alt="Gadriana Studio - Creative beauty content creators"
               />
               <video
-                className="video-element w-full mt-20"
+                className="video-element w-full mt-16"
                 src={Services2}
                 autoPlay
                 muted
@@ -72,7 +72,7 @@ function Services() {
               />
               <img
                 src={Services3}
-                className="mt-20"
+                className="mt-16"
                 alt="Gadriana Studio - Creative beauty content creators"
               />
             </div>
@@ -81,12 +81,14 @@ function Services() {
             id="services"
             className="mt-32 md:mt-40 flex flex-col items-center"
           >
-            <img src={OurServices} className="h-10 md:h-14" alt="" />
+            <img src={OurServices} className="h-8 sm:h-10 md:h-14" alt="" />
             <div
               id="photograpy"
               className="w-full mt-14 md:mt-10 mb-20 flex flex-col md:flex-row justify-between"
             >
-              <h3 className="text-4xl md:text-5xl md:w-1/2">Photography</h3>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl md:w-1/2">
+                Photography
+              </h3>
               <p className="text-lg md:text-xl mt-8 md:mt-12 md:mt-0 md:w-1/2">
                 We offer professional photography services to help you capture
                 the perfect image for your product. From pre-production planning
@@ -99,7 +101,9 @@ function Services() {
               id="videography"
               className="w-full mt-16 md:mt-28 mb-20 flex flex-col md:flex-row justify-between"
             >
-              <h3 className="text-4xl md:text-5xl md:w-1/2">Videography</h3>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl md:w-1/2">
+                Videography
+              </h3>
               <p className="text-lg md:text-xl mt-8 md:mt-12 md:w-1/2">
                 Having quality video content is important for your business,
                 whether it's a simple how-to video or a more impactful piece for
@@ -113,7 +117,9 @@ function Services() {
               id="set-design"
               className="w-full mt-16 lg:mt-28 mb-12 md:mb-20 lg:mb-32 flex flex-col md:flex-row justify-between"
             >
-              <h3 className="text-4xl md:text-5xl md:w-1/2">Set Design</h3>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl md:w-1/2">
+                Set Design
+              </h3>
               <p className="text-lg md:text-xl mt-8 md:mt-12 md:w-1/2">
                 We create stunning sets using the latest techniques and
                 technology. Whether you need a traditional set, digital
@@ -132,7 +138,7 @@ function Services() {
               />
               <img
                 src={MakingOf2}
-                className="mt-20"
+                className="mt-12"
                 alt="Gadriana Studio - Creative beauty content creators"
               />
             </div>
@@ -141,7 +147,7 @@ function Services() {
             id="clients"
             className="w-full flex flex-col items-center mt-32 md:mt-40"
           >
-            <img src={OurClients} className="h-10 md:h-14 mb-4" alt="" />
+            <img src={OurClients} className="h-8 sm:h-10 md:h-14 mb-4" alt="" />
             <div
               id="logos"
               className="w-full relative overflow-hidden flex items-center h-60
