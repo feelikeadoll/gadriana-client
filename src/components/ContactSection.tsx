@@ -10,7 +10,7 @@ function ContactSection() {
     >
       <div className="w-full flex flex-col items-center justify-center">
         <hr className="border-black border-t-1 w-full" />
-        <div className="w-full px-6 pt-28 pb-14 flex flex-col md:flex-row justify-between">
+        <div className="w-full md:px-6 pt-28 pb-14 flex flex-col md:flex-row justify-between">
           <div className="mb-10 md:w-1/2 text-lg md:text-xl">
             <img
               src={Collaborate}
