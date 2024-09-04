@@ -24,14 +24,13 @@ function Services() {
             id="about"
             className="px-6 flex justify-between items-center mx-auto"
           >
-            <div className="flex-col mt-10 md:mt-32 mb-16 w-full">
+            <div className="flex-col mt-4 sm:mt-10 md:mt-32 mb-16 w-full">
               <div className="w-full flex flex-col items-center">
-                <div className="w-full md:w-11/12 lg:w-3/4 text-3xl md:text-3.5xl lg:text-4xl leading-relaxed">
+                <div className="w-full md:w-11/12 lg:w-3/4 text-2xl sm:text-3xl md:text-3.5xl lg:text-4xl leading-relaxed">
                   <p className="pt-8 hidden md:block">
                     <img
                       src={HelloImg}
-                      className="h-12 md:h-16 mb-8 md:mb-12 mr-4 md:inline-block"
-                      alt=""
+                      className="w-20 sm:w-32 md:w-52 mb-8 md:mb-12 mr-4 md:inline-block"
                     />
                     We're a creative studio
                   </p>
@@ -54,18 +53,25 @@ function Services() {
           </section>
           <section id="images" className="px-12 w-full flex justify-center">
             <div className="columns-1 md:columns-3 gap-20">
-              <img src={Services1} alt="" />
+              <img
+                src={Services1}
+                alt="Gadriana Studio - Creative beauty content creators"
+              />
               <video
-                className="video-element"
+                className="video-element w-full"
                 src={Services2}
                 autoPlay
                 muted
                 loop
                 playsInline
-                webkit-playsinline
+                webkit-playsinline="true"
                 controls={false}
               />
-              <img src={Services3} alt="" />
+              <img
+                src={Services3}
+                className=""
+                alt="Gadriana Studio - Creative beauty content creators"
+              />
             </div>
           </section>
           <section id="services" className="mt-40 flex flex-col items-center">
