@@ -91,7 +91,7 @@ function ContactForm() {
             className="grow text-darkgrey px-2"
           />
         </label>
-        <label className="input input-bordered rounded-none border-black flex items-center gap-2 my-2">
+        <label className="input input-bordered h-16 sm:h-12 rounded-none border-black flex items-center gap-2 my-2">
           Brand you represent
           <input
             type="text"
@@ -101,7 +101,7 @@ function ContactForm() {
             className="grow text-darkgrey px-2"
           />
         </label>
-        <label className="input input-bordered rounded-none border-black flex items-center gap-2 my-2">
+        <label className="input input-bordered h-16 sm:h-12 rounded-none border-black flex items-center gap-2 my-2">
           Service you're interested in
           <input
             type="text"
