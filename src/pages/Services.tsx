@@ -52,13 +52,13 @@ function Services() {
             </div>
           </section>
           <section id="images" className="px-12 w-full flex justify-center">
-            <div className="columns-1 md:columns-3 gap-20">
+            <div className="columns-1 md:columns-3 md:gap-20">
               <img
                 src={Services1}
                 alt="Gadriana Studio - Creative beauty content creators"
               />
               <video
-                className="video-element w-full"
+                className="video-element w-full mt-20"
                 src={Services2}
                 autoPlay
                 muted
@@ -69,16 +69,19 @@ function Services() {
               />
               <img
                 src={Services3}
-                className=""
+                className="mt-20"
                 alt="Gadriana Studio - Creative beauty content creators"
               />
             </div>
           </section>
-          <section id="services" className="mt-40 flex flex-col items-center">
-            <img src={OurServices} className="h-14" alt="" />
+          <section
+            id="services"
+            className="mt-32 md:mt-40 flex flex-col items-center"
+          >
+            <img src={OurServices} className="h-10 md:h-14" alt="" />
             <div
               id="photograpy"
-              className="w-full mt-6 md:mt-10 mb-20 flex flex-col md:flex-row justify-between"
+              className="w-full mt-14 md:mt-10 mb-20 flex flex-col md:flex-row justify-between"
             >
               <h3 className="text-4xl md:text-5xl md:w-1/2">Photography</h3>
               <p className="text-lg md:text-xl mt-8 md:mt-12 md:mt-0 md:w-1/2">
@@ -116,16 +119,23 @@ function Services() {
             </div>
           </section>
           <section id="making-of" className="px-6 w-full flex justify-center">
-            <div className="columns-1 md:columns-2 gap-10">
-              <img src={MakingOf1} alt="" />
-              <img src={MakingOf2} alt="" />
+            <div className="columns-1 md:columns-2 md:gap-10">
+              <img
+                src={MakingOf1}
+                alt="Gadriana Studio - Creative beauty content creators"
+              />
+              <img
+                src={MakingOf2}
+                className="mt-20"
+                alt="Gadriana Studio - Creative beauty content creators"
+              />
             </div>
           </section>
           <section
             id="clients"
-            className="w-full flex flex-col items-center mt-40"
+            className="w-full flex flex-col items-center mt-32 md:mt-40"
           >
-            <img src={OurClients} className="h-14 mb-4" alt="" />
+            <img src={OurClients} className="h-10 md:h-14 mb-4" alt="" />
             <div
               id="logos"
               className="w-full relative overflow-hidden flex items-center h-60
