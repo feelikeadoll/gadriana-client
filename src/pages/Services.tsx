@@ -51,7 +51,10 @@ function Services() {
               </div>
             </div>
           </section>
-          <section id="images" className="px-12 w-full flex justify-center">
+          <section
+            id="images"
+            className="px-6 md:px-12 w-full flex justify-center"
+          >
             <div className="columns-1 md:columns-3 md:gap-20">
               <img
                 src={Services1}
@@ -118,7 +121,10 @@ function Services() {
               </p>
             </div>
           </section>
-          <section id="making-of" className="px-6 w-full flex justify-center">
+          <section
+            id="making-of"
+            className="md:px-6 w-full flex justify-center"
+          >
             <div className="columns-1 md:columns-2 md:gap-10">
               <img
                 src={MakingOf1}
