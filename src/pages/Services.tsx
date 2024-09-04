@@ -61,6 +61,8 @@ function Services() {
                 autoPlay
                 muted
                 loop
+                playsInline
+                webkit-playsinline
                 controls={false}
               />
               <img src={Services3} alt="" />

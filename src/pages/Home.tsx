@@ -62,6 +62,8 @@ function Home() {
                 autoPlay
                 muted
                 loop
+                playsInline
+                webkit-playsinline
                 controls={false}
               />
               <img src={img4} className="my-10 mx-10" alt="" />
@@ -73,6 +75,8 @@ function Home() {
                 autoPlay
                 muted
                 loop
+                playsInline
+                webkit-playsinline
                 controls={false}
               />
               <img src={img8} className="my-10 mx-10" alt="" />
@@ -89,6 +93,8 @@ function Home() {
                 autoPlay
                 muted
                 loop
+                playsInline
+                webkit-playsinline
                 controls={false}
               />
               <img src={img17} className="my-10" alt="" />
@@ -99,6 +105,8 @@ function Home() {
                 autoPlay
                 muted
                 loop
+                playsInline
+                webkit-playsinline
                 controls={false}
               />
               <img src={img19} className="my-10 mx-10" alt="" />
