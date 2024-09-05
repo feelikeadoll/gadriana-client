@@ -25,7 +25,7 @@ module.exports = {
         600: "600px",
         800: "800px",
         128: "1100px",
-        wlogos: "1653px",
+        wlogos: "1964px",
         hlogos: "95px",
       },
       boxShadow: {
