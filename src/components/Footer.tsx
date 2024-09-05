@@ -8,8 +8,8 @@ function Footer() {
           <hr className="border-black border-t-1 w-full" />
           <div className="md:px-6 my-12 mb-24 flex justify-between w-full">
             <div className="flex flex-col">
-              <NavLink to="/about" className="my-2">
-                About
+              <NavLink to="/" className="my-2">
+                Home
               </NavLink>
               <NavLink to="/services" className="my-2">
                 Services
