@@ -1,10 +1,10 @@
 import img1 from "../assets/homepage grid/1.jpg";
-import img2 from "../assets/homepage grid/2.png";
+import img2 from "../assets/homepage grid/2.jpg";
 import img3 from "../assets/homepage grid/3.mp4";
-import img4 from "../assets/homepage grid/4.jpg";
+import img4 from "../assets/homepage grid/4.png";
 import img5 from "../assets/homepage grid/5.jpg";
 import img6 from "../assets/homepage grid/6.jpg";
-import img7 from "../assets/homepage grid/7.mp4";
+import img7 from "../assets/homepage grid/7.jpg";
 import img8 from "../assets/homepage grid/8.jpg";
 import img9 from "../assets/homepage grid/9.jpg";
 import img10 from "../assets/homepage grid/10.jpg";
@@ -40,7 +40,7 @@ function HomeImgGrid() {
     { type: "image", src: img4 },
     { type: "image", src: img5 },
     { type: "image", src: img6 },
-    { type: "video", src: img7 },
+    { type: "image", src: img7 },
     { type: "image", src: img8 },
     { type: "image", src: img9 },
     { type: "image", src: img10 },
