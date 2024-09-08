@@ -31,6 +31,8 @@ import img30 from "../assets/homepage grid/30.jpg";
 import img31 from "../assets/homepage grid/31.jpg";
 import img32 from "../assets/homepage grid/32.jpg";
 import img33 from "../assets/homepage grid/33.jpg";
+import ImgThumbnail from "./ImgThumbnail";
+import VideoThumbnail from "./VideoThumbnail";
 
 function HomeImgGrid() {
   const mediaItems = [
@@ -77,20 +79,20 @@ function HomeImgGrid() {
 
           if (item.type === "image") {
             return (
-              <img key={index} src={item.src} className={marginClass} alt="" />
+              <ImgThumbnail
+                key={index}
+                id={index}
+                src={item.src}
+                marginClass={marginClass}
+              />
             );
           } else if (item.type === "video") {
             return (
-              <video
+              <VideoThumbnail
                 key={index}
-                className={`video-element ${marginClass}`}
+                id={index}
                 src={item.src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                webkit-playsinline="true"
-                controls={false}
+                marginClass={marginClass}
               />
             );
           }
