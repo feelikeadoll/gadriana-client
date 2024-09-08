@@ -25,7 +25,7 @@ function Navbar(props: NavbarProps) {
           </svg>
         </button>
         <div className="pb-12 h-screen flex flex-col justify-between items-center">
-          <nav className="p-20 mt-12 flex flex-col items-center">
+          <nav className="p-20 mt-20 flex flex-col items-center">
             <NavLink
               to="/"
               onClick={props.closeNavbar}
