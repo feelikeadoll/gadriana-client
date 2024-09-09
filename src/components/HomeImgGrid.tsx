@@ -111,8 +111,9 @@ function HomeImgGrid() {
               <VideoThumbnail
                 key={index}
                 id={index}
-                src={item.src}
                 marginClass={marginClass}
+                mediaItems={mediaItems}
+                openModal={openModal}
               />
             );
           }
