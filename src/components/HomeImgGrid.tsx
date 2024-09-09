@@ -91,10 +91,10 @@ function HomeImgGrid() {
   };
 
   return (
-    <div className="w-full flex justify-center">
+    <div className="mx-4 flex justify-center">
       <div className="columns-1 md:columns-2 lg:columns-3 gap-36">
         {mediaItems.map((item, index) => {
-          const marginClass = index % 2 === 0 ? "my-10" : "my-10 mx-10";
+          const marginClass = index % 2 === 0 ? "my-10 -mx-5" : "my-10 mx-5";
 
           if (item.type === "image") {
             return (
