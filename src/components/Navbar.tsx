@@ -9,7 +9,7 @@ type NavbarProps = {
 function Navbar(props: NavbarProps) {
   return (
     <div className={props.displayNavbar}>
-      <div className="w-full h-full absolute bg-white top-0 right-0 z-50">
+      <div className="w-screen h-screen absolute bg-white top-0 right-0 z-50">
         <button
           onClick={props.closeNavbar}
           className="btn btn-circle btn-ghost absolute top-4 right-6"
