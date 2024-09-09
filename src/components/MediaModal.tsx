@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ImgLarge from "./ImgLarge";
+import VideoLarge from "./VideoLarge";
 // import VideoLarge from "./VideoLarge";
 
 type MediaItem = {
@@ -53,32 +54,34 @@ function MediaModal(props: MediaModalProps) {
     }
   }
 
-  // function zoomOut() {}
-
   return (
     <div
       className={`${props.displayModal} fixed top-0 left-0 h-screen w-screen z-50 p-8 bg-white`}
     >
       <div className="pb-8 flex justify-between">
-        <button onClick={handleZoom}>
-          <svg
-            fill="#000000"
-            width="36px"
-            height="36px"
-            viewBox="0 0 16 16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              <path d="m14.91 13.09-3.68-3.21a4.86 4.86 0 0 0 .86-2.77A5.34 5.34 0 0 0 6.59 2a5.35 5.35 0 0 0-5.5 5.15 5.34 5.34 0 0 0 5.5 5.15 5.71 5.71 0 0 0 3.82-1.44L14.08 14zM6.59 11a4.09 4.09 0 0 1-4.25-3.9 4.09 4.09 0 0 1 4.25-3.9 4.09 4.09 0 0 1 4.25 3.9A4.08 4.08 0 0 1 6.59 11z"></path>
-            </g>
-          </svg>
-        </button>
+        {props.mediaItems[props.id].type === "video" ? (
+          <button></button>
+        ) : (
+          <button onClick={handleZoom}>
+            <svg
+              fill="#000000"
+              width="36px"
+              height="36px"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path d="m14.91 13.09-3.68-3.21a4.86 4.86 0 0 0 .86-2.77A5.34 5.34 0 0 0 6.59 2a5.35 5.35 0 0 0-5.5 5.15 5.34 5.34 0 0 0 5.5 5.15 5.71 5.71 0 0 0 3.82-1.44L14.08 14zM6.59 11a4.09 4.09 0 0 1-4.25-3.9 4.09 4.09 0 0 1 4.25-3.9 4.09 4.09 0 0 1 4.25 3.9A4.08 4.08 0 0 1 6.59 11z"></path>
+              </g>
+            </svg>
+          </button>
+        )}
         <button onClick={props.closeModal} className="">
           <svg
             fill="#000000"
@@ -132,12 +135,12 @@ function MediaModal(props: MediaModalProps) {
             handleZoom={handleZoom}
           />
         ) : (
-          <h1>This is VideoLarge</h1>
-          // <VideoLarge
-          //   id={props.id}
-          //   mediaSize={mediaSize}
-          //   mediaItems={props.mediaItems}
-          // />
+          <VideoLarge
+            id={props.id}
+            containerSize={containerSize}
+            mediaSize={mediaSize}
+            mediaItems={props.mediaItems}
+          />
         )}
 
         {position >= 32 ? (
