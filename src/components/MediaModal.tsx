@@ -11,6 +11,7 @@ type MediaModalProps = {
   id: number;
   mediaItems: MediaItem[];
   displayModal: string;
+  openModal: (id: number) => void;
   closeModal: () => void;
 };
 
@@ -23,17 +24,19 @@ function MediaModal(props: MediaModalProps) {
 
   function previousImg() {
     if (position <= 0) {
-      console.log("no more previous imgs");
+      return;
     } else {
-      console.log(`moving to img ${position - 1}`);
+      props.closeModal();
+      props.openModal(position - 1);
     }
   }
 
   function nextImg() {
     if (position >= 32) {
-      console.log("no more imgs");
+      return;
     } else {
-      console.log(`moving to img ${position + 1}`);
+      props.closeModal();
+      props.openModal(position + 1);
     }
   }
 

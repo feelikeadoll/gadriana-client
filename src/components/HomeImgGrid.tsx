@@ -124,6 +124,7 @@ function HomeImgGrid() {
           id={selectedMediaId}
           mediaItems={mediaItems}
           displayModal="block"
+          openModal={openModal}
           closeModal={closeModal}
         />
       )}
