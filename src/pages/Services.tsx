@@ -43,9 +43,9 @@ function Services() {
                     wellness brands.
                   </p>
                   <p className="py-8">
-                    We direct, create, style, build, style, retouch and perfect
-                    still images and motions to help consumer brands create
-                    impactful digital content.
+                    We direct, create, style, build, retouch and perfect still
+                    images and motions to help consumer brands create impactful
+                    digital content.
                   </p>
                 </div>
               </div>
