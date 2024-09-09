@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ImgLarge from "./ImgLarge";
 import VideoLarge from "./VideoLarge";
-// import VideoLarge from "./VideoLarge";
 
 type MediaItem = {
   type: "image" | "video";
@@ -56,7 +55,7 @@ function MediaModal(props: MediaModalProps) {
 
   return (
     <div
-      className={`${props.displayModal} hidden md:block fixed top-0 left-0 h-screen w-screen z-50 p-8 bg-white`}
+      className={`${props.displayModal} fixed top-0 left-0 h-screen w-screen z-50 p-8 bg-white`}
     >
       <div className="pb-8 flex justify-between">
         {props.mediaItems[props.id].type === "video" ? (
