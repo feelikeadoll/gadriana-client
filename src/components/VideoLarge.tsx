@@ -21,7 +21,7 @@ function VideoLarge(props: VideoLargeProps) {
         loop
         playsInline
         webkit-playsinline="true"
-        controls={true}
+        controls={false}
       />
     </div>
   );
