@@ -90,12 +90,10 @@ function HomeImgGrid() {
 
     window.addEventListener("resize", handleResize);
 
-    if (window.innerWidth >= 768) {
+    if (screenSize) {
       setShowMediaModal(true);
-      console.log("screen is bigger");
     } else {
       setShowMediaModal(null);
-      console.log("window is smaller");
     }
     return () => {
       window.removeEventListener("resize", handleResize);
