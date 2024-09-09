@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import ImgLarge from "./ImgLarge";
+// import VideoLarge from "./VideoLarge";
 
 type MediaItem = {
   type: "image" | "video";
@@ -13,30 +15,49 @@ type MediaModalProps = {
 };
 
 function MediaModal(props: MediaModalProps) {
+  const [containerSize, setContainerSize] = useState<string>(
+    "relative h-full contain"
+  );
+  const [mediaSize, setMediaSize] = useState<string>("h-full");
   const position: number = props.id;
-  console.log();
 
   function previousImg() {
-    if (props.id <= 0) {
+    if (position <= 0) {
       console.log("no more previous imgs");
     } else {
-      console.log(`moving to img ${props.id - 1}`);
+      console.log(`moving to img ${position - 1}`);
     }
   }
 
   function nextImg() {
-    if (props.id >= 32) {
+    if (position >= 32) {
       console.log("no more imgs");
     } else {
-      console.log(`moving to img ${props.id + 1}`);
+      console.log(`moving to img ${position + 1}`);
     }
   }
+
+  function handleZoom() {
+    if (
+      containerSize === "relative w-full h-full" &&
+      mediaSize === "absolute"
+    ) {
+      setContainerSize("relative h-full contain");
+      setMediaSize("h-full");
+    } else {
+      setContainerSize("relative w-full h-full");
+      setMediaSize("absolute");
+    }
+  }
+
+  // function zoomOut() {}
+
   return (
     <div
       className={`${props.displayModal} fixed top-0 left-0 h-screen w-screen z-50 p-8 bg-white`}
     >
       <div className="pb-8 flex justify-between">
-        <button>
+        <button onClick={handleZoom}>
           <svg
             fill="#000000"
             width="36px"
@@ -99,12 +120,23 @@ function MediaModal(props: MediaModalProps) {
             </svg>
           </button>
         )}
+        {props.mediaItems[props.id].type == "image" ? (
+          <ImgLarge
+            id={props.id}
+            containerSize={containerSize}
+            mediaSize={mediaSize}
+            mediaItems={props.mediaItems}
+            handleZoom={handleZoom}
+          />
+        ) : (
+          <h1>This is VideoLarge</h1>
+          // <VideoLarge
+          //   id={props.id}
+          //   mediaSize={mediaSize}
+          //   mediaItems={props.mediaItems}
+          // />
+        )}
 
-        <img
-          src={props.mediaItems[props.id].src}
-          alt="Gadriana Creative Studio - Beauty product photography"
-          className="h-full"
-        />
         {position >= 32 ? (
           <button></button>
         ) : (
