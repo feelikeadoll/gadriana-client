@@ -9,7 +9,7 @@ import ContactSection from "./components/ContactSection";
 
 function App() {
   return (
-    <div className="font-avenir bg-white text-black w-screen">
+    <div className="font-avenir bg-white text-black w-full">
       <Header />
 
       <Routes>
