@@ -34,7 +34,7 @@ import img33 from "../assets/homepage grid/33.jpg";
 import ImgThumbnail from "./ImgThumbnail";
 import VideoThumbnail from "./VideoThumbnail";
 import MediaModal from "./MediaModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function HomeImgGrid() {
   type MediaItem = {
@@ -77,8 +77,30 @@ function HomeImgGrid() {
     { type: "image", src: img32 },
     { type: "image", src: img33 },
   ];
-
+  const [showMediaModal, setShowMediaModal] = useState<null | boolean>(null);
   const [selectedMediaId, setSelectedMediaId] = useState<number | null>(null);
+  const [screenSize, setScreenSize] = useState<boolean>(
+    window.innerWidth >= 768
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(window.innerWidth >= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    if (window.innerWidth >= 768) {
+      setShowMediaModal(true);
+      console.log("screen is bigger");
+    } else {
+      setShowMediaModal(null);
+      console.log("window is smaller");
+    }
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const openModal = (id: number) => {
     setSelectedMediaId(id);
@@ -104,6 +126,7 @@ function HomeImgGrid() {
                 marginClass={marginClass}
                 mediaItems={mediaItems}
                 openModal={openModal}
+                showMediaModal={showMediaModal}
               />
             );
           } else if (item.type === "video") {
@@ -114,13 +137,14 @@ function HomeImgGrid() {
                 marginClass={marginClass}
                 mediaItems={mediaItems}
                 openModal={openModal}
+                showMediaModal={showMediaModal}
               />
             );
           }
           return null;
         })}
       </div>
-      {selectedMediaId !== null && (
+      {selectedMediaId !== null && showMediaModal === true && (
         <MediaModal
           id={selectedMediaId}
           mediaItems={mediaItems}
