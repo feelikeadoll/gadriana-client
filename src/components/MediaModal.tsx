@@ -42,14 +42,14 @@ function MediaModal(props: MediaModalProps) {
 
   function handleZoom() {
     if (
-      containerSize === "relative w-full h-full" &&
-      mediaSize === "absolute"
+      containerSize === "relative w-screen h-screen" &&
+      mediaSize === "absolute w-1/2"
     ) {
-      setContainerSize("relative h-full contain");
+      setContainerSize("relative h-full");
       setMediaSize("h-full");
     } else {
-      setContainerSize("relative w-full h-full");
-      setMediaSize("absolute");
+      setContainerSize("relative w-screen h-screen");
+      setMediaSize("absolute w-1/2");
     }
   }
 
