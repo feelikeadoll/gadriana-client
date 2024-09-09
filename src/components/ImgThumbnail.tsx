@@ -8,17 +8,26 @@ type ImgThumbnailProps = {
   marginClass: string;
   mediaItems: MediaItem[];
   openModal: (id: number) => void;
+  showMediaModal: boolean | null;
 };
 
 function ImgThumbnail(props: ImgThumbnailProps) {
   return (
     <div>
-      <img
-        src={props.mediaItems[props.id].src}
-        className={props.marginClass}
-        alt="Gadriana Creative Studio - Beauty product photography"
-        onClick={() => props.openModal(props.id)}
-      />
+      {!props.showMediaModal ? (
+        <img
+          src={props.mediaItems[props.id].src}
+          className={props.marginClass}
+          alt="Gadriana Creative Studio - Beauty product photography"
+        />
+      ) : (
+        <img
+          src={props.mediaItems[props.id].src}
+          className={props.marginClass}
+          alt="Gadriana Creative Studio - Beauty product photography"
+          onClick={() => props.openModal(props.id)}
+        />
+      )}
     </div>
   );
 }
