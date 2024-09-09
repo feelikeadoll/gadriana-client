@@ -21,7 +21,7 @@ function BackToTopButton() {
       {backToTop && (
         <button
           onClick={scrollBack}
-          className="shadow-around border-1 border-black z-50 fixed bottom-12 right-12 md:bottom-16 md:right-16 lg:bottom-20 lg:right-20 btn btn-circle btn-lg bg-white"
+          className="shadow-around border-1 border-black z-45 fixed bottom-12 right-12 md:bottom-16 md:right-16 lg:bottom-20 lg:right-20 btn btn-circle btn-lg bg-white"
         >
           <svg
             width="50px"
