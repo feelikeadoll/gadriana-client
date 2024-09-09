@@ -33,9 +33,16 @@ import img32 from "../assets/homepage grid/32.jpg";
 import img33 from "../assets/homepage grid/33.jpg";
 import ImgThumbnail from "./ImgThumbnail";
 import VideoThumbnail from "./VideoThumbnail";
+import MediaModal from "./MediaModal";
+import { useState } from "react";
 
 function HomeImgGrid() {
-  const mediaItems = [
+  type MediaItem = {
+    type: "image" | "video";
+    src: string;
+  };
+
+  const mediaItems: MediaItem[] = [
     { type: "image", src: img1 },
     { type: "image", src: img2 },
     { type: "video", src: img3 },
@@ -71,6 +78,18 @@ function HomeImgGrid() {
     { type: "image", src: img33 },
   ];
 
+  const [selectedMediaId, setSelectedMediaId] = useState<number | null>(null);
+
+  const openModal = (id: number) => {
+    setSelectedMediaId(id);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    setSelectedMediaId(null);
+    document.body.style.overflow = "auto";
+  };
+
   return (
     <div className="w-full flex justify-center">
       <div className="columns-1 md:columns-2 lg:columns-3 gap-36">
@@ -82,8 +101,9 @@ function HomeImgGrid() {
               <ImgThumbnail
                 key={index}
                 id={index}
-                src={item.src}
                 marginClass={marginClass}
+                mediaItems={mediaItems}
+                openModal={openModal}
               />
             );
           } else if (item.type === "video") {
@@ -99,6 +119,14 @@ function HomeImgGrid() {
           return null;
         })}
       </div>
+      {selectedMediaId !== null && (
+        <MediaModal
+          id={selectedMediaId}
+          mediaItems={mediaItems}
+          displayModal="block"
+          closeModal={closeModal}
+        />
+      )}
     </div>
   );
 }
