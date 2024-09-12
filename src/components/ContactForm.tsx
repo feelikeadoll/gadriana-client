@@ -77,7 +77,7 @@ function ContactForm() {
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            className="grow text-darkgrey px-2"
+            className="bg-white grow text-darkgrey px-2"
           />
         </label>
         <label className="input input-bordered rounded-none border-black flex items-center gap-2 my-2">
@@ -88,7 +88,7 @@ function ContactForm() {
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            className="grow text-darkgrey px-2"
+            className="bg-white grow text-darkgrey px-2"
           />
         </label>
         <label className="input input-bordered h-16 sm:h-12 rounded-none border-black flex items-center gap-2 my-2">
@@ -108,7 +108,7 @@ function ContactForm() {
             name="service"
             value={formData.service}
             onChange={handleInputChange}
-            className="grow text-darkgrey px-2"
+            className="bg-white grow text-darkgrey px-2"
           />
         </label>
         <label className="textarea textarea-bordered rounded-none border-black flex items-start gap-2 my-2 textarea-md text-base">
@@ -117,7 +117,7 @@ function ContactForm() {
             name="projectInfo"
             value={formData.projectInfo}
             onChange={handleTextAreaChange}
-            className="textarea rounded-none h-28 px-2 py-0 grow text-darkgrey text-base"
+            className="bg-white textarea rounded-none h-28 px-2 py-0 grow text-darkgrey text-base"
           />
         </label>
         <div className="flex justify-center my-2">
