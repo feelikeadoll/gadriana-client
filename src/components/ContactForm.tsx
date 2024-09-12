@@ -1,6 +1,6 @@
-import { useState, ChangeEvent, createRef } from "react";
-// import { useState, ChangeEvent, FormEvent, createRef } from "react";
-// import emailjs from "@emailjs/browser";
+// import { useState, ChangeEvent, createRef } from "react";
+import { useState, ChangeEvent, FormEvent, createRef } from "react";
+import emailjs from "@emailjs/browser";
 
 interface FormData {
   name: string;
@@ -13,7 +13,7 @@ interface FormData {
 function ContactForm() {
   const form = createRef<HTMLFormElement>();
 
-  //   const [isSubmitting, setIsSubmitting] = useState<boolean>( false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -32,41 +32,41 @@ function ContactForm() {
     setFormData({ ...formData, [name]: value });
   }
 
-  //   function sendEmail(e: FormEvent<HTMLFormElement>): void {
-  //     e.preventDefault();
-  //     e.stopPropagation();
-  //     setIsSubmitting(true);
+  function sendEmail(e: FormEvent<HTMLFormElement>): void {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsSubmitting(true);
 
-  //     emailjs
-  //       .sendForm(
-  //         import.meta.env.VITE_REACT_APP_SERVICE_ID!,
-  //         import.meta.env.VITE_REACT_APP_TEMPLATE_ID!,
-  //         e.currentTarget,
-  //         import.meta.env.VITE_REACT_APP_PUBLIC_KEY!
-  //       )
-  //       .then(
-  //         () => {
-  //           setIsSubmitting(false);
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_REACT_APP_SERVICE_ID!,
+        import.meta.env.VITE_REACT_APP_TEMPLATE_ID!,
+        e.currentTarget,
+        import.meta.env.VITE_REACT_APP_PUBLIC_KEY!
+      )
+      .then(
+        () => {
+          setIsSubmitting(false);
 
-  //           setFormData({
-  //             name: "";
-  //             email: "";
-  //             brand: "";
-  //             service: "";
-  //             projectInfo: "";
-  //           });
-  //         },
-  //         () => {
-  //           setIsSubmitting(false);
-  //         }
-  //       );
-  //   }
+          setFormData({
+            name: "",
+            email: "",
+            brand: "",
+            service: "",
+            projectInfo: "",
+          });
+        },
+        () => {
+          setIsSubmitting(false);
+        }
+      );
+  }
 
   return (
     <div className="flex flex-col w-full">
       <form
         ref={form}
-        // onSubmit={sendEmail}
+        onSubmit={sendEmail}
         className="text-black flex flex-col text-xs"
       >
         <label className="input input-bordered rounded-none border-black flex items-center gap-2 my-2">
@@ -94,6 +94,7 @@ function ContactForm() {
         <label className="input input-bordered h-16 sm:h-12 rounded-none border-black flex items-center gap-2 my-2">
           Brand you represent
           <input
+            required
             type="text"
             name="brand"
             value={formData.brand}
@@ -104,6 +105,7 @@ function ContactForm() {
         <label className="input input-bordered h-16 sm:h-12 rounded-none border-black flex items-center gap-2 my-2">
           Service you're interested in
           <input
+            required
             type="text"
             name="service"
             value={formData.service}
@@ -114,6 +116,7 @@ function ContactForm() {
         <label className="textarea textarea-bordered rounded-none border-black flex items-start gap-2 my-2 textarea-md text-base">
           Project info
           <textarea
+            required
             name="projectInfo"
             value={formData.projectInfo}
             onChange={handleTextAreaChange}
@@ -121,18 +124,18 @@ function ContactForm() {
           />
         </label>
         <div className="flex justify-center my-2">
-          {/* {isSubmitting ? (
+          {isSubmitting ? (
             <button className="translate-y-1.5 bg-neutral-200 text-black text-base w-48 h-14 rounded-full shadow-btn-click tracking-widest">
               SENDING
             </button>
-          ) : ( */}
-          <button
-            type="submit"
-            className="bg-white border-1 border-black text-black hover:bg-neutral-200 hover:border-0 text-base w-48 h-14 rounded-full shadow-btn tracking-widest"
-          >
-            SEND
-          </button>
-          {/* )} */}
+          ) : (
+            <button
+              type="submit"
+              className="bg-white border-1 border-black text-black hover:bg-neutral-200 hover:border-0 text-base w-48 h-14 rounded-full shadow-btn tracking-widest"
+            >
+              SEND
+            </button>
+          )}
         </div>
       </form>
     </div>
