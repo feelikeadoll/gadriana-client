@@ -13,7 +13,7 @@ function Home() {
 
       <div className="px-6 flex justify-between items-center mx-auto">
         <div className="flex flex-col items-center mb-32">
-          <h2 className="w-11/12 sm:w-4/6 lg:w-7/12 text-xl md:text-2xl lg:text-3xl text-center my-16 md:my-20 lg:my-32">
+          <h2 className="w-11/12 sm:w-4/6 lg:w-7/12 text-xl md:text-2xl lg:text-3xl text-center mb-8 mt-16 md:my-20 lg:my-32">
             We create stunning imagery and videos{" "}
             <br className="hidden lg:block" />
             that help our clients captivate their audience{" "}
