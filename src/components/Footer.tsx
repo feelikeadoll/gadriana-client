@@ -79,7 +79,16 @@ function Footer() {
             </div>
           </div>
           <hr className="border-black border-t-1 w-full" />
-          <p className="mb-12 mt-10 text-sm tracking-wider">©2024 GADRIANA.</p>
+          <p className="mb-12 mt-10 text-sm tracking-wider">
+            ©2024 GADRIANA. Website built by{" "}
+            <a
+              href="https://www.linkedin.com/in/laianavalonarxe/"
+              target="_blank"
+              className="underline"
+            >
+              Laia Navalón Arxé
+            </a>
+          </p>
         </div>
       </div>
     </div>
