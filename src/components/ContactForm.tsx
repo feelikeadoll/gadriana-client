@@ -99,7 +99,7 @@ function ContactForm() {
             name="brand"
             value={formData.brand}
             onChange={handleInputChange}
-            className="w-2/3 grow text-darkgrey px-2"
+            className="w-2/3 md:w-auto grow text-darkgrey px-2"
           />
         </label>
         <label className="input input-bordered h-16 sm:h-12 rounded-none border-black flex items-center gap-2 my-2">
@@ -110,7 +110,7 @@ function ContactForm() {
             name="service"
             value={formData.service}
             onChange={handleInputChange}
-            className="w-2/3 bg-white grow text-darkgrey px-2"
+            className="w-2/3 md:w-auto bg-white grow text-darkgrey px-2"
           />
         </label>
         <label className="textarea textarea-bordered rounded-none border-black flex items-start gap-2 my-2 textarea-md text-base">
