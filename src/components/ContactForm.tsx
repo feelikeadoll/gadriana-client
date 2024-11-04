@@ -69,7 +69,7 @@ function ContactForm() {
         onSubmit={sendEmail}
         className="text-black flex flex-col text-xs"
       >
-        <label className="input input-bordered rounded-none border-black flex items-center gap-2 my-2">
+        <label className="input input-bordered bg-white rounded-none border-black flex items-center gap-2 my-2">
           Name
           <input
             required
@@ -80,7 +80,7 @@ function ContactForm() {
             className="bg-white grow text-darkgrey px-2"
           />
         </label>
-        <label className="input input-bordered rounded-none border-black flex items-center gap-2 my-2">
+        <label className="input input-bordered bg-white rounded-none border-black flex items-center gap-2 my-2">
           E-mail
           <input
             required
@@ -91,7 +91,7 @@ function ContactForm() {
             className="bg-white grow text-darkgrey px-2"
           />
         </label>
-        <label className="input input-bordered h-16 sm:h-12 rounded-none border-black flex items-center gap-2 my-2">
+        <label className="input input-bordered bg-white h-16 sm:h-12 rounded-none border-black flex items-center gap-2 my-2">
           Brand you represent
           <input
             required
@@ -102,7 +102,7 @@ function ContactForm() {
             className="w-2/3 md:w-auto grow text-darkgrey px-2"
           />
         </label>
-        <label className="input input-bordered h-16 sm:h-12 rounded-none border-black flex items-center gap-2 my-2">
+        <label className="input input-bordered bg-white h-16 sm:h-12 rounded-none border-black flex items-center gap-2 my-2">
           Service you're interested in
           <input
             required
@@ -113,7 +113,7 @@ function ContactForm() {
             className="w-2/3 md:w-auto bg-white grow text-darkgrey px-2"
           />
         </label>
-        <label className="textarea textarea-bordered rounded-none border-black flex items-start gap-2 my-2 textarea-md text-base">
+        <label className="textarea textarea-bordered bg-white rounded-none border-black flex items-start gap-2 my-2 textarea-md text-base">
           Project info
           <textarea
             required
