@@ -1,4 +1,4 @@
-import ContactForm from "./ContactForm";
+import ContactForm from "../components/ContactForm";
 
 import Collaborate from "../assets/section titles/collaborate.png";
 

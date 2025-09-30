@@ -1,4 +1,4 @@
-import HomeImgGrid from "../components/HomeImgGrid";
+import HomeImgGrid from "./components/HomeImgGrid";
 
 function Home() {
   return (
