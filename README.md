@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+# Gadriana - Creative Studio website (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A static, highly visual, and responsive portfolio website built for Gadriana, a Barcelona-based creative studio specializing in stunning photo and video content for international beauty and wellness brands.
 
-Currently, two official plugins are available:
+This repository contains the client-side code. While currently static, we are working on integrating a backend solution to allow for dynamic content updates, meaning this site will not remain static for long!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](src/assets/readme-screenshot.jpg)
 
-## Expanding the ESLint configuration
+## Project Goal
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The primary objective was to create an elegant, intuitive, and high-performance digital showcase that allows Gadriana's beautiful work to take center stage. The design focuses on a "less is more" philosophy, ensuring a clean layout where every visual element is perfectly placed to attract potential international clients. A core focus was achieving flawless responsive design on all screen sizes.
 
-- Configure the top-level `parserOptions` property like this:
+### Key Features
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Visual-First Design: A simple, neat layout optimized to showcase high-quality photo and video content.
+- Mobile-First Responsiveness: Flawless user experience across all screen sizes.
+- Type Safety: Built with TypeScript for increased code reliability and maintainability.
+- Contact Form: Functional contact form integrated using EmailJS.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Tech stack
+
+This project was built focusing on modern, efficient, and type-safe frontend technologies:
+- React
+- Typescript
+- Tailwind Css
+- Deployed with Netlify
+
+##  Live Site
+
+See the live result here: [gadriana.com](https://gadriana.com/) 
+
+## What's Next?
+
+Phase II development is underway to integrate a simple backend for independent client content management.
+
+Feel free to explore the components and project structure.
