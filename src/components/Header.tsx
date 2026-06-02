@@ -16,23 +16,26 @@ function Header() {
   };
 
   return (
-    <div className="w-full fixed bg-white z-40">
+    <div className="w-full bg-white z-40">
       <Navbar displayNavbar={displayNavbar} closeNavbar={closeNavbar} />
       <div className="px-6 flex justify-between items-center mx-auto">
-        <div className="my-4 lg:my-6 w-full flex items-end md:items-center justify-between">
-          <Link to="/">
-            <img
-              src={Logo}
-              alt="Gadriana Creative Product Photography Studio located Barcelona"
-              className="w-44 md:w-52"
-            />
-          </Link>
+        <div className="my-4 lg:my-6 w-full flex items-end md:items-center justify-between font-normal">
+          <div className="flex flex-col">
+            <Link to="/">
+              <img
+                src={Logo}
+                alt="Gadriana Creative Product Photography Studio located Barcelona"
+                className="w-44 md:w-44 mb-2"
+              />
+            </Link>
+            <div>ANYTHING BEAUTY</div>
+          </div>
           <div className="flex items-center">
             <NavLink to="/services" className="hidden md:block ml-10 text-md">
-              Services
+              INFO
             </NavLink>
             <HashLink to="#contact" className="hidden md:block ml-10 text-md">
-              Contact
+              CONTACT
             </HashLink>
             <a
               href="https://www.instagram.com/gadrianastudio/"
@@ -80,7 +83,6 @@ function Header() {
           </div>
         </div>
       </div>
-      <hr className="border-black border-t-1" />
     </div>
   );
 }

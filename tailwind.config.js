@@ -16,6 +16,7 @@ export default {
       fontSize: {
         sm: "0.8rem",
         base: "1rem",
+        md: "1.1rem",
         xl: "1.25rem",
         "2xl": "1.563rem",
         "3xl": "1.953rem",
@@ -37,6 +38,7 @@ export default {
     },
     fontFamily: {
       avenir: ["Avenir Light", "sans-serif"],
+      spartan: [ 'Spartan', "sans-serif"]
     },
     borderWidth: {
       DEFAULT: "1px",
