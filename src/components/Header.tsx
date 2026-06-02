@@ -19,7 +19,7 @@ function Header() {
     <div className="w-full bg-white z-40">
       <Navbar displayNavbar={displayNavbar} closeNavbar={closeNavbar} />
       <div className="px-8 flex justify-between items-center mx-auto">
-        <div className="my-4 lg:my-6 w-full flex items-end md:items-center justify-between font-normal">
+        <div className="my-4 lg:my-6 w-full flex items-end md:items-start justify-between font-normal">
           <div className="flex flex-col">
             <Link to="/">
               <img
@@ -40,7 +40,7 @@ function Header() {
             <a
               href="https://www.instagram.com/gadrianastudio/"
               target="_blank"
-              className="hidden md:block ml-10"
+              className="hidden md:block ml-8"
             >
               <svg
                 width="26px"
