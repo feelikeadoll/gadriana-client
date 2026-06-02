@@ -18,7 +18,7 @@ function Header() {
   return (
     <div className="w-full bg-white z-40">
       <Navbar displayNavbar={displayNavbar} closeNavbar={closeNavbar} />
-      <div className="px-6 flex justify-between items-center mx-auto">
+      <div className="px-8 flex justify-between items-center mx-auto">
         <div className="my-4 lg:my-6 w-full flex items-end md:items-center justify-between font-normal">
           <div className="flex flex-col">
             <Link to="/">

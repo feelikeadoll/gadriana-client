@@ -13,7 +13,7 @@ function Services() {
     <div className="w-full">
       <div
         id="services"
-        className="px-6 flex justify-between items-center mx-auto"
+        className="px-8 flex justify-between items-center mx-auto"
       >
         <div className="flex-col mt-32 mb-16 w-full">
           <AboutSection />

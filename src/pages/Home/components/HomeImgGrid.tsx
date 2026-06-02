@@ -103,20 +103,11 @@ function HomeImgGrid(props: HomeImgGridProps) {
   const [screenSize, setScreenSize] = useState<boolean>(window.innerWidth >= 768);
 
   useEffect(() => {
-    const handleResize = () => {
-      setScreenSize(window.innerWidth >= 768);
-    };
-
+    const handleResize = () => setScreenSize(window.innerWidth >= 768);
     window.addEventListener("resize", handleResize);
-
-    if (screenSize) {
-      setShowMediaModal(true);
-    } else {
-      setShowMediaModal(null);
-    }
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    if (screenSize) setShowMediaModal(true);
+    else setShowMediaModal(null);
+    return () => window.removeEventListener("resize", handleResize);
   }, [screenSize]);
 
   const openModal = (id: number) => {
@@ -129,16 +120,21 @@ function HomeImgGrid(props: HomeImgGridProps) {
     document.body.style.overflow = "auto";
   };
 
+  const filteredItems = props.displayedImgs === "all" 
+    ? shuffledItems 
+    : shuffledItems.filter(item => item.category === props.displayedImgs);
+
   return (
-    <div className="mx-4 flex justify-center">
-      <div className="columns-1 md:columns-2 lg:columns-3 gap-36">
-        {shuffledItems.map((item, index) => {
+    <div className="mx-4 flex justify-center w-full">
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-36 w-full">
+        {filteredItems.map((item, index) => {
           const marginClass = index % 2 === 0 ? "my-10 -mx-5" : "my-10 mx-5";
+          const uniqueKey = `${item.id}-${props.displayedImgs}`;
 
           if (item.type === "image") {
             return (
               <ImgThumbnail
-                key={item.id}
+                key={uniqueKey}
                 id={index}
                 item={item}
                 marginClass={marginClass}
@@ -148,8 +144,8 @@ function HomeImgGrid(props: HomeImgGridProps) {
             );
           } else if (item.type === "video") {
             return (
-             <VideoThumbnail
-                key={item.id}
+              <VideoThumbnail
+                key={uniqueKey}
                 id={index}
                 item={item}
                 marginClass={marginClass}
@@ -164,7 +160,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
       {selectedMediaId !== null && showMediaModal === true && (
         <MediaModal
           id={selectedMediaId}
-          mediaItems={shuffledItems}
+          mediaItems={filteredItems}
           displayModal="block"
           openModal={openModal}
           closeModal={closeModal}

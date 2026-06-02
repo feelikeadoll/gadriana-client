@@ -6,7 +6,7 @@ function ContactSection() {
   return (
     <div
       id="contact"
-      className="xl:pt-16 2xl:pt-24 w-full px-6 flex justify-between items-center mx-auto"
+      className="xl:pt-16 2xl:pt-24 w-full px-8 flex justify-between items-center mx-auto"
     >
       <div className="w-full flex flex-col items-center justify-center">
         <hr className="border-black border-t-1 w-full" />
