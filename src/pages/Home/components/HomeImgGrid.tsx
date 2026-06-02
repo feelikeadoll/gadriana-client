@@ -37,7 +37,8 @@ import MediaModal from "./MediaModal";
 import { useEffect, useState } from "react";
 
 type HomeImgGridProps = {
-  displayedImgs: string;
+  selectedCategory: string;
+  selectedBrand: string;
 };
 
 export type MediaItem = {
@@ -45,44 +46,44 @@ export type MediaItem = {
   type: "image" | "video";
   src: string;
   category: string;
-  campaign?: string;
+  brand: string;
   placeholderColor: string;
 };
 
 const initialMediaItems: MediaItem[] = [
-  { id: "img1", type: "image", src: img1, category: 'still', placeholderColor: '#e5dfd9' },
-  { id: "img2", type: "image", src: img2, category: 'hair&skin', placeholderColor: '#f3ece3' },
-  { id: "img3", type: "video", src: img3, category: 'motion', placeholderColor: '#dcdcdc' },
-  { id: "img4", type: "image", src: img4, category: 'still', placeholderColor: '#eae6df' },
-  { id: "img5", type: "image", src: img5, category: 'texture', placeholderColor: '#e2dbd5' },
-  { id: "img6", type: "image", src: img6, category: 'motion', placeholderColor: '#ebebeb' },
-  { id: "img7", type: "image", src: img7, category: 'hair&skin', placeholderColor: '#f6f0ea' },
-  { id: "img8", type: "image", src: img8, category: 'texture', placeholderColor: '#ded8d0' },
-  { id: "img9", type: "image", src: img9, category: 'still', placeholderColor: '#e8e8e8' },
-  { id: "img10", type: "image", src: img10, category: 'motion', placeholderColor: '#f0f0f0' },
-  { id: "img11", type: "image", src: img11, category: 'hair&skin', placeholderColor: '#f1eae2' },
-  { id: "img12", type: "image", src: img12, category: 'texture', placeholderColor: '#e6ded6' },
-  { id: "img13", type: "image", src: img13, category: 'motion', placeholderColor: '#e0e0e0' },
-  { id: "img14", type: "image", src: img14, category: 'hair&skin', placeholderColor: '#f4ece4' },
-  { id: "img15", type: "image", src: img15, category: 'still', placeholderColor: '#e7e7e7' },
-  { id: "img16", type: "video", src: img16, category: 'still', placeholderColor: '#d8d2cb' },
-  { id: "img17", type: "image", src: img17, category: 'texture', placeholderColor: '#eade93' },
-  { id: "img18", type: "image", src: img18, category: 'motion', placeholderColor: '#f2f2f2' },
-  { id: "img19", type: "video", src: img19, category: 'hair&skin', placeholderColor: '#f5eee6' },
-  { id: "img20", type: "image", src: img20, category: 'still', placeholderColor: '#ebdcd0' },
-  { id: "img21", type: "image", src: img21, category: 'motion', placeholderColor: '#e4e4e4' },
-  { id: "img22", type: "image", src: img22, category: 'texture', placeholderColor: '#dfd7ce' },
-  { id: "img23", type: "image", src: img23, category: 'texture', placeholderColor: '#e1d9cf' },
-  { id: "img24", type: "image", src: img24, category: 'hair&skin', placeholderColor: '#f7f1ea' },
-  { id: "img25", type: "image", src: img25, category: 'motion', placeholderColor: '#e9e9e9' },
-  { id: "img26", type: "image", src: img26, category: 'motion', placeholderColor: '#f4f4f4' },
-  { id: "img27", type: "image", src: img27, category: 'still', placeholderColor: '#e3dad0' },
-  { id: "img28", type: "image", src: img28, category: 'motion', placeholderColor: '#ededed' },
-  { id: "img29", type: "image", src: img29, category: 'hair&skin', placeholderColor: '#f2eae1' },
-  { id: "img30", type: "image", src: img30, category: 'texture', placeholderColor: '#e5ded5' },
-  { id: "img31", type: "image", src: img31, category: 'hair&skin', placeholderColor: '#f9f3ec' },
-  { id: "img32", type: "image", src: img32, category: 'still', placeholderColor: '#eaeaea' },
-  { id: "img33", type: "image", src: img33, category: 'motion', placeholderColor: '#f5f5f5' },
+  { id: "img1", type: "image", src: img1, category: 'still', brand: '', placeholderColor: '#e5dfd9' },
+  { id: "img2", type: "image", src: img2, category: 'hair&skin', brand: '', placeholderColor: '#f3ece3' },
+  { id: "img3", type: "video", src: img3, category: 'motion', brand: 'cocoEve', placeholderColor: '#dcdcdc' },
+  { id: "img4", type: "image", src: img4, category: 'still', brand: '', placeholderColor: '#eae6df' },
+  { id: "img5", type: "image", src: img5, category: 'texture', brand: 'cocoEve', placeholderColor: '#e2dbd5' },
+  { id: "img6", type: "image", src: img6, category: 'motion', brand: '', placeholderColor: '#ebebeb' },
+  { id: "img7", type: "image", src: img7, category: 'hair&skin', brand: 'cocoEve', placeholderColor: '#f6f0ea' },
+  { id: "img8", type: "image", src: img8, category: 'texture', brand: 'lovingTan', placeholderColor: '#ded8d0' },
+  { id: "img9", type: "image", src: img9, category: 'still', brand: '', placeholderColor: '#e8e8e8' },
+  { id: "img10", type: "image", src: img10, category: 'motion', brand: '', placeholderColor: '#f0f0f0' },
+  { id: "img11", type: "image", src: img11, category: 'hair&skin', brand: '', placeholderColor: '#f1eae2' },
+  { id: "img12", type: "image", src: img12, category: 'texture', brand: 'dcypher', placeholderColor: '#e6ded6' },
+  { id: "img13", type: "image", src: img13, category: 'motion', brand: '', placeholderColor: '#e0e0e0' },
+  { id: "img14", type: "image", src: img14, category: 'hair&skin', brand: '', placeholderColor: '#f4ece4' },
+  { id: "img15", type: "image", src: img15, category: 'still', brand: 'lovingTan', placeholderColor: '#e7e7e7' },
+  { id: "img16", type: "video", src: img16, category: 'still', brand: '', placeholderColor: '#d8d2cb' },
+  { id: "img17", type: "image", src: img17, category: 'texture', brand: 'lovingTan', placeholderColor: '#eade93' },
+  { id: "img18", type: "image", src: img18, category: 'motion', brand: '', placeholderColor: '#f2f2f2' },
+  { id: "img19", type: "video", src: img19, category: 'hair&skin', brand: 'dcypher', placeholderColor: '#f5eee6' },
+  { id: "img20", type: "image", src: img20, category: 'still', brand: '', placeholderColor: '#ebdcd0' },
+  { id: "img21", type: "image", src: img21, category: 'motion', brand: 'dcypher', placeholderColor: '#e4e4e4' },
+  { id: "img22", type: "image", src: img22, category: 'texture', brand: 'dcypher', placeholderColor: '#dfd7ce' },
+  { id: "img23", type: "image", src: img23, category: 'texture', brand: 'dcypher', placeholderColor: '#e1d9cf' },
+  { id: "img24", type: "image", src: img24, category: 'hair&skin', brand: 'lovingTan', placeholderColor: '#f7f1ea' },
+  { id: "img25", type: "image", src: img25, category: 'motion', brand: '', placeholderColor: '#e9e9e9' },
+  { id: "img26", type: "image", src: img26, category: 'motion', brand: '', placeholderColor: '#f4f4f4' },
+  { id: "img27", type: "image", src: img27, category: 'still', brand: '', placeholderColor: '#e3dad0' },
+  { id: "img28", type: "image", src: img28, category: 'motion', brand: '', placeholderColor: '#ededed' },
+  { id: "img29", type: "image", src: img29, category: 'hair&skin', brand: 'lovingTan', placeholderColor: '#f2eae1' },
+  { id: "img30", type: "image", src: img30, category: 'texture', brand: 'lovingTan', placeholderColor: '#e5ded5' },
+  { id: "img31", type: "image", src: img31, category: 'hair&skin', brand: '', placeholderColor: '#f9f3ec' },
+  { id: "img32", type: "image", src: img32, category: 'still', brand: '', placeholderColor: '#eaeaea' },
+  { id: "img33", type: "image", src: img33, category: 'motion', brand: '', placeholderColor: '#f5f5f5' },
 ];
 
 const shuffleArray = (array: MediaItem[]): MediaItem[] => {
@@ -120,16 +121,18 @@ function HomeImgGrid(props: HomeImgGridProps) {
     document.body.style.overflow = "auto";
   };
 
-  const filteredItems = props.displayedImgs === "all" 
-    ? shuffledItems 
-    : shuffledItems.filter(item => item.category === props.displayedImgs);
-
+ const filteredItems = shuffledItems.filter(item => {
+  const matchesCategory = props.selectedCategory === "all" || item.category === props.selectedCategory;
+  const matchesCampaign = props.selectedBrand === "all" || item.brand === props.selectedBrand;
+  
+  return matchesCategory && matchesCampaign;
+});
   return (
     <div className="mx-4 flex justify-center w-full">
       <div className="columns-1 md:columns-2 lg:columns-3 gap-36 w-full">
         {filteredItems.map((item, index) => {
           const marginClass = index % 2 === 0 ? "my-10 -mx-5" : "my-10 mx-5";
-          const uniqueKey = `${item.id}-${props.displayedImgs}`;
+          const uniqueKey = `${item.id}-${props.selectedCategory}-${props.selectedBrand}`;
 
           if (item.type === "image") {
             return (
