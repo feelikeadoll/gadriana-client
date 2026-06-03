@@ -25,7 +25,7 @@ function Header() {
               <img
                 src={Logo}
                 alt="Gadriana Creative Product Photography Studio located Barcelona"
-                className="w-44 md:w-44 mb-2"
+                className="w-44 md:w-52 mb-2"
               />
             </Link>
             <div>ANYTHING BEAUTY</div>
