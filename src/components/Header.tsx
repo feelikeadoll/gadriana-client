@@ -24,11 +24,11 @@ function Header() {
             <Link to="/">
               <img
                 src={Logo}
-                alt="Gadriana Creative Product Photography Studio located Barcelona"
+                alt="Gadriana Creative Product Photography and video Studio for beauty & skincare brands located Barcelona Spain Europe Union"
                 className="w-44 md:w-52 mb-2"
               />
+              <div>ANYTHING BEAUTY</div>
             </Link>
-            <div>ANYTHING BEAUTY</div>
           </div>
           <div className="flex items-center">
             <NavLink to="/services" className="hidden md:block ml-10 text-md">

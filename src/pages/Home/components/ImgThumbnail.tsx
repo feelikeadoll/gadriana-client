@@ -32,7 +32,7 @@ function ImgThumbnail(props: ImgThumbnailProps) {
     >
       <img
         src={props.item.src}
-        alt="Gadriana Creative Studio - Beauty product photography"
+        alt={`Shot #${props.id + 1}: ${props.item.category} product photography for ${props.item.campaign || 'beauty brand'} - Gadriana Creative Studio Barcelona Spain Europe Union`}
         onLoad={() => setIsLoaded(true)} // Al cargar, activa el fade-in
         onClick={props.showMediaModal ? () => props.openModal(props.id) : undefined}
         className={`w-full h-full object-cover block transition-opacity duration-500 cursor-pointer ${
