@@ -5,6 +5,9 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      colors: {
+        'black-bg': '#211f20',
+      },
       backgroundImage: {
         aboutImg: "url('/src/assets/about-img.jpg')",
         servicesImg1: "url('/src/assets/services-img1.jpg')",

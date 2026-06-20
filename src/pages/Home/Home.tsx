@@ -14,14 +14,14 @@ function Home() {
               onClick={() => setSelectedCategory(prev => prev === "Still" ? "all" : "Still")}
               className={selectedCategory === "Still" ? "font-semibold" : "font-normal"}
             >
-              Still LIFE
+              STILL LIFE
             </button>
             <div> | </div>
             <button 
               onClick={() => setSelectedCategory(prev => prev === "Texture" ? "all" : "Texture")}
               className={selectedCategory === "Texture" ? "font-semibold" : "font-normal"}
             >
-              Texture
+              TEXTURE
             </button>
             <div> | </div>
             <button 
@@ -35,7 +35,7 @@ function Home() {
               onClick={() => setSelectedCategory(prev => prev === "Motion" ? "all" : "Motion")}
               className={selectedCategory === "Motion" ? "font-semibold" : "font-normal"}
             >
-              Motion
+              MOTION
             </button>
           </div>
 
