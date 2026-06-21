@@ -6,15 +6,15 @@ type MediaItem = {
   src: string;
   category: string;
   campaign?: string;
-  placeholderColor: string; 
+  placeholderColor: string;
 };
 
 type VideoThumbnailProps = {
   id: number;
-  item: MediaItem; // Recibimos el item actual directamente
-  marginClass: string;
+  item: MediaItem;
   openModal: (id: number) => void;
   showMediaModal: boolean | null;
+  style?: React.CSSProperties;
 };
 
 function VideoThumbnail(props: VideoThumbnailProps) {
@@ -22,10 +22,11 @@ function VideoThumbnail(props: VideoThumbnailProps) {
 
   return (
     <div
-      className={`relative w-full overflow-hidden transition-all duration-300 ${props.marginClass}`}
+      className="relative w-full overflow-hidden transition-all duration-300"
       style={{
         backgroundColor: props.item.placeholderColor,
-        aspectRatio: "3/4", // Mismo ratio que uses en las imágenes para mantener la coherencia del grid
+        aspectRatio: "3/4",
+        ...props.style,
       }}
     >
       <video
@@ -34,9 +35,8 @@ function VideoThumbnail(props: VideoThumbnailProps) {
         muted
         loop
         playsInline
-        webkit-playsinline="true"
         controls={false}
-        onLoadedData={() => setIsLoaded(true)} // CLAVE: Se dispara cuando el vídeo está listo para reproducirse
+        onLoadedData={() => setIsLoaded(true)}
         onClick={props.showMediaModal ? () => props.openModal(props.id) : undefined}
         className={`video-element w-full h-full object-cover block transition-opacity duration-500 cursor-pointer ${
           isLoaded ? "opacity-100" : "opacity-0"
