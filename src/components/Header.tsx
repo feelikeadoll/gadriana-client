@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 
 import Logo from "../assets/gadriana-logo.png";
 import { useState } from "react";
