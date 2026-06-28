@@ -3,9 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Services from "./pages/Services/Services";
 import BackToTopButton from "./components/BackToTopButton";
 import ContactSection from "./components/ContactSection";
+import Info from "./pages/Info/Info";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/info" element={<Info />} />
       </Routes>
 
       <BackToTopButton />

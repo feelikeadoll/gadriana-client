@@ -38,7 +38,7 @@ function Navbar(props: NavbarProps) {
               Home
             </NavLink>
             <NavLink
-              to="/services"
+              to="/info"
               onClick={props.closeNavbar}
               className={({ isActive }) =>
                 isActive
@@ -46,7 +46,7 @@ function Navbar(props: NavbarProps) {
                   : "my-4 p-1 px-2 text-2xl rounded hover:bg-zinc-300"
               }
             >
-              Services
+              Info
             </NavLink>
             <HashLink
               to="#contact"
