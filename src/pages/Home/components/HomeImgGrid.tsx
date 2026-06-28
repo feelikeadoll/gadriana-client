@@ -286,8 +286,8 @@ function HomeImgGrid(props: HomeImgGridProps) {
           }}
           aria-label="Grid layout">
           <svg
-            width="34px"
-            height="34px"
+            width="28px"
+            height="28px"
             viewBox="0 0 20 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -317,8 +317,8 @@ function HomeImgGrid(props: HomeImgGridProps) {
           }}
           aria-label="Editorial layout">
           <svg
-            width="34px"
-            height="34px"
+            width="28px"
+            height="28px"
             viewBox="0 0 20 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
