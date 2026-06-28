@@ -48,19 +48,19 @@ function Header() {
               <img
                 src={Logo}
                 alt="Gadriana Creative Product Photography and video Studio for beauty & skincare brands located Barcelona Spain Europe Union"
-                className="w-44 md:w-52 mb-2"
+                className="w-40 md:w-48 mb-2"
               />
-              <div>ANYTHING BEAUTY</div>
+              <div className="text-sm">ANYTHING BEAUTY</div>
             </Link>
           </div>
           <div className="flex items-center">
-            <NavLink to="/info" className="hidden md:block ml-10 text-md -mb-1">
+            <NavLink to="/info" className="hidden md:block ml-10 text-sm -mb-1">
               INFO
             </NavLink>
             <a
               href="#contact"
               onClick={scrollToContact}
-              className="hidden md:block ml-10 text-md -mb-1">
+              className="hidden md:block ml-10 text-sm -mb-1">
               CONTACT
             </a>
             <a

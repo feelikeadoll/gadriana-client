@@ -1,4 +1,4 @@
-import daisyui from 'daisyui'
+import daisyui from "daisyui";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'black-bg': '#211f20',
+        "black-bg": "#211f20",
       },
       backgroundImage: {
         aboutImg: "url('/src/assets/about-img.jpg')",
@@ -17,7 +17,9 @@ export default {
         homeGif: "url('/src/assets/gadriana_home.gif')",
       },
       fontSize: {
-        sm: "0.8rem",
+        "2xs": "0.7rem",
+        xs: "0.8rem",
+        sm: "0.9rem",
         base: "1rem",
         md: "1.1rem",
         xl: "1.25rem",
@@ -41,7 +43,7 @@ export default {
     },
     fontFamily: {
       avenir: ["Avenir Light", "sans-serif"],
-      spartan: [ 'Spartan', "sans-serif"]
+      spartan: ["Spartan", "sans-serif"],
     },
     borderWidth: {
       DEFAULT: "1px",

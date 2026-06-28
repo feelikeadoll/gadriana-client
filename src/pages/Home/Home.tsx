@@ -18,7 +18,7 @@ function Home() {
   return (
     <div className="w-full">
       <div className="px-8 flex justify-between items-center mx-auto">
-        <div className="flex flex-col items-center mb-32 w-full">
+        <div className="flex flex-col items-center mb-32 w-full text-sm">
           <div className="mt-4 w-full h-8 flex justify-end items-center gap-x-4 gap-y-0 tracking-wide">
             <button
               onClick={() => handleCategoryClick("Still")}

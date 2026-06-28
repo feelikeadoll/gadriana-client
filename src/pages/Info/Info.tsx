@@ -10,7 +10,7 @@ function Info() {
       <div className="border-2 border-green bg-black-bg text-white px-8 flex justify-between items-center mx-auto">
         <div className="flex-col mb-16 w-full mt-4">
           <div className="flex justify-end">
-            <NavLink to="/" className="hidden md:block text-sm -mb-1">
+            <NavLink to="/" className="hidden md:block text-2xs -mb-1">
               <span>{"<<"}</span>
               <span className="ml-4">{"PORTFOLIO"}</span>
             </NavLink>
