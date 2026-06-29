@@ -1,8 +1,6 @@
 function ContactSection() {
   return (
-    <div
-      id="contact"
-      className="bg-black-bg text-white xl:pt-16 2xl:pt-24 w-full px-8 flex justify-between items-center mx-auto">
+    <div className="bg-black-bg text-white xl:pt-16 2xl:pt-24 w-full px-8 flex justify-between items-center mx-auto">
       <div className="w-full md:px-6 pt-28 pb-14 flex flex-col items-center justify-between text-2xs md:text-sm">
         <p className="md:mb-4 font-light">GET IN TOUCH</p>
         <a href="mailto:studio@gadriana.com">STUDIO@GADRIANA.COM</a>

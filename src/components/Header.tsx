@@ -40,7 +40,11 @@ function Header() {
 
   return (
     <div className="w-full bg-white z-40">
-      <Navbar displayNavbar={displayNavbar} closeNavbar={closeNavbar} />
+      <Navbar
+        displayNavbar={displayNavbar}
+        closeNavbar={closeNavbar}
+        scrollToContact={scrollToContact}
+      />
       <div className="px-6 md:px-8 flex justify-between items-center mx-auto">
         <div className="my-4 lg:my-6 w-full flex items-center md:items-start justify-between font-normal">
           <div className="flex flex-col">
