@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import ContactSection from "./ContactSection";
 
 type NavbarProps = {
