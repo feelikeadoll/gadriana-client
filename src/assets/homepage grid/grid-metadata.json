@@ -448,5 +448,95 @@
     "brand": "Sisley",
     "category": "Still",
     "placeholderColor": "#4e1613"
+  },
+  {
+    "filename": "gadriana_curel_mousse_shelf_splash.mp4",
+    "brand": "Curél",
+    "category": "Motion",
+    "placeholderColor": "#50c6d8"
+  },
+  {
+    "filename": "gadriana_curel_mousse_rotation.mp4",
+    "brand": "Curél",
+    "category": "Motion",
+    "placeholderColor": "#59c3d5"
+  },
+  {
+    "filename": "gadriana_bali_body_clear_tanning_gel.mp4",
+    "brand": "Bali Body",
+    "category": "Motion",
+    "placeholderColor": "#f3e5df"
+  },
+  {
+    "filename": "gadriana_bali_body_tanning_mousse.mp4",
+    "brand": "Bali Body",
+    "category": "Motion",
+    "placeholderColor": "#553b57"
+  },
+  {
+    "filename": "gadriana_biore_uv_spf_water.mp4",
+    "brand": "Bioré",
+    "category": "Motion",
+    "placeholderColor": "#5bb0ca"
+  },
+  {
+    "filename": "gadriana_cecred_hair_oil_1.mp4",
+    "brand": "Cécred",
+    "category": "Motion",
+    "placeholderColor": "#564437"
+  },
+  {
+    "filename": "gadriana_coco_and_eve_drip_body_gel.mp4",
+    "brand": "Coco & Eve",
+    "category": "Motion",
+    "placeholderColor": "#acc7d6"
+  },
+  {
+    "filename": "gadriana_coco_and_eve_frizz_mist_water.mp4",
+    "brand": "Coco & Eve",
+    "category": "Motion",
+    "placeholderColor": "#e1aac3"
+  },
+  {
+    "filename": "gadriana_coco_and_eve_oil_bubbles.mp4",
+    "brand": "Coco & Eve",
+    "category": "Motion",
+    "placeholderColor": "#de7e1c"
+  },
+  {
+    "filename": "gadriana_coco_and_eve_shampoo_hair_reveal.mp4",
+    "brand": "Coco & Eve",
+    "category": "Motion",
+    "placeholderColor": "#4d5848"
+  },
+  {
+    "filename": "gadriana_coco_and_eve_spf_texture_reveal.mp4",
+    "brand": "Coco & Eve",
+    "category": "Motion",
+    "placeholderColor": "#cac5d1"
+  },
+  {
+    "filename": "gadriana_coco_and_eve_texture_reveal.mp4",
+    "brand": "Coco & Eve",
+    "category": "Motion",
+    "placeholderColor": "#eab6a1"
+  },
+  {
+    "filename": "gadriana_dropper_liquid_texture.mp4",
+    "brand": "",
+    "category": "Motion",
+    "placeholderColor": "#9ebdf5"
+  },
+  {
+    "filename": "gadriana_sand_and_sky_garden_mask.mp4",
+    "brand": "Sand & Sky",
+    "category": "Motion",
+    "placeholderColor": "#bc9fba"
+  },
+  {
+    "filename": "gadriana_swirl_texture_white_lotion.mp4",
+    "brand": "",
+    "category": "Motion",
+    "placeholderColor": "#d5d2d3"
   }
 ]
