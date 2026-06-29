@@ -40,7 +40,7 @@ function Navbar(props: NavbarProps) {
           </svg>
         </button>
         <div className="pb-12 h-screen flex flex-col justify-between items-center">
-          <nav className="pb-12 mt-52 flex flex-col items-center">
+          <nav className="pb-4 mt-48 flex flex-col items-center">
             <NavLink
               to="/info"
               onClick={props.closeNavbar}

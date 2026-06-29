@@ -17,7 +17,7 @@ function Home() {
 
   return (
     <div className="w-full">
-      <div className="px-6 md:px-8 flex justify-between items-center mx-auto">
+      <div className="px-4 md:px-8 flex justify-between items-center mx-auto">
         <div className="flex flex-col items-center mb-32 w-full text-xs md:text-sm">
           <div className="mt-4 w-full flex flex-wrap justify-center md:justify-end items-center gap-x-3 gap-y-1 tracking-wide mb-1">
             <button
@@ -55,7 +55,7 @@ function Home() {
             </button>
           </div>
 
-          <div className="mt-2 mb-4 md:mt-0 w-full flex flex-wrap justify-center md:justify-end items-center gap-x-3 gap-y-1 tracking-wide md:mb-12">
+          <div className="mt-2 mb-6 md:mt-0 w-full flex flex-wrap justify-center md:justify-end items-center gap-x-3 gap-y-1 tracking-wide md:mb-12">
             <button
               onClick={() => handleBrandClick("Loving Tan")}
               className={
