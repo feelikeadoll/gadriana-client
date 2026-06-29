@@ -28,18 +28,18 @@ function Navbar(props: NavbarProps) {
             <path
               d="M5 5L15 15"
               stroke="#fff"
-              stroke-width="2.2"
-              stroke-linecap="round"
+              strokeWidth="1.6"
+              strokeLinecap="round"
             />
             <path
               d="M15 5L5 15"
               stroke="#fff"
-              stroke-width="2.2"
-              stroke-linecap="round"
+              strokeWidth="1.6"
+              strokeLinecap="round"
             />
           </svg>
         </button>
-        <div className="pb-12 h-screen flex flex-col justify-between items-center">
+        <div className="pb-12 h-screen flex flex-col items-center">
           <nav className="mt-48 flex flex-col items-center">
             <NavLink
               to="/info"

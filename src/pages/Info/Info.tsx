@@ -7,10 +7,10 @@ import { NavLink } from "react-router-dom";
 function Info() {
   return (
     <div id="info" className="w-full  absolute top-0">
-      <div className="border-2 border-green bg-black-bg text-white px-4 md:px-8 flex justify-between items-center mx-auto">
+      <div className="bg-black-bg text-white px-4 md:px-8 flex justify-between items-center mx-auto">
         <div className="flex-col mb-16 w-full mt-4">
           <div className="flex justify-end">
-            <NavLink to="/" className="block text-2xs -mb-1">
+            <NavLink to="/" className="mt-2 md:mt-0 block text-2xs -mb-1">
               <span>{"<<"}</span>
               <span className="ml-4">{"PORTFOLIO"}</span>
             </NavLink>
