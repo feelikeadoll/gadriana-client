@@ -17,9 +17,9 @@ function Home() {
 
   return (
     <div className="w-full">
-      <div className="px-8 flex justify-between items-center mx-auto">
+      <div className="px-6 md:px-8 flex justify-between items-center mx-auto">
         <div className="flex flex-col items-center mb-32 w-full text-sm">
-          <div className="mt-4 w-full h-8 flex justify-end items-center gap-x-4 gap-y-0 tracking-wide">
+          <div className="mt-4 w-full flex flex-wrap justify-center md:justify-end items-center gap-x-3 gap-y-1 tracking-wide mb-1">
             <button
               onClick={() => handleCategoryClick("Still")}
               className={
@@ -27,7 +27,7 @@ function Home() {
               }>
               STILL LIFE
             </button>
-            <div> | </div>
+            <div>|</div>
             <button
               onClick={() => handleCategoryClick("Texture")}
               className={
@@ -35,7 +35,7 @@ function Home() {
               }>
               TEXTURE
             </button>
-            <div> | </div>
+            <div>|</div>
             <button
               onClick={() => handleCategoryClick("Hair & Skin")}
               className={
@@ -45,7 +45,7 @@ function Home() {
               }>
               HAIR & SKIN
             </button>
-            <div> | </div>
+            <div>|</div>
             <button
               onClick={() => handleCategoryClick("Motion")}
               className={
@@ -55,7 +55,7 @@ function Home() {
             </button>
           </div>
 
-          <div className="w-full h-8 mb-12 flex justify-end items-center gap-x-4 gap-y-0 tracking-wide">
+          <div className="m-2 md:mt-0 w-full flex flex-wrap justify-center md:justify-end items-center gap-x-3 gap-y-1 tracking-wide md:mb-12">
             <button
               onClick={() => handleBrandClick("Loving Tan")}
               className={
@@ -63,7 +63,7 @@ function Home() {
               }>
               LOVING TAN
             </button>
-            <div> | </div>
+            <div>|</div>
             <button
               onClick={() => handleBrandClick("Dcypher")}
               className={
@@ -71,7 +71,7 @@ function Home() {
               }>
               DCYPHER
             </button>
-            <div> | </div>
+            <div>|</div>
             <button
               onClick={() => handleBrandClick("Coco & Eve")}
               className={

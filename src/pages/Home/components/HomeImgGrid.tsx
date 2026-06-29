@@ -28,21 +28,18 @@ export type MediaItem = {
 
 const VIDEO_EXTENSIONS = [".mp4", ".webm", ".mov"];
 
-// Grab every file in the assets folder at build time
 const mediaModules = import.meta.glob("../../../assets/homepage grid/*", {
   eager: true,
 }) as Record<string, { default: string }>;
 
-// Build a lookup: filename → resolved URL
 const resolvedByFilename: Record<string, string> = {};
 for (const [path, mod] of Object.entries(mediaModules)) {
   const filename = path.split("/").pop()!;
   resolvedByFilename[filename] = mod.default;
 }
 
-// Build the final array using metadata as the source of truth for ordering and props
 const initialMediaItems: MediaItem[] = metadata
-  .filter((entry) => resolvedByFilename[entry.filename] !== undefined) // skip if file is missing
+  .filter((entry) => resolvedByFilename[entry.filename] !== undefined)
   .map((entry) => {
     const ext = "." + entry.filename.split(".").pop()!.toLowerCase();
     return {
@@ -56,7 +53,7 @@ const initialMediaItems: MediaItem[] = metadata
   });
 
 // ---------------------------------------------------------------------------
-// Shuffle (stable across re-renders — run once at module level)
+// Shuffle
 // ---------------------------------------------------------------------------
 
 const shuffleArray = (array: MediaItem[]): MediaItem[] => {
@@ -71,7 +68,7 @@ const shuffleArray = (array: MediaItem[]): MediaItem[] => {
 const staticShuffledItems = shuffleArray(initialMediaItems);
 
 // ---------------------------------------------------------------------------
-// Grid layout
+// Grid layout (desktop editorial)
 // ---------------------------------------------------------------------------
 
 type GridSlot = {
@@ -82,18 +79,11 @@ type GridSlot = {
   isLarge: boolean;
 };
 
-// One pattern cycle = 9 rows, 35 slots
-// A: 1 row  (5 items)
-// B: 3 rows (1 large 2×3 + 9 small)
-// C: 2 rows (10 small)
-// D: 3 rows (9 small + 1 large 2×3)
 const PATTERN_ROWS = 9;
 const PATTERN_SLOTS = 35;
 
 const buildPatternSlots = (): GridSlot[] => {
   const slots: GridSlot[] = [];
-
-  // BLOCK A: row 1, 5 equal cells
   for (let col = 1; col <= 5; col++) {
     slots.push({
       colStart: col,
@@ -103,8 +93,6 @@ const buildPatternSlots = (): GridSlot[] => {
       isLarge: false,
     });
   }
-
-  // BLOCK B: rows 2-4 — big left (2×3) + 3×3 small right
   slots.push({ colStart: 1, colEnd: 3, rowStart: 2, rowEnd: 5, isLarge: true });
   for (let row = 2; row <= 4; row++) {
     for (let col = 3; col <= 5; col++) {
@@ -117,8 +105,6 @@ const buildPatternSlots = (): GridSlot[] => {
       });
     }
   }
-
-  // BLOCK C: rows 5-6, 5×2 equal cells
   for (let row = 5; row <= 6; row++) {
     for (let col = 1; col <= 5; col++) {
       slots.push({
@@ -130,8 +116,6 @@ const buildPatternSlots = (): GridSlot[] => {
       });
     }
   }
-
-  // BLOCK D: rows 7-9 — 3×3 small left + big right (2×3)
   for (let row = 7; row <= 9; row++) {
     for (let col = 1; col <= 3; col++) {
       slots.push({
@@ -150,7 +134,6 @@ const buildPatternSlots = (): GridSlot[] => {
     rowEnd: 10,
     isLarge: true,
   });
-
   return slots;
 };
 
@@ -169,7 +152,7 @@ const getSlot = (index: number): GridSlot => {
 };
 
 // ---------------------------------------------------------------------------
-// Shared thumbnail wrapper
+// Thumbnail wrapper
 // ---------------------------------------------------------------------------
 
 type ThumbnailProps = {
@@ -223,6 +206,9 @@ function HomeImgGrid(props: HomeImgGridProps) {
   const [layoutMode, setLayoutMode] = useState<"grid" | "editorial">(
     "editorial",
   );
+  const [mobileLayoutMode, setMobileLayoutMode] = useState<"1col" | "2col">(
+    "1col",
+  );
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth >= 768);
@@ -254,100 +240,180 @@ function HomeImgGrid(props: HomeImgGridProps) {
   const iconActive = "#000";
   const iconInactive = "#555";
 
-  // Mobile: single-column list
-  if (!screenSize) {
-    return (
-      <div className="mx-4 flex flex-col gap-2 w-full">
-        {filteredItems.map((item, index) => (
-          <GridThumbnail
-            key={`${item.id}-${props.selectedCategory}-${props.selectedBrand}`}
-            id={index}
-            item={item}
-            openModal={openModal}
-            showMediaModal={showMediaModal}
-          />
-        ))}
-      </div>
-    );
-  }
-
   return (
     <div className="mx-4 w-full">
       {/* Layout toggle buttons */}
-      <div className="hidden md:flex justify-end mb-2 gap-1">
-        {/* 3-line icon → uniform 3-col grid */}
-        <button
-          onClick={() => setLayoutMode("grid")}
-          style={{
-            background: "none",
-            border: "none",
-            padding: 0,
-            cursor: "pointer",
-          }}
-          aria-label="Grid layout">
-          <svg
-            width="28px"
-            height="28px"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2 4.5C2 4.22386 2.22386 4 2.5 4H17.5C17.7761 4 18 4.22386 18 4.5C18 4.77614 17.7761 5 17.5 5H2.5C2.22386 5 2 4.77614 2 4.5Z"
-              fill={layoutMode === "grid" ? iconActive : iconInactive}
-            />
-            <path
-              d="M2 9.5C2 9.22386 2.22386 9 2.5 9H17.5C17.7761 9 18 9.22386 18 9.5C18 9.77614 17.7761 10 17.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z"
-              fill={layoutMode === "grid" ? iconActive : iconInactive}
-            />
-            <path
-              d="M2.5 14C2.22386 14 2 14.2239 2 14.5C2 14.7761 2.22386 15 2.5 15H17.5C17.7761 15 18 14.7761 18 14.5C18 14.2239 17.7761 14 17.5 14H2.5Z"
-              fill={layoutMode === "grid" ? iconActive : iconInactive}
-            />
-          </svg>
-        </button>
+      <div className="flex justify-end mb-2 gap-1">
+        {/* Mobile: 1col / 2col */}
+        {!screenSize && (
+          <>
+            {/* 3-line icon → 1 col */}
+            <button
+              onClick={() => setMobileLayoutMode("1col")}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+              }}
+              aria-label="Single column">
+              <svg
+                width="28px"
+                height="28px"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2 4.5C2 4.22386 2.22386 4 2.5 4H17.5C17.7761 4 18 4.22386 18 4.5C18 4.77614 17.7761 5 17.5 5H2.5C2.22386 5 2 4.77614 2 4.5Z"
+                  fill={mobileLayoutMode === "1col" ? iconActive : iconInactive}
+                />
+                <path
+                  d="M2 9.5C2 9.22386 2.22386 9 2.5 9H17.5C17.7761 9 18 9.22386 18 9.5C18 9.77614 17.7761 10 17.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z"
+                  fill={mobileLayoutMode === "1col" ? iconActive : iconInactive}
+                />
+                <path
+                  d="M2.5 14C2.22386 14 2 14.2239 2 14.5C2 14.7761 2.22386 15 2.5 15H17.5C17.7761 15 18 14.7761 18 14.5C18 14.2239 17.7761 14 17.5 14H2.5Z"
+                  fill={mobileLayoutMode === "1col" ? iconActive : iconInactive}
+                />
+              </svg>
+            </button>
+            {/* 5-line icon → 2 col */}
+            <button
+              onClick={() => setMobileLayoutMode("2col")}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+              }}
+              aria-label="Two columns">
+              <svg
+                width="28px"
+                height="28px"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 2C2.77614 2 3 2.22386 3 2.5V17.5C3 17.7761 2.77614 18 2.5 18C2.22386 18 2 17.7761 2 17.5V2.5C2 2.22386 2.22386 2 2.5 2Z"
+                  fill={mobileLayoutMode === "2col" ? iconActive : iconInactive}
+                />
+                <path
+                  d="M6.25 2C6.52614 2 6.75 2.22386 6.75 2.5V17.5C6.75 17.7761 6.52614 18 6.25 18C5.97386 18 5.75 17.7761 5.75 17.5V2.5C5.75 2.22386 5.97386 2 6.25 2Z"
+                  fill={mobileLayoutMode === "2col" ? iconActive : iconInactive}
+                />
+                <path
+                  d="M10 2C10.2761 2 10.5 2.22386 10.5 2.5V17.5C10.5 17.7761 10.2761 18 10 18C9.72386 18 9.5 17.7761 9.5 17.5V2.5C9.5 2.22386 9.72386 2 10 2Z"
+                  fill={mobileLayoutMode === "2col" ? iconActive : iconInactive}
+                />
+                <path
+                  d="M13.75 2C14.0261 2 14.25 2.22386 14.25 2.5V17.5C14.25 17.7761 14.0261 18 13.75 18C13.4739 18 13.25 17.7761 13.25 17.5V2.5C13.25 2.22386 13.4739 2 13.75 2Z"
+                  fill={mobileLayoutMode === "2col" ? iconActive : iconInactive}
+                />
+                <path
+                  d="M17.5 2C17.7761 2 18 2.22386 18 2.5V17.5C18 17.7761 17.7761 18 17.5 18C17.2239 18 17 17.7761 17 17.5V2.5C17 2.22386 17.2239 2 17.5 2Z"
+                  fill={mobileLayoutMode === "2col" ? iconActive : iconInactive}
+                />
+              </svg>
+            </button>
+          </>
+        )}
 
-        {/* 5-line icon → editorial layout (default) */}
-        <button
-          onClick={() => setLayoutMode("editorial")}
-          style={{
-            background: "none",
-            border: "none",
-            padding: 0,
-            cursor: "pointer",
-          }}
-          aria-label="Editorial layout">
-          <svg
-            width="28px"
-            height="28px"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.5 2C2.77614 2 3 2.22386 3 2.5V17.5C3 17.7761 2.77614 18 2.5 18C2.22386 18 2 17.7761 2 17.5V2.5C2 2.22386 2.22386 2 2.5 2Z"
-              fill={layoutMode === "editorial" ? iconActive : iconInactive}
-            />
-            <path
-              d="M6.25 2C6.52614 2 6.75 2.22386 6.75 2.5V17.5C6.75 17.7761 6.52614 18 6.25 18C5.97386 18 5.75 17.7761 5.75 17.5V2.5C5.75 2.22386 5.97386 2 6.25 2Z"
-              fill={layoutMode === "editorial" ? iconActive : iconInactive}
-            />
-            <path
-              d="M10 2C10.2761 2 10.5 2.22386 10.5 2.5V17.5C10.5 17.7761 10.2761 18 10 18C9.72386 18 9.5 17.7761 9.5 17.5V2.5C9.5 2.22386 9.72386 2 10 2Z"
-              fill={layoutMode === "editorial" ? iconActive : iconInactive}
-            />
-            <path
-              d="M13.75 2C14.0261 2 14.25 2.22386 14.25 2.5V17.5C14.25 17.7761 14.0261 18 13.75 18C13.4739 18 13.25 17.7761 13.25 17.5V2.5C13.25 2.22386 13.4739 2 13.75 2Z"
-              fill={layoutMode === "editorial" ? iconActive : iconInactive}
-            />
-            <path
-              d="M17.5 2C17.7761 2 18 2.22386 18 2.5V17.5C18 17.7761 17.7761 18 17.5 18C17.2239 18 17 17.7761 17 17.5V2.5C17 2.22386 17.2239 2 17.5 2Z"
-              fill={layoutMode === "editorial" ? iconActive : iconInactive}
-            />
-          </svg>
-        </button>
+        {/* Desktop: grid / editorial */}
+        {screenSize && (
+          <>
+            <button
+              onClick={() => setLayoutMode("grid")}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+              }}
+              aria-label="Grid layout">
+              <svg
+                width="28px"
+                height="28px"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2 4.5C2 4.22386 2.22386 4 2.5 4H17.5C17.7761 4 18 4.22386 18 4.5C18 4.77614 17.7761 5 17.5 5H2.5C2.22386 5 2 4.77614 2 4.5Z"
+                  fill={layoutMode === "grid" ? iconActive : iconInactive}
+                />
+                <path
+                  d="M2 9.5C2 9.22386 2.22386 9 2.5 9H17.5C17.7761 9 18 9.22386 18 9.5C18 9.77614 17.7761 10 17.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z"
+                  fill={layoutMode === "grid" ? iconActive : iconInactive}
+                />
+                <path
+                  d="M2.5 14C2.22386 14 2 14.2239 2 14.5C2 14.7761 2.22386 15 2.5 15H17.5C17.7761 15 18 14.7761 18 14.5C18 14.2239 17.7761 14 17.5 14H2.5Z"
+                  fill={layoutMode === "grid" ? iconActive : iconInactive}
+                />
+              </svg>
+            </button>
+            <button
+              onClick={() => setLayoutMode("editorial")}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+              }}
+              aria-label="Editorial layout">
+              <svg
+                width="28px"
+                height="28px"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 2C2.77614 2 3 2.22386 3 2.5V17.5C3 17.7761 2.77614 18 2.5 18C2.22386 18 2 17.7761 2 17.5V2.5C2 2.22386 2.22386 2 2.5 2Z"
+                  fill={layoutMode === "editorial" ? iconActive : iconInactive}
+                />
+                <path
+                  d="M6.25 2C6.52614 2 6.75 2.22386 6.75 2.5V17.5C6.75 17.7761 6.52614 18 6.25 18C5.97386 18 5.75 17.7761 5.75 17.5V2.5C5.75 2.22386 5.97386 2 6.25 2Z"
+                  fill={layoutMode === "editorial" ? iconActive : iconInactive}
+                />
+                <path
+                  d="M10 2C10.2761 2 10.5 2.22386 10.5 2.5V17.5C10.5 17.7761 10.2761 18 10 18C9.72386 18 9.5 17.7761 9.5 17.5V2.5C9.5 2.22386 9.72386 2 10 2Z"
+                  fill={layoutMode === "editorial" ? iconActive : iconInactive}
+                />
+                <path
+                  d="M13.75 2C14.0261 2 14.25 2.22386 14.25 2.5V17.5C14.25 17.7761 14.0261 18 13.75 18C13.4739 18 13.25 17.7761 13.25 17.5V2.5C13.25 2.22386 13.4739 2 13.75 2Z"
+                  fill={layoutMode === "editorial" ? iconActive : iconInactive}
+                />
+                <path
+                  d="M17.5 2C17.7761 2 18 2.22386 18 2.5V17.5C18 17.7761 17.7761 18 17.5 18C17.2239 18 17 17.7761 17 17.5V2.5C17 2.22386 17.2239 2 17.5 2Z"
+                  fill={layoutMode === "editorial" ? iconActive : iconInactive}
+                />
+              </svg>
+            </button>
+          </>
+        )}
       </div>
 
-      {/* GRID MODE: uniform 3 columns */}
-      {layoutMode === "grid" && (
+      {/* MOBILE layouts */}
+      {!screenSize && (
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns:
+              mobileLayoutMode === "2col" ? "repeat(2, 1fr)" : "1fr",
+            gap: "8px",
+          }}>
+          {filteredItems.map((item, index) => (
+            <GridThumbnail
+              key={`${item.id}-${props.selectedCategory}-${props.selectedBrand}`}
+              id={index}
+              item={item}
+              openModal={openModal}
+              showMediaModal={showMediaModal}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* DESKTOP: GRID MODE */}
+      {screenSize && layoutMode === "grid" && (
         <div
           style={{
             display: "grid",
@@ -366,8 +432,8 @@ function HomeImgGrid(props: HomeImgGridProps) {
         </div>
       )}
 
-      {/* EDITORIAL MODE: pattern with large items */}
-      {layoutMode === "editorial" && (
+      {/* DESKTOP: EDITORIAL MODE */}
+      {screenSize && layoutMode === "editorial" && (
         <div
           style={{
             display: "grid",

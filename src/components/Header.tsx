@@ -41,8 +41,8 @@ function Header() {
   return (
     <div className="w-full bg-white z-40">
       <Navbar displayNavbar={displayNavbar} closeNavbar={closeNavbar} />
-      <div className="px-8 flex justify-between items-center mx-auto">
-        <div className="my-4 lg:my-6 w-full flex items-end md:items-start justify-between font-normal">
+      <div className="px-6 md:px-8 flex justify-between items-center mx-auto">
+        <div className="my-4 lg:my-6 w-full flex items-center md:items-start justify-between font-normal">
           <div className="flex flex-col">
             <Link to="/">
               <img
@@ -90,30 +90,16 @@ function Header() {
             </a>
             <button
               onClick={openNavbar}
-              className="md:hidden btn btn-circle btn-ghost">
+              className="md:hidden btn btn-circle btn-ghost -mt-3 -mr-4">
               <svg
-                width="40px"
-                height="40px"
+                width="35px"
+                height="35px"
                 viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                  {" "}
-                  <path
-                    d="M2 4.5C2 4.22386 2.22386 4 2.5 4H17.5C17.7761 4 18 4.22386 18 4.5C18 4.77614 17.7761 5 17.5 5H2.5C2.22386 5 2 4.77614 2 4.5Z"
-                    fill="#212121"></path>{" "}
-                  <path
-                    d="M2 9.5C2 9.22386 2.22386 9 2.5 9H17.5C17.7761 9 18 9.22386 18 9.5C18 9.77614 17.7761 10 17.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z"
-                    fill="#212121"></path>{" "}
-                  <path
-                    d="M2.5 14C2.22386 14 2 14.2239 2 14.5C2 14.7761 2.22386 15 2.5 15H17.5C17.7761 15 18 14.7761 18 14.5C18 14.2239 17.7761 14 17.5 14H2.5Z"
-                    fill="#212121"></path>{" "}
-                </g>
+                <circle cx="10" cy="4.5" r="1.2" fill="#212121" />
+                <circle cx="10" cy="10" r="1.2" fill="#212121" />
+                <circle cx="10" cy="15.5" r="1.2" fill="#212121" />
               </svg>
             </button>
           </div>
