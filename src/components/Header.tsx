@@ -54,17 +54,17 @@ function Header() {
                 alt="Gadriana Creative Product Photography and video Studio for beauty & skincare brands located Barcelona Spain Europe Union"
                 className="w-40 md:w-48 mb-2"
               />
-              <div className="text-sm">ANYTHING BEAUTY</div>
+              <div className="text-xs">ANYTHING BEAUTY</div>
             </Link>
           </div>
           <div className="flex items-center">
-            <NavLink to="/info" className="hidden md:block ml-10 text-sm -mb-1">
+            <NavLink to="/info" className="hidden md:block ml-10 text-xs -mb-1">
               INFO
             </NavLink>
             <a
               href="#contact"
               onClick={scrollToContact}
-              className="hidden md:block ml-10 text-sm -mb-1">
+              className="hidden md:block ml-10 text-xs -mb-1">
               CONTACT
             </a>
             <a
@@ -72,8 +72,8 @@ function Header() {
               target="_blank"
               className="hidden md:block ml-8">
               <svg
-                width="26px"
-                height="26px"
+                width="25px"
+                height="25px"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">

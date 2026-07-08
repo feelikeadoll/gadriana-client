@@ -22,13 +22,11 @@ function VideoThumbnail(props: VideoThumbnailProps) {
 
   return (
     <div
-      className="relative w-full overflow-hidden transition-all duration-300"
+      className="relative w-full h-full overflow-hidden transition-all duration-300"
       style={{
         backgroundColor: props.item.placeholderColor,
-        aspectRatio: "3/4",
         ...props.style,
-      }}
-    >
+      }}>
       <video
         src={props.item.src}
         autoPlay
@@ -37,8 +35,10 @@ function VideoThumbnail(props: VideoThumbnailProps) {
         playsInline
         controls={false}
         onLoadedData={() => setIsLoaded(true)}
-        onClick={props.showMediaModal ? () => props.openModal(props.id) : undefined}
-        className={`video-element w-full h-full object-cover block transition-opacity duration-500 cursor-pointer ${
+        onClick={
+          props.showMediaModal ? () => props.openModal(props.id) : undefined
+        }
+        className={`video-element absolute inset-0 w-full h-full object-cover block transition-opacity duration-500 cursor-pointer ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       />

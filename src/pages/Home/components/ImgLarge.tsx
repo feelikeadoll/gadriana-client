@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 type MediaItem = {
   type: "image" | "video";
@@ -15,9 +15,13 @@ type ImgLargeProps = {
 
 function ImgLarge(props: ImgLargeProps) {
   const [position, setPosition] = useState({ x: 50, y: 50 });
+  const [isLandscape, setIsLandscape] = useState(false);
+
+  const isZoomed = props.mediaSize === "zoomed";
+  const zoomedSize = isLandscape ? "absolute w-2/3" : "absolute w-1/2";
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (props.mediaSize !== "h-full") {
+    if (isZoomed) {
       const { left, top, width, height } =
         e.currentTarget.getBoundingClientRect();
       const x = ((e.clientX - left) / width) * 100;
@@ -26,21 +30,31 @@ function ImgLarge(props: ImgLargeProps) {
     }
   };
 
+  // handles both onLoad (not cached) and ref callback (cached)
+  const imgRef = useCallback(
+    (img: HTMLImageElement | null) => {
+      if (!img) return;
+      const check = () => setIsLandscape(img.naturalWidth > img.naturalHeight);
+      if (img.complete) check();
+      else img.addEventListener("load", check);
+    },
+    [props.id],
+  );
+
   return (
     <div
       className={props.containerSize}
       onMouseMove={handleMouseMove}
-      style={{ cursor: props.mediaSize !== "h-full" ? "move" : "zoom-out" }}
-    >
+      style={{ cursor: isZoomed ? "move" : "zoom-out" }}>
       <img
+        ref={imgRef}
         src={props.mediaItems[props.id].src}
         alt="Gadriana Creative Studio - Beauty product photography"
-        className={props.mediaSize}
+        className={isZoomed ? zoomedSize : "h-full"}
         style={{
-          transform:
-            props.mediaSize !== "h-full"
-              ? `translate(-${position.x}%, -${position.y}%) scale(2)`
-              : "none",
+          transform: isZoomed
+            ? `translate(-${position.x}%, -${position.y}%) scale(1.5)`
+            : "none",
           top: "50%",
           left: "50%",
           transformOrigin: "center center",

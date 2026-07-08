@@ -16,7 +16,7 @@ const services = [
   {
     title: "POST-PRODUCTION",
     description:
-      "Impeccable retouching. Video editing. Color Grading. AI-Animated Stills.",
+      "Impeccable retouching. Video editing. Color Grading. Animated Stills.",
   },
 ];
 

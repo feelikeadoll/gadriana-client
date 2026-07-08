@@ -22,10 +22,9 @@ function ImgThumbnail(props: ImgThumbnailProps) {
 
   return (
     <div
-      className="relative w-full overflow-hidden transition-all duration-300"
+      className="relative w-full h-full overflow-hidden transition-all duration-300"
       style={{
         backgroundColor: props.item.placeholderColor,
-        aspectRatio: "3/4",
         ...props.style,
       }}>
       <img
@@ -35,7 +34,7 @@ function ImgThumbnail(props: ImgThumbnailProps) {
         onClick={
           props.showMediaModal ? () => props.openModal(props.id) : undefined
         }
-        className={`w-full h-full object-cover block transition-opacity duration-500 cursor-pointer ${
+        className={`absolute inset-0 w-full h-full object-cover block transition-opacity duration-500 cursor-pointer ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       />

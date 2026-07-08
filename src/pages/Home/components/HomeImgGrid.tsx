@@ -79,8 +79,8 @@ type GridSlot = {
   isLarge: boolean;
 };
 
-const PATTERN_ROWS = 9;
-const PATTERN_SLOTS = 35;
+const PATTERN_ROWS = 7;
+const PATTERN_SLOTS = 29;
 
 const buildPatternSlots = (): GridSlot[] => {
   const slots: GridSlot[] = [];
@@ -93,8 +93,8 @@ const buildPatternSlots = (): GridSlot[] => {
       isLarge: false,
     });
   }
-  slots.push({ colStart: 1, colEnd: 3, rowStart: 2, rowEnd: 5, isLarge: true });
-  for (let row = 2; row <= 4; row++) {
+  slots.push({ colStart: 1, colEnd: 3, rowStart: 2, rowEnd: 4, isLarge: true });
+  for (let row = 2; row <= 3; row++) {
     for (let col = 3; col <= 5; col++) {
       slots.push({
         colStart: col,
@@ -105,7 +105,7 @@ const buildPatternSlots = (): GridSlot[] => {
       });
     }
   }
-  for (let row = 5; row <= 6; row++) {
+  for (let row = 4; row <= 5; row++) {
     for (let col = 1; col <= 5; col++) {
       slots.push({
         colStart: col,
@@ -116,7 +116,7 @@ const buildPatternSlots = (): GridSlot[] => {
       });
     }
   }
-  for (let row = 7; row <= 9; row++) {
+  for (let row = 6; row <= 7; row++) {
     for (let col = 1; col <= 3; col++) {
       slots.push({
         colStart: col,
@@ -130,8 +130,8 @@ const buildPatternSlots = (): GridSlot[] => {
   slots.push({
     colStart: 4,
     colEnd: 6,
-    rowStart: 7,
-    rowEnd: 10,
+    rowStart: 6,
+    rowEnd: 8,
     isLarge: true,
   });
   return slots;
@@ -438,6 +438,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(5, 1fr)",
+            gridAutoRows: "25vw",
             gap: "8px",
           }}>
           {filteredItems.map((item, index) => {
@@ -446,23 +447,26 @@ function HomeImgGrid(props: HomeImgGridProps) {
               gridColumn: `${slot.colStart} / ${slot.colEnd}`,
               gridRow: `${slot.rowStart} / ${slot.rowEnd}`,
               margin: 0,
+              minHeight: 0,
             };
             return (
-              <div
+              <GridThumbnail
                 key={`${item.id}-${props.selectedCategory}-${props.selectedBrand}`}
-                style={itemStyle}>
-                <GridThumbnail
-                  id={index}
-                  item={item}
-                  openModal={openModal}
-                  showMediaModal={showMediaModal}
-                  style={
-                    slot.isLarge
-                      ? { aspectRatio: "unset", height: "100%" }
-                      : undefined
-                  }
-                />
-              </div>
+                id={index}
+                item={item}
+                openModal={openModal}
+                showMediaModal={showMediaModal}
+                style={
+                  slot.isLarge
+                    ? {
+                        ...itemStyle,
+                        aspectRatio: "unset",
+                        height: "100%",
+                        position: "relative",
+                      }
+                    : itemStyle
+                }
+              />
             );
           })}
         </div>
@@ -475,6 +479,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
           displayModal="block"
           openModal={openModal}
           closeModal={closeModal}
+          filteredItemsLength={filteredItems.length}
         />
       )}
     </div>
