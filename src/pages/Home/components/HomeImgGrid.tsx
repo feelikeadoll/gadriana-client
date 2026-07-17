@@ -1,7 +1,7 @@
 import ImgThumbnail from "./ImgThumbnail";
 import VideoThumbnail from "./VideoThumbnail";
 import MediaModal from "./MediaModal";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import metadata from "../../../assets/homepage grid/grid-metadata.json";
 
 type HomeImgGridProps = {
@@ -186,6 +186,17 @@ function HomeImgGrid(props: HomeImgGridProps) {
   const [mobileLayoutMode, setMobileLayoutMode] = useState<"1col" | "2col">(
     "1col",
   );
+  const [visibleCount, setVisibleCount] = useState<number>(PATTERN_SLOTS);
+  const sentinelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setVisibleCount(PATTERN_SLOTS);
+  }, [
+    props.selectedCategory,
+    props.selectedBrand,
+    layoutMode,
+    mobileLayoutMode,
+  ]);
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth >= 768);
@@ -215,6 +226,36 @@ function HomeImgGrid(props: HomeImgGridProps) {
       item.category.includes(props.selectedCategory);
     return isGeneral && matchesCategory;
   });
+
+  // Batch size per mode
+  const batchSize = !screenSize
+    ? mobileLayoutMode === "2col"
+      ? 20
+      : 10
+    : layoutMode === "editorial"
+      ? PATTERN_SLOTS
+      : 30;
+
+  const hasMore = visibleCount < filteredItems.length;
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && hasMore) {
+          setVisibleCount((prev) =>
+            Math.min(prev + batchSize, filteredItems.length),
+          );
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [hasMore, batchSize, filteredItems.length]);
+
+  const visibleItems = filteredItems.slice(0, visibleCount);
 
   const iconActive = "#000";
   const iconInactive = "#555";
@@ -374,7 +415,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
             gridAutoRows: mobileLayoutMode === "2col" ? "50vw" : "100vw",
             gap: "8px",
           }}>
-          {filteredItems.map((item, index) => (
+          {visibleItems.map((item, index) => (
             <GridThumbnail
               key={`${item.id}-${props.selectedCategory}-${props.selectedBrand}`}
               id={index}
@@ -395,7 +436,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
             gridAutoRows: "33vw",
             gap: "8px",
           }}>
-          {filteredItems.map((item, index) => (
+          {visibleItems.map((item, index) => (
             <GridThumbnail
               key={`${item.id}-${props.selectedCategory}-${props.selectedBrand}`}
               id={index}
@@ -416,7 +457,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
             gridAutoRows: "25vw",
             gap: "8px",
           }}>
-          {filteredItems.map((item, index) => {
+          {visibleItems.map((item, index) => {
             const slot = getSlot(index);
             const itemStyle: React.CSSProperties = {
               gridColumn: `${slot.colStart} / ${slot.colEnd}`,
@@ -444,6 +485,14 @@ function HomeImgGrid(props: HomeImgGridProps) {
               />
             );
           })}
+        </div>
+      )}
+
+      {/* Sentinel for infinite scroll */}
+      <div ref={sentinelRef} style={{ height: "1px" }} />
+      {hasMore && (
+        <div className="w-full flex justify-center py-8 text-xs tracking-widest text-gray-400">
+          LOADING...
         </div>
       )}
 
