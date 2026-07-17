@@ -1,4 +1,10 @@
-import ClientsLogos from "../../../assets/clients-all.jpg";
+import OurClients from "../../../assets/section titles/clients.png";
+
+const logoModules = import.meta.glob("../../../assets/clients/*", {
+  eager: true,
+}) as Record<string, { default: string }>;
+
+const logos = Object.values(logoModules).map((m) => m.default);
 
 function ClientsSection() {
   return (
@@ -14,9 +20,14 @@ function ClientsSection() {
         after:absolute after:top-0 after:w-20 md:after:w-60 after:h-full after:content-no after:z-20
         after:right-0 after:bg-after">
         <div id="logos-slide" className="flex items-center">
-          <img src={ClientsLogos} className="w-wlogos h-hlogos min-w-wlogos" />
-          <img src={ClientsLogos} className="w-wlogos h-hlogos min-w-wlogos" />
-          <img src={ClientsLogos} className="w-wlogos h-hlogos min-w-wlogos" />
+          {[...logos, ...logos, ...logos].map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              className="max-w-32 max-h-16 object-contain mx-8 md:mx-10"
+              alt="Client logo"
+            />
+          ))}
         </div>
       </div>
     </section>
