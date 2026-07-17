@@ -4,10 +4,6 @@ import MediaModal from "./MediaModal";
 import { useEffect, useState } from "react";
 import metadata from "../../../assets/homepage grid/grid-metadata.json";
 
-// ---------------------------------------------------------------------------
-// Types
-// ---------------------------------------------------------------------------
-
 type HomeImgGridProps = {
   selectedCategory: string;
   selectedBrand: string;
@@ -21,10 +17,6 @@ export type MediaItem = {
   brand: string;
   placeholderColor: string;
 };
-
-// ---------------------------------------------------------------------------
-// Build media items dynamically
-// ---------------------------------------------------------------------------
 
 const VIDEO_EXTENSIONS = [".mp4", ".webm", ".mov"];
 
@@ -52,10 +44,6 @@ const initialMediaItems: MediaItem[] = metadata
     };
   });
 
-// ---------------------------------------------------------------------------
-// Shuffle
-// ---------------------------------------------------------------------------
-
 const shuffleArray = (array: MediaItem[]): MediaItem[] => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -66,10 +54,6 @@ const shuffleArray = (array: MediaItem[]): MediaItem[] => {
 };
 
 const staticShuffledItems = shuffleArray(initialMediaItems);
-
-// ---------------------------------------------------------------------------
-// Grid layout (desktop editorial)
-// ---------------------------------------------------------------------------
 
 type GridSlot = {
   colStart: number;
@@ -127,13 +111,7 @@ const buildPatternSlots = (): GridSlot[] => {
       });
     }
   }
-  slots.push({
-    colStart: 4,
-    colEnd: 6,
-    rowStart: 6,
-    rowEnd: 8,
-    isLarge: true,
-  });
+  slots.push({ colStart: 4, colEnd: 6, rowStart: 6, rowEnd: 8, isLarge: true });
   return slots;
 };
 
@@ -150,10 +128,6 @@ const getSlot = (index: number): GridSlot => {
     rowEnd: base.rowEnd + rowOffset,
   };
 };
-
-// ---------------------------------------------------------------------------
-// Thumbnail wrapper
-// ---------------------------------------------------------------------------
 
 type ThumbnailProps = {
   id: number;
@@ -191,10 +165,6 @@ function GridThumbnail({
     />
   );
 }
-
-// ---------------------------------------------------------------------------
-// Main component
-// ---------------------------------------------------------------------------
 
 function HomeImgGrid(props: HomeImgGridProps) {
   const [shuffledItems] = useState<MediaItem[]>(staticShuffledItems);
@@ -242,12 +212,9 @@ function HomeImgGrid(props: HomeImgGridProps) {
 
   return (
     <div className="mx-4 w-full">
-      {/* Layout toggle buttons */}
       <div className="flex justify-end mb-2 gap-1">
-        {/* Mobile: 1col / 2col */}
         {!screenSize && (
           <>
-            {/* 3-line icon → 1 col */}
             <button
               onClick={() => setMobileLayoutMode("1col")}
               style={{
@@ -277,7 +244,6 @@ function HomeImgGrid(props: HomeImgGridProps) {
                 />
               </svg>
             </button>
-            {/* 5-line icon → 2 col */}
             <button
               onClick={() => setMobileLayoutMode("2col")}
               style={{
@@ -317,8 +283,6 @@ function HomeImgGrid(props: HomeImgGridProps) {
             </button>
           </>
         )}
-
-        {/* Desktop: grid / editorial */}
         {screenSize && (
           <>
             <button
@@ -398,6 +362,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
             display: "grid",
             gridTemplateColumns:
               mobileLayoutMode === "2col" ? "repeat(2, 1fr)" : "1fr",
+            gridAutoRows: mobileLayoutMode === "2col" ? "50vw" : "100vw",
             gap: "8px",
           }}>
           {filteredItems.map((item, index) => (
@@ -418,6 +383,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
+            gridAutoRows: "33vw",
             gap: "8px",
           }}>
           {filteredItems.map((item, index) => (
