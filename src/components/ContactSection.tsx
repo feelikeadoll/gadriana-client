@@ -1,21 +1,23 @@
 function ContactSection() {
   return (
     <div className="bg-black-bg text-white xl:pt-16 2xl:pt-24 w-full px-8 flex justify-between items-center mx-auto">
-      <div className="w-full md:px-6 pt-28 pb-14 flex flex-col items-center justify-between text-2xs md:text-sm">
+      <div className="w-full md:px-6 pt-28 pb-14 flex flex-col items-center justify-between text-2xs md:text-xs">
         <p className="md:mb-4 font-light">GET IN TOUCH</p>
-        <a href="mailto:studio@gadriana.com">STUDIO@GADRIANA.COM</a>
+        <a className="text-sm" href="mailto:studio@gadriana.com">
+          STUDIO@GADRIANA.COM
+        </a>
 
-        <div className="flex m-8 gap-1">
+        <div className="flex m-6 gap-1">
           {/* INSTAGRAM */}
           <a
             href="https://www.instagram.com/gadrianastudio/"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-circle ml-2"
-            style={{ width: "42px", height: "42px", minHeight: "42px" }}>
+            style={{ width: "32px", height: "32px", minHeight: "32px" }}>
             <svg
-              width="26px"
-              height="26px"
+              width="22px"
+              height="22px"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +42,7 @@ function ContactSection() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-circle ml-2"
-            style={{ width: "42px", height: "42px", minHeight: "42px" }}>
+            style={{ width: "32px", height: "32px", minHeight: "32px" }}>
             <svg
               fill="#000000"
               version="1.1"
@@ -48,7 +50,7 @@ function ContactSection() {
               xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 512 512"
               xmlSpace="preserve"
-              className="w-5 h-5">
+              className="w-4 h-4">
               <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
@@ -73,7 +75,7 @@ function ContactSection() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-circle ml-2"
-            style={{ width: "42px", height: "42px", minHeight: "42px" }}>
+            style={{ width: "32px", height: "32px", minHeight: "32px" }}>
             <svg
               fill="#000000"
               version="1.1"
@@ -81,7 +83,7 @@ function ContactSection() {
               xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 512 512"
               xmlSpace="preserve"
-              className="w-6 h-6">
+              className="w-5 h-5">
               <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"

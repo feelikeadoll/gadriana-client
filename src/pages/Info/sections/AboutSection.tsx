@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const services = [
   {
     title: "CREATIVE DIRECTION",
@@ -23,18 +21,12 @@ const services = [
 function ServiceItem({
   title,
   description,
-  defaultOpen = false,
 }: {
   title: string;
   description: string;
-  defaultOpen?: boolean;
 }) {
-  const [open, setOpen] = useState(defaultOpen);
-
   return (
-    <div
-      className="py-5 cursor-pointer"
-      onClick={() => setOpen((prev) => !prev)}>
+    <div className="py-5">
       <div className="flex items-center gap-4">
         <svg
           width="14px"
@@ -44,27 +36,11 @@ function ServiceItem({
           stroke="#fff"
           strokeWidth="2.2"
           strokeLinecap="round">
-          <path
-            d="M3 11H19"
-            style={{
-              transition: "transform 0.3s ease",
-              transform: open ? "rotate(0deg)" : "rotate(90deg)",
-              transformOrigin: "center",
-            }}
-          />
+          <path d="M3 11H19" />
         </svg>
         <h5 className="font-medium">{title}</h5>
       </div>
-      <div
-        style={{
-          maxHeight: open ? "200px" : "0",
-          overflow: "hidden",
-          transition:
-            "max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease",
-          opacity: open ? 1 : 0,
-        }}>
-        <p className="font-light mt-1">{description}</p>
-      </div>
+      <p className="font-light mt-1">{description}</p>
     </div>
   );
 }
@@ -74,7 +50,7 @@ function AboutSection() {
     <section
       id="about"
       className="px-4 md:px-8 flex justify-between items-center mx-auto">
-      <div className="flex-col mt-4 sm:mt-6 md:mt-20 md:mb-16 w-full">
+      <div className="flex-col mt-4 sm:mt-6 md:mt-16 md:mb-16 w-full">
         <div className="w-full flex flex-col items-center">
           <div className="mb-8 md:mb-20 w-full md:w-11/12 lg:w-4/6 text-xs sm:text-sm leading-relaxed">
             <div className="flex flex-col items-center gap-2 mt-12 mb-10 md:mb-16">
@@ -99,12 +75,8 @@ function AboutSection() {
             </p>
           </div>
           <div className="mb-6 md:mb-12 w-full md:w-11/12 lg:w-4/6 text-xs sm:text-sm leading-relaxed">
-            {services.map((service, index) => (
-              <ServiceItem
-                key={service.title}
-                {...service}
-                defaultOpen={index === 0}
-              />
+            {services.map((service) => (
+              <ServiceItem key={service.title} {...service} />
             ))}
           </div>
         </div>

@@ -17,6 +17,7 @@ export default {
         homeGif: "url('/src/assets/gadriana_home.gif')",
       },
       fontSize: {
+        "3xs": "0.6rem",
         "2xs": "0.7rem",
         xs: "0.8rem",
         sm: "0.9rem",
