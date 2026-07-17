@@ -13,19 +13,26 @@ export type MediaItem = {
   id: string;
   type: "image" | "video";
   src: string;
-  category: string;
+  category: string[];
   brand: string;
   placeholderColor: string;
 };
 
 const VIDEO_EXTENSIONS = [".mp4", ".webm", ".mov"];
 
-const mediaModules = import.meta.glob("../../../assets/homepage grid/*", {
-  eager: true,
-}) as Record<string, { default: string }>;
+const mediaModules = import.meta.glob(
+  "../../../assets/homepage grid/**/*.{jpg,jpeg,png,webp,mp4,mov,webm}",
+  {
+    eager: true,
+  },
+) as Record<string, { default: string }>;
 
 const resolvedByFilename: Record<string, string> = {};
 for (const [path, mod] of Object.entries(mediaModules)) {
+  const parts = path.split("homepage grid/");
+  const relativePath = parts[1];
+  resolvedByFilename[relativePath] = mod.default;
+
   const filename = path.split("/").pop()!;
   resolvedByFilename[filename] = mod.default;
 }
@@ -199,12 +206,14 @@ function HomeImgGrid(props: HomeImgGridProps) {
   };
 
   const filteredItems = shuffledItems.filter((item) => {
+    if (props.selectedBrand !== "all") {
+      return item.brand === props.selectedBrand;
+    }
+    const isGeneral = item.brand === "";
     const matchesCategory =
       props.selectedCategory === "all" ||
-      item.category === props.selectedCategory;
-    const matchesCampaign =
-      props.selectedBrand === "all" || item.brand === props.selectedBrand;
-    return matchesCategory && matchesCampaign;
+      item.category.includes(props.selectedCategory);
+    return isGeneral && matchesCategory;
   });
 
   const iconActive = "#000";

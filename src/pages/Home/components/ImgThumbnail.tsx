@@ -4,7 +4,7 @@ type MediaItem = {
   id: string;
   type: "image" | "video";
   src: string;
-  category: string;
+  category: string[];
   brand: string;
   placeholderColor: string;
 };
@@ -29,7 +29,7 @@ function ImgThumbnail(props: ImgThumbnailProps) {
       }}>
       <img
         src={props.item.src}
-        alt={`Shot #${props.id + 1}: ${props.item.category} product photography for ${props.item.brand || "beauty brand"} - Gadriana Creative Studio Barcelona Spain Europe Union`}
+        alt={`Shot #${props.id + 1}: ${props.item.category.join(", ")} product photography for ${props.item.brand || "beauty brand"} - Gadriana Creative Studio Barcelona Spain Europe Union`}
         onLoad={() => setIsLoaded(true)}
         onClick={
           props.showMediaModal ? () => props.openModal(props.id) : undefined

@@ -4,7 +4,7 @@ type MediaItem = {
   id: string;
   type: "image" | "video";
   src: string;
-  category: string;
+  category: string[];
   campaign?: string;
   placeholderColor: string;
 };
