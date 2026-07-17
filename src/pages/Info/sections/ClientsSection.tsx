@@ -1,5 +1,3 @@
-import OurClients from "../../../assets/section titles/clients.png";
-
 const logoModules = import.meta.glob("../../../assets/clients/*", {
   eager: true,
 }) as Record<string, { default: string }>;
