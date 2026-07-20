@@ -97,11 +97,19 @@ type GridSlot = {
   isLarge: boolean;
 };
 
+// Pattern: A(5) + B(7) + C(5) + D(7) + E(5) = 29 slots, 7 rows
+// A: row 1, 5 equal
+// B: rows 2-3, large left (2×2) + 3×2 small right
+// C: row 4, 5 equal
+// D: rows 5-6, 3×2 small left + large right (2×2)
+// E: row 7, 5 equal
 const PATTERN_ROWS = 7;
 const PATTERN_SLOTS = 29;
 
 const buildPatternSlots = (): GridSlot[] => {
   const slots: GridSlot[] = [];
+
+  // BLOCK A: row 1
   for (let col = 1; col <= 5; col++) {
     slots.push({
       colStart: col,
@@ -111,6 +119,8 @@ const buildPatternSlots = (): GridSlot[] => {
       isLarge: false,
     });
   }
+
+  // BLOCK B: rows 2-3, large left + 3×2 small right
   slots.push({ colStart: 1, colEnd: 3, rowStart: 2, rowEnd: 4, isLarge: true });
   for (let row = 2; row <= 3; row++) {
     for (let col = 3; col <= 5; col++) {
@@ -123,18 +133,20 @@ const buildPatternSlots = (): GridSlot[] => {
       });
     }
   }
-  for (let row = 4; row <= 5; row++) {
-    for (let col = 1; col <= 5; col++) {
-      slots.push({
-        colStart: col,
-        colEnd: col + 1,
-        rowStart: row,
-        rowEnd: row + 1,
-        isLarge: false,
-      });
-    }
+
+  // BLOCK C: row 4, 5 equal
+  for (let col = 1; col <= 5; col++) {
+    slots.push({
+      colStart: col,
+      colEnd: col + 1,
+      rowStart: 4,
+      rowEnd: 5,
+      isLarge: false,
+    });
   }
-  for (let row = 6; row <= 7; row++) {
+
+  // BLOCK D: rows 5-6, 3×2 small left + large right
+  for (let row = 5; row <= 6; row++) {
     for (let col = 1; col <= 3; col++) {
       slots.push({
         colStart: col,
@@ -145,7 +157,19 @@ const buildPatternSlots = (): GridSlot[] => {
       });
     }
   }
-  slots.push({ colStart: 4, colEnd: 6, rowStart: 6, rowEnd: 8, isLarge: true });
+  slots.push({ colStart: 4, colEnd: 6, rowStart: 5, rowEnd: 7, isLarge: true });
+
+  // BLOCK E: row 7, 5 equal
+  for (let col = 1; col <= 5; col++) {
+    slots.push({
+      colStart: col,
+      colEnd: col + 1,
+      rowStart: 7,
+      rowEnd: 8,
+      isLarge: false,
+    });
+  }
+
   return slots;
 };
 
@@ -280,7 +304,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
     );
     observer.observe(sentinel);
     return () => observer.disconnect();
-  }, [hasMore, batchSize, filteredItems.length]);
+  }, [hasMore, batchSize, filteredItems.length, visibleCount]);
 
   const visibleItems = filteredItems.slice(0, visibleCount);
 
@@ -476,46 +500,90 @@ function HomeImgGrid(props: HomeImgGridProps) {
       )}
 
       {/* DESKTOP: EDITORIAL MODE */}
-      {screenSize && layoutMode === "editorial" && (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(5, 1fr)",
-            gridAutoRows: "25vw",
-            gap: "8px",
-          }}>
-          {visibleItems.map((item, index) => {
-            const slot = getSlot(index);
-            const itemStyle: React.CSSProperties = {
-              gridColumn: `${slot.colStart} / ${slot.colEnd}`,
-              gridRow: `${slot.rowStart} / ${slot.rowEnd}`,
-              margin: 0,
-              minHeight: 0,
-            };
-            return (
-              <GridThumbnail
-                key={`${item.id}-${props.selectedCategory}-${props.selectedBrand}`}
-                id={index}
-                item={item}
-                openModal={openModal}
-                showMediaModal={showMediaModal}
-                style={
-                  slot.isLarge
-                    ? {
-                        ...itemStyle,
-                        aspectRatio: "unset",
-                        height: "100%",
-                        position: "relative",
-                      }
-                    : itemStyle
-                }
-              />
-            );
-          })}
-        </div>
-      )}
+      {screenSize &&
+        layoutMode === "editorial" &&
+        (() => {
+          // A: 0-4 (safe), B: 5-11 (large left), C: 12-16 (safe), D: 17-22 (large right), E: 23-28 (safe)
+          const remainder = visibleItems.length % PATTERN_SLOTS;
+          const inBlockB = remainder >= 5 && remainder <= 11;
+          const inBlockD = remainder >= 17 && remainder <= 22;
 
-      {/* Sentinel for infinite scroll */}
+          let safeCount = visibleItems.length;
+          if (inBlockB)
+            safeCount =
+              Math.floor(visibleItems.length / PATTERN_SLOTS) * PATTERN_SLOTS +
+              5;
+          else if (inBlockD)
+            safeCount =
+              Math.floor(visibleItems.length / PATTERN_SLOTS) * PATTERN_SLOTS +
+              17;
+
+          const patternItems = visibleItems.slice(0, safeCount);
+          const remainderItems = visibleItems.slice(safeCount);
+
+          return (
+            <>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(5, 1fr)",
+                  gridAutoRows: "25vw",
+                  gap: "8px",
+                }}>
+                {patternItems.map((item, index) => {
+                  const slot = getSlot(index);
+                  const itemStyle: React.CSSProperties = {
+                    gridColumn: `${slot.colStart} / ${slot.colEnd}`,
+                    gridRow: `${slot.rowStart} / ${slot.rowEnd}`,
+                    margin: 0,
+                    minHeight: 0,
+                  };
+                  return (
+                    <GridThumbnail
+                      key={`${item.id}-${props.selectedCategory}-${props.selectedBrand}`}
+                      id={index}
+                      item={item}
+                      openModal={openModal}
+                      showMediaModal={showMediaModal}
+                      style={
+                        slot.isLarge
+                          ? {
+                              ...itemStyle,
+                              aspectRatio: "unset",
+                              height: "100%",
+                              position: "relative",
+                            }
+                          : itemStyle
+                      }
+                    />
+                  );
+                })}
+              </div>
+              {remainderItems.length > 0 && (
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(5, 1fr)",
+                    gridAutoRows: "25vw",
+                    gap: "8px",
+                    marginTop: "8px",
+                  }}>
+                  {remainderItems.map((item, index) => (
+                    <GridThumbnail
+                      key={`${item.id}-${props.selectedCategory}-${props.selectedBrand}`}
+                      id={safeCount + index}
+                      item={item}
+                      openModal={openModal}
+                      showMediaModal={showMediaModal}
+                      style={{ margin: 0, minHeight: 0 }}
+                    />
+                  ))}
+                </div>
+              )}
+            </>
+          );
+        })()}
+
       <div ref={sentinelRef} style={{ height: "1px" }} />
       {hasMore && (
         <div className="w-full flex justify-center py-8 text-xs tracking-widest text-gray-400">

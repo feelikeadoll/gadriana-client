@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import Logo from "../assets/gadriana-logo.png";
 import { useState } from "react";
@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 
 function Header() {
   const [displayNavbar, setDisplayNavbar] = useState<string>("hidden");
+  const navigate = useNavigate();
 
   const openNavbar = (): void => {
     setDisplayNavbar("block");
@@ -16,26 +17,32 @@ function Header() {
 
   const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const target = document.getElementById("contact");
-    if (!target) return;
 
-    const start = window.scrollY;
-    const end = target.getBoundingClientRect().top + window.scrollY;
-    const distance = end - start;
-    const duration = 800;
-    const startTime = performance.now();
-
-    const easeInOutQuad = (t: number) =>
-      t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-
-    const step = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      window.scrollTo(0, start + distance * easeInOutQuad(progress));
-      if (progress < 1) requestAnimationFrame(step);
+    const doScroll = () => {
+      const target = document.getElementById("contact");
+      if (!target) return;
+      const start = window.scrollY;
+      const end = target.getBoundingClientRect().top + window.scrollY;
+      const distance = end - start;
+      const duration = 400;
+      const startTime = performance.now();
+      const easeInOutQuad = (t: number) =>
+        t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      const step = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        window.scrollTo(0, start + distance * easeInOutQuad(progress));
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
     };
 
-    requestAnimationFrame(step);
+    if (document.getElementById("contact")) {
+      doScroll();
+    } else {
+      navigate("/info");
+      setTimeout(doScroll, 300);
+    }
   };
 
   return (

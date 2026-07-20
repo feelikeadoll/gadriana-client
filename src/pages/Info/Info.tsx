@@ -28,8 +28,10 @@ function Info() {
         </div>
       </div>
       <ClientsSection />
-      <ContactSection />
-      <Footer />
+      <div id="contact">
+        <ContactSection />
+        <Footer />
+      </div>
     </div>
   );
 }

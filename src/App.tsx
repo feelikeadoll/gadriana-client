@@ -18,10 +18,9 @@ function App() {
       </Routes>
 
       <BackToTopButton />
-      <div id="contact">
-        <ContactSection />
-        <Footer />
-      </div>
+
+      <ContactSection />
+      <Footer />
     </div>
   );
 }
