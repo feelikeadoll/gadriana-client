@@ -51,7 +51,7 @@ function Header() {
             <Link to="/" reloadDocument>
               <img
                 src={Logo}
-                alt="Gadriana Creative Product Photography and video Studio for beauty & skincare brands located Barcelona Spain Europe Union"
+                alt="Gadriana Studio logo"
                 className="w-40 md:w-48 mb-2"
               />
               <div className="text-xs">ANYTHING BEAUTY</div>

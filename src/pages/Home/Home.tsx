@@ -1,5 +1,6 @@
 import { useState } from "react";
 import HomeImgGrid from "./components/HomeImgGrid";
+import { Helmet } from "react-helmet-async";
 
 function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -17,6 +18,19 @@ function Home() {
 
   return (
     <div className="w-full">
+      <Helmet>
+        <title>GADRIANA Studio | Product Photography & Videography</title>
+        <meta
+          name="description"
+          content="Photography and video studio for beauty & skincare brands in Barcelona, Spain, European Union."
+        />
+      </Helmet>
+
+      <h1 className="sr-only">
+        Photography and video studio for beauty & skincare brands in Barcelona,
+        Spain
+      </h1>
+
       <div className="px-4 md:px-8 flex justify-between items-center mx-auto">
         <div className="flex flex-col items-center mb-32 w-full text-2xs md:text-xs">
           <div className="mt-4 w-full flex flex-wrap justify-center md:justify-end items-center gap-x-3 gap-y-1 tracking-wide mb-1">
