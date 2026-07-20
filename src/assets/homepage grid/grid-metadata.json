@@ -109,55 +109,55 @@
   },
   {
     "filename": "gadriana_coco_and_eve_body_oil_dripping_hand.jpg",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Still", "Texture"],
     "placeholderColor": "#eac796"
   },
   {
     "filename": "gadriana_coco_and_eve_body_oil_stomach.jpg",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Hair & Skin"],
     "placeholderColor": "#c28d4c"
   },
   {
     "filename": "gadriana_coco_and_eve_bond_therapy_masks.jpg",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Still"],
     "placeholderColor": "#383e2d"
   },
   {
     "filename": "gadriana_coco_and_eve_coconut_body_milk_texture.jpg",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Texture", "Still"],
     "placeholderColor": "#e2cfd0"
   },
   {
     "filename": "gadriana_coco_and_eve_coconut_milk_body_splash.jpg",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Still", "Texture"],
     "placeholderColor": "#d7c1c4"
   },
   {
     "filename": "gadriana_coco_and_eve_express_tanning_mousse_photography.jpg",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Still"],
     "placeholderColor": "#bd9ba2"
   },
   {
     "filename": "gadriana_coco_and_eve_gel_scrub_distorted.jpg",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Still"],
     "placeholderColor": "#9db3d9"
   },
   {
     "filename": "gadriana_coco_and_eve_soft_curls_serum_hair.jpg",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Hair & Skin"],
     "placeholderColor": "#8c7b79"
   },
   {
     "filename": "gadriana_coco_and_eve_sweet_repair_hair_photography.jpg",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Still"],
     "placeholderColor": "#dbcac8"
   },
@@ -169,25 +169,25 @@
   },
   {
     "filename": "gadriana_dcypher_face_drops.jpg",
-    "brand": "",
+    "brand": "Dcypher",
     "category": ["Still"],
     "placeholderColor": "#c1aca2"
   },
   {
     "filename": "gadriana_dcypher_foundation_shelf_swatch_photography.jpg",
-    "brand": "",
+    "brand": "Dcypher",
     "category": ["Still", "Texture"],
     "placeholderColor": "#ddcfca"
   },
   {
     "filename": "gadriana_dcypher_foundation_swatch_swirl.jpg",
-    "brand": "",
+    "brand": "Dcypher",
     "category": ["Texture"],
     "placeholderColor": "#a26f4b"
   },
   {
     "filename": "gadriana_dcypher_hand_application_foundation.jpg",
-    "brand": "",
+    "brand": "Dcypher",
     "category": ["Still"],
     "placeholderColor": "#a17e70"
   },
@@ -223,25 +223,25 @@
   },
   {
     "filename": "gadriana_loving_tan_shelf_fade_in.mp4",
-    "brand": "",
+    "brand": "Loving Tan",
     "category": ["Motion"],
     "placeholderColor": "#b0a6a0"
   },
   {
     "filename": "gadriana_loving_tan_tanning_body_lotion_drip.jpg",
-    "brand": "",
+    "brand": "Loving Tan",
     "category": ["Still", "Texture"],
     "placeholderColor": "#e1d2c9"
   },
   {
     "filename": "gadriana_loving_tan_tanning_lotion.jpg",
-    "brand": "",
+    "brand": "Loving Tan",
     "category": ["Still"],
     "placeholderColor": "#ece3df"
   },
   {
     "filename": "gadriana_loving_tan_teaser.jpg",
-    "brand": "",
+    "brand": "Loving Tan",
     "category": ["Still"],
     "placeholderColor": "#7d7675"
   },
@@ -487,37 +487,37 @@
   },
   {
     "filename": "gadriana_coco_and_eve_drip_body_gel.mp4",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Motion"],
     "placeholderColor": "#acc7d6"
   },
   {
     "filename": "gadriana_coco_and_eve_frizz_mist_water.mp4",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Motion"],
     "placeholderColor": "#e1aac3"
   },
   {
     "filename": "gadriana_coco_and_eve_oil_bubbles.mp4",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Motion"],
     "placeholderColor": "#de7e1c"
   },
   {
     "filename": "gadriana_coco_and_eve_shampoo_hair_reveal.mp4",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Motion"],
     "placeholderColor": "#4d5848"
   },
   {
     "filename": "gadriana_coco_and_eve_spf_texture_reveal.mp4",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Motion"],
     "placeholderColor": "#cac5d1"
   },
   {
     "filename": "gadriana_coco_and_eve_texture_reveal.mp4",
-    "brand": "",
+    "brand": "Coco & Eve",
     "category": ["Motion"],
     "placeholderColor": "#eab6a1"
   },
@@ -559,19 +559,19 @@
   },
   {
     "filename": "gadriana_loving_tan_brush_editorial_photography.jpg",
-    "brand": "",
+    "brand": "Loving Tan",
     "category": ["Still"],
     "placeholderColor": "#b19e95"
   },
   {
     "filename": "gadriana_loving_tan_freckle_pen_low_angle_distorted_photography.jpg",
-    "brand": "",
+    "brand": "Loving Tan",
     "category": ["Still"],
     "placeholderColor": "#ded3ce"
   },
   {
     "filename": "gadriana_loving_tan_mousse_swatch_round.jpg",
-    "brand": "",
+    "brand": "Loving Tan",
     "category": ["Texture"],
     "placeholderColor": "#ae9f99"
   },
@@ -672,12 +672,6 @@
     "placeholderColor": "#ca9d64"
   },
   {
-    "filename": "gadriana_texture_spatula_lotion.mp4",
-    "brand": "",
-    "category": ["Motion"],
-    "placeholderColor": "#232323"
-  },
-  {
     "filename": "gadriana_curel_texture_gel_finger.mp4",
     "brand": "",
     "category": ["Motion"],
@@ -695,258 +689,282 @@
     "category": ["Motion"],
     "placeholderColor": "#e597a7"
   },
+  {
+    "filename": "gadriana_guerlain_terracotta_bronzer_texture.jpg",
+    "brand": "",
+    "category": ["Texture"],
+    "placeholderColor": "#b36c4c"
+  },
+  {
+    "filename": "gadriana_merit_lip_oil.jpg",
+    "brand": "",
+    "category": ["Still"],
+    "placeholderColor": "#5a5457"
+  },
+  {
+    "filename": "gadriana_guerlain_terracotta_bronzer.jpg",
+    "brand": "",
+    "category": ["Still"],
+    "placeholderColor": "#bea198"
+  },
+  {
+    "filename": "gadriana_guerlain_terracotta_bronzer_mirror.jpg",
+    "brand": "",
+    "category": ["Still"],
+    "placeholderColor": "#b08e82"
+  },
 
 
   {
     "filename": "coco-eve/gadriana_coco_and_eve_body_oil_sunglasses.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#de93b6"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_boost_therapy_textures.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#c0c5e5"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_cooling_gel_aloe.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#80c8ec"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_cooling_gel_aloe_2.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#b2c5d7"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_elixir_anthurium.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#ddd4bf"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_express_mousse_tan_ingredients_fruits.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#e4b885"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_express_mousse_tan_lotion_fruits.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#97756f"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_face_drops_moisturiser_application.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#dd8384"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_frizz_mist.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#f397ad"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_hair_mask_ingredients_tropical.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#a1a99e"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_hair_model.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#aa9ea1"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_haircare_honey.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#98a2bc"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_leave_in_conditioner.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#eca8b6"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_mask_honey.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#d09022"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_milk_spf_fruits.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#e28f47"
   },
   {
     "filename": "coco-eve/gadriana_coco_and_eve_milk_spf_model.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#859995"
   },
   {
     "filename": "gadriana_coco_and_eve_mist_application.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#eb939d"
   },
   {
     "filename": "gadriana_coco_and_eve_mist_fruit_watermelon.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#75a0ad"
   },
   {
     "filename": "gadriana_coco_and_eve_oil_duo_floating_photography.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#f0a4a8"
   },
   {
     "filename": "gadriana_coco_and_eve_pre_shampoo_carton.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#efa7b2"
   },
   {
     "filename": "gadriana_coco_and_eve_primer_texture.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#eab8a7"
   },
   {
     "filename": "gadriana_coco_and_eve_scrub_water.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#a7c6ef"
   },
   {
     "filename": "gadriana_coco_and_eve_scrub_water_model_photography.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#c49799"
   },
   {
     "filename": "gadriana_coco_and_eve_serum_tan_model.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#cd9896"
   },
   {
     "filename": "gadriana_coco_and_eve_shampoo_conditioner_duo.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#aac4d0"
   },
   {
     "filename": "gadriana_coco_and_eve_shampoo_conditioner_duo_tropical.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#63858f"
   },
   {
     "filename": "gadriana_coco_and_eve_shampoo_hair_floating.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#839ba8"
   },
   {
     "filename": "gadriana_coco_and_eve_shampoo_lab_vase_ingredients.jpg",
-    "brand": "Coco & eve",
-    "category": [""],
+    "brand": "Coco & Eve",
+    "category": [],
     "placeholderColor": "#c8c8d5"
   },
   {
     "filename": "gadriana_coco_and_eve_shampoo_lemon_peel.jpg",
-    "brand": "Coco & eve",
-    "category": [""],
+    "brand": "Coco & Eve",
+    "category": [],
     "placeholderColor": "#b7ccc0"
   },
   {
     "filename": "gadriana_coco_and_eve_shampoo_splash.jpg",
-    "brand": "Coco & eve",
-    "category": [""],
+    "brand": "Coco & Eve",
+    "category": [],
     "placeholderColor": "#dee1e4"
   },
   {
     "filename": "gadriana_coco_and_eve_shimmer_body_oil.jpg",
-    "brand": "Coco & eve",
-    "category": [""],
+    "brand": "Coco & Eve",
+    "category": [],
     "placeholderColor": "#a3b9b9"
   },
   {
     "filename": "gadriana_coco_and_eve_shimmer_body_oil_model_application.jpg",
-    "brand": "Coco & eve",
-    "category": [""],
+    "brand": "Coco & Eve",
+    "category": [],
     "placeholderColor": "#ce8667"
   },
-{
+  {
     "filename": "gadriana_coco_and_eve_skincare_ingredients_fruits.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#c4b4aa"
   },
   {
     "filename": "gadriana_coco_and_eve_spf_macro.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#ddc9c0"
   },
   {
     "filename": "gadriana_coco_and_eve_spf_texture.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#d2cbc5"
   },
   {
     "filename": "gadriana_coco_and_eve_spf_underwater_photography.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#5cb2c9"
   },
   {
     "filename": "gadriana_coco_and_eve_sunny_honey_family.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#efb372"
   },
   {
     "filename": "gadriana_coco_and_eve_sunscreen_lifestyle.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#a2b6c0"
   },
   {
     "filename": "gadriana_coco_and_eve_sweet_repair_candies.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#f3d7da"
   },
   {
     "filename": "gadriana_coco_and_eve_sweet_repair_mask_marshmallows.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#ebb7b4"
   },
   {
     "filename": "gadriana_coco_and_eve_sweet_repair_range_lily.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#b2c3df"
   },
   {
     "filename": "gadriana_coco_and_eve_tan_body_oil_application.jpg",
     "brand": "Coco & Eve",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#d6798e"
   },
 
@@ -954,175 +972,177 @@
   {
     "filename": "gadriana_dcypher_brushes_foundation_levitating_photography.jpg",
     "brand": "Dcypher",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#d9d3d0"
   },
   {
     "filename": "gadriana_dcypher_concealer_photography.jpg",
     "brand": "Dcypher",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#ede8e4"
   },
   {
     "filename": "gadriana_dcypher_foundation.jpg",
     "brand": "Dcypher",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#dfc9bb"
   },
   {
     "filename": "gadriana_dcypher_foundation_concealer.jpg",
     "brand": "Dcypher",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#e1dbd8"
   },
   {
     "filename": "gadriana_dcypher_foundation_photography.jpg",
     "brand": "Dcypher",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#aea49f"
   },
   {
     "filename": "gadriana_dcypher_foundation_swatch_photography.jpg",
     "brand": "Dcypher",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#c39977"
   },
   {
     "filename": "gadriana_dcypher_foundation_texture_dripping_stop_motion.mp4",
     "brand": "Dcypher",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#d7c4b9"
   },
   {
     "filename": "gadriana_dcypher_glow_booster_droplets.jpg",
     "brand": "Dcypher",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#c4c3c2"
   },
   {
     "filename": "gadriana_dcypher_glow_booster_foundation.jpg",
     "brand": "Dcypher",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#7b5b3b"
   },
   {
     "filename": "gadriana_dcypher_glow_booster_foundation_swatches.jpg",
     "brand": "Dcypher",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#cda98e"
   },
+
+  
   {
     "filename": "gadriana_loving_lotion_mousse_swatch_round.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#c9b7aa"
   },
   {
     "filename": "gadriana_loving_tan_brush_editorial_photography-2.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#c2b3ab"
   },
   {
     "filename": "gadriana_loving_tan_brush_editorial_photography-3.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#ab988f"
   },
   {
     "filename": "gadriana_loving_tan_deluxe_lotion.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#d3c5bd"
   },
   {
     "filename": "gadriana_loving_tan_family_range_shelf.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#dbcec9"
   },
   {
     "filename": "gadriana_loving_tan_lotion_droplets.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#e8d6d2"
   },
   {
     "filename": "gadriana_loving_tan_lotion_swatch.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#d9c9bd"
   },
   {
     "filename": "gadriana_loving_tan_lotion_swatch_round.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#c7b4a7"
   },
   {
     "filename": "gadriana_loving_tan_mousse_family.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#ddcfcb"
   },
   {
     "filename": "gadriana_loving_tan_mousse_swatch.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#e7d8d5"
   },
   {
     "filename": "gadriana_loving_tan_mousse_tanning_mitt.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#c4b7b1"
   },
   {
     "filename": "gadriana_loving_tan_mousses.mp4",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#c6beb9"
   },
   {
     "filename": "gadriana_loving_tan_remover_gel_texture.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#f2edea"
   },
   {
     "filename": "gadriana_loving_tan_remover_texture_photography.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#e7dcd7"
   },
   {
     "filename": "gadriana_loving_tan_serum_splash_water_photography.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#ebe0de"
   },
   {
     "filename": "gadriana_loving_tan_serum_texture_brown.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#694737"
   },
   {
     "filename": "gadriana_loving_tan_shelf_lotion_swatch.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#d6c7c2"
   },
   {
     "filename": "gadriana_loving_tan_swatches_textures.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#dad0cb"
   },
   {
     "filename": "gadriana_loving_tan_teaser_serum.jpg",
     "brand": "Loving Tan",
-    "category": [""],
+    "category": [],
     "placeholderColor": "#9a897c"
   }
 ]
