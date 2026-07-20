@@ -7,6 +7,7 @@ type MediaItem = {
   category: string[];
   campaign?: string;
   placeholderColor: string;
+  description: string;
 };
 
 type VideoThumbnailProps = {
@@ -27,6 +28,7 @@ function VideoThumbnail(props: VideoThumbnailProps) {
         backgroundColor: props.item.placeholderColor,
         ...props.style,
       }}>
+      <span className="sr-only">{props.item.description}</span>
       <video
         src={props.item.src}
         autoPlay

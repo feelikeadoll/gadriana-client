@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet-async";
 
 function Info() {
   return (
-    <div id="info" className="w-full  absolute top-0">
+    <div id="info" className="w-full absolute top-0">
       <Helmet>
         <title>GADRIANA Studio | Info</title>
         <meta

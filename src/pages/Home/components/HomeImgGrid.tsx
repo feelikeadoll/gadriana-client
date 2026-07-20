@@ -16,6 +16,7 @@ export type MediaItem = {
   category: string[];
   brand: string;
   placeholderColor: string;
+  description: string;
 };
 
 const VIDEO_EXTENSIONS = [".mp4", ".webm", ".mov"];
@@ -53,6 +54,15 @@ for (const [path, mod] of Object.entries(mediaModules)) {
 //   );
 // }
 
+const filenameToDescription = (filename: string): string => {
+  const nameOnly = filename
+    .replace(/\.(jpg|jpeg|png|webp|mp4|mov|webm)$/i, "")
+    .replace(/^gadriana_/, "")
+    .replace(/-\d+$/, "") // quita sufijos tipo -01, -02
+    .replace(/_/g, " ");
+  return nameOnly.charAt(0).toUpperCase() + nameOnly.slice(1);
+};
+
 const initialMediaItems: MediaItem[] = metadata
   .filter((entry) => resolvedByFilename[entry.filename] !== undefined)
   .map((entry) => {
@@ -64,6 +74,7 @@ const initialMediaItems: MediaItem[] = metadata
       category: entry.category,
       brand: entry.brand,
       placeholderColor: entry.placeholderColor,
+      description: filenameToDescription(entry.filename),
     };
   });
 

@@ -54,10 +54,10 @@ function AboutSection() {
         <div className="w-full flex flex-col items-center">
           <div className="mb-8 md:mb-20 w-full md:w-11/12 lg:w-4/6 text-xs sm:text-sm leading-relaxed">
             <div className="flex flex-col items-center gap-2 mt-12 mb-10 md:mb-16">
-              <p>
+              <h1>
                 <b>GADRIANA</b> IS A CREATION STUDIO
-              </p>
-              <p>FOR ALL YOUR BRAND'S VISUAL NEEDS.</p>
+              </h1>
+              <h2>FOR ALL YOUR BRAND'S VISUAL NEEDS.</h2>
             </div>
             <p className="py-4 text-center font-light">
               We specialise in skincare, wellness and cosmetics visuals for
