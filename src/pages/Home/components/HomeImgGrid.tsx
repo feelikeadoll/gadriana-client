@@ -505,15 +505,11 @@ function HomeImgGrid(props: HomeImgGridProps) {
         (() => {
           // A: 0-4 (safe), B: 5-11 (large left), C: 12-16 (safe), D: 17-22 (large right), E: 23-28 (safe)
           const remainder = visibleItems.length % PATTERN_SLOTS;
-          const inBlockB = remainder >= 5 && remainder <= 11;
+
           const inBlockD = remainder >= 17 && remainder <= 22;
 
           let safeCount = visibleItems.length;
-          if (inBlockB)
-            safeCount =
-              Math.floor(visibleItems.length / PATTERN_SLOTS) * PATTERN_SLOTS +
-              5;
-          else if (inBlockD)
+          if (inBlockD)
             safeCount =
               Math.floor(visibleItems.length / PATTERN_SLOTS) * PATTERN_SLOTS +
               17;
