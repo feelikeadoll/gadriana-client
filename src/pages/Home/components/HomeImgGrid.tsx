@@ -37,6 +37,22 @@ for (const [path, mod] of Object.entries(mediaModules)) {
   resolvedByFilename[filename] = mod.default;
 }
 
+// // Debugging Files
+
+// const missingFiles = metadata.filter(
+//   (entry) => resolvedByFilename[entry.filename] === undefined,
+// );
+// const homeFiles = metadata.filter((entry) => entry.brand === "");
+
+// console.log("Files in Home:", homeFiles.length);
+
+// if (missingFiles.length > 0) {
+//   console.log(
+//     "Missing files:",
+//     missingFiles.map((e) => e.filename),
+//   );
+// }
+
 const initialMediaItems: MediaItem[] = metadata
   .filter((entry) => resolvedByFilename[entry.filename] !== undefined)
   .map((entry) => {
