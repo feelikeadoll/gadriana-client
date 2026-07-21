@@ -191,7 +191,7 @@ type ThumbnailProps = {
   id: number;
   item: MediaItem;
   openModal: (id: number) => void;
-  showMediaModal: boolean | null;
+  showMediaModal: boolean;
   style?: React.CSSProperties;
 };
 
@@ -208,7 +208,7 @@ function GridThumbnail({
         id={id}
         item={item}
         openModal={openModal}
-        showMediaModal={showMediaModal}
+        showMediaModal={true}
         style={style}
       />
     );
@@ -218,7 +218,7 @@ function GridThumbnail({
       id={id}
       item={item}
       openModal={openModal}
-      showMediaModal={showMediaModal}
+      showMediaModal={true}
       style={style}
     />
   );
@@ -226,7 +226,7 @@ function GridThumbnail({
 
 function HomeImgGrid(props: HomeImgGridProps) {
   const [shuffledItems] = useState<MediaItem[]>(staticShuffledItems);
-  const [showMediaModal, setShowMediaModal] = useState<null | boolean>(null);
+
   const [selectedMediaId, setSelectedMediaId] = useState<number | null>(null);
   const [screenSize, setScreenSize] = useState<boolean>(
     window.innerWidth >= 768,
@@ -252,8 +252,6 @@ function HomeImgGrid(props: HomeImgGridProps) {
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth >= 768);
     window.addEventListener("resize", handleResize);
-    if (screenSize) setShowMediaModal(true);
-    else setShowMediaModal(null);
     return () => window.removeEventListener("resize", handleResize);
   }, [screenSize]);
 
@@ -472,7 +470,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
               id={index}
               item={item}
               openModal={openModal}
-              showMediaModal={showMediaModal}
+              showMediaModal={true}
             />
           ))}
         </div>
@@ -493,7 +491,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
               id={index}
               item={item}
               openModal={openModal}
-              showMediaModal={showMediaModal}
+              showMediaModal={true}
             />
           ))}
         </div>
@@ -540,7 +538,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
                       id={index}
                       item={item}
                       openModal={openModal}
-                      showMediaModal={showMediaModal}
+                      showMediaModal={true}
                       style={
                         slot.isLarge
                           ? {
@@ -570,7 +568,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
                       id={safeCount + index}
                       item={item}
                       openModal={openModal}
-                      showMediaModal={showMediaModal}
+                      showMediaModal={true}
                       style={{ margin: 0, minHeight: 0 }}
                     />
                   ))}
@@ -587,7 +585,7 @@ function HomeImgGrid(props: HomeImgGridProps) {
         </div>
       )}
 
-      {selectedMediaId !== null && showMediaModal === true && (
+      {selectedMediaId !== null && (
         <MediaModal
           id={selectedMediaId}
           mediaItems={filteredItems}

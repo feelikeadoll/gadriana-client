@@ -14,7 +14,7 @@ type VideoThumbnailProps = {
   id: number;
   item: MediaItem;
   openModal: (id: number) => void;
-  showMediaModal: boolean | null;
+  showMediaModal: boolean;
   style?: React.CSSProperties;
 };
 
