@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef } from "react";
+import React, { useState, useCallback } from "react";
 
 type MediaItem = {
   type: "image" | "video";
@@ -15,36 +15,18 @@ type ImgLargeProps = {
 
 function ImgLarge(props: ImgLargeProps) {
   const [position, setPosition] = useState({ x: 50, y: 50 });
-  const [translate, setTranslate] = useState({ x: 0, y: 0 });
   const [isLandscape, setIsLandscape] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const isZoomed = props.mediaSize === "zoomed";
   const zoomedSize = isLandscape ? "absolute w-2/3" : "absolute w-1/2";
 
-  // Desktop mouse move
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isZoomed || isMobile) return;
+    if (!isZoomed) return;
     const { left, top, width, height } =
       e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - left) / width) * 100;
     const y = ((e.clientY - top) / height) * 100;
     setPosition({ x, y });
-  };
-
-  // Mobile touch drag — registered manually with passive:false to allow preventDefault
-
-  const handleClick = () => {
-    if (!isMobile) {
-      props.handleZoom();
-    }
   };
 
   const imgRef = useCallback(
@@ -59,45 +41,29 @@ function ImgLarge(props: ImgLargeProps) {
 
   return (
     <div
-      ref={containerRef}
-      className={`${isMobile ? "relative h-full w-full overflow-hidden" : props.containerSize}`}
+      className={props.containerSize}
       onMouseMove={handleMouseMove}
       style={{ cursor: isZoomed ? "move" : "zoom-in" }}>
       <img
         ref={imgRef}
         src={props.mediaItems[props.id].src}
         alt="Gadriana Creative Studio - Beauty product photography"
-        onClick={handleClick}
-        className={isMobile ? undefined : isZoomed ? zoomedSize : "h-full"}
+        onClick={() => {
+          if (window.innerWidth >= 768) props.handleZoom();
+        }}
+        className={isZoomed ? zoomedSize : "h-full"}
         style={
-          isMobile
-            ? isZoomed
-              ? {
-                  position: "fixed",
-                  top: "50%",
-                  left: "50%",
-                  width: isLandscape ? "66vw" : "50vw",
-                  height: "auto",
-                  transform: `translate(calc(-50% + ${translate.x}vw), calc(-50% + ${translate.y}vw)) scale(2.5)`,
-                  transformOrigin: "center center",
-                  cursor: "move",
-                  zIndex: 60,
-                }
-              : {
-                  display: "block",
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                  cursor: "zoom-in",
-                  position: "relative",
-                }
-            : {
-                transform: isZoomed
-                  ? `translate(-${position.x}%, -${position.y}%) scale(1.5)`
-                  : "none",
+          isZoomed
+            ? {
+                transform: `translate(-${position.x}%, -${position.y}%) scale(1.5)`,
                 top: "50%",
                 left: "50%",
                 transformOrigin: "center center",
+              }
+            : {
+                objectFit: "contain",
+                width: "100%",
+                height: "100%",
               }
         }
       />
