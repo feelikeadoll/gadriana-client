@@ -195,13 +195,7 @@ type ThumbnailProps = {
   style?: React.CSSProperties;
 };
 
-function GridThumbnail({
-  id,
-  item,
-  openModal,
-  showMediaModal,
-  style,
-}: ThumbnailProps) {
+function GridThumbnail({ id, item, openModal, style }: ThumbnailProps) {
   if (item.type === "video") {
     return (
       <VideoThumbnail
