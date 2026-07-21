@@ -18,7 +18,6 @@ function ImgLarge(props: ImgLargeProps) {
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
   const [isLandscape, setIsLandscape] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [mobileZoomed, setMobileZoomed] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,7 +26,7 @@ function ImgLarge(props: ImgLargeProps) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isZoomed = isMobile ? mobileZoomed : props.mediaSize === "zoomed";
+  const isZoomed = props.mediaSize === "zoomed";
   const zoomedSize = isLandscape ? "absolute w-2/3" : "absolute w-1/2";
 
   // Desktop mouse move
@@ -41,21 +40,6 @@ function ImgLarge(props: ImgLargeProps) {
   };
 
   // Mobile touch drag — registered manually with passive:false to allow preventDefault
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el || !isMobile) return;
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!mobileZoomed) return;
-      e.preventDefault();
-      const touch = e.touches[0];
-      const { left, top, width, height } = el.getBoundingClientRect();
-      const x = ((touch.clientX - left) / width - 0.5) * -100;
-      const y = ((touch.clientY - top) / height - 0.5) * -100;
-      setTranslate({ x, y });
-    };
-    el.addEventListener("touchmove", handleTouchMove, { passive: false });
-    return () => el.removeEventListener("touchmove", handleTouchMove);
-  }, [isMobile, mobileZoomed]);
 
   const handleClick = () => {
     if (!isMobile) {
