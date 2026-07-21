@@ -1,4 +1,11 @@
-import React, { useState, useCallback, useEffect, useRef } from "react";
+import React, {
+  useState,
+  useCallback,
+  useEffect,
+  useRef,
+  useImperativeHandle,
+  forwardRef,
+} from "react";
 
 type MediaItem = {
   type: "image" | "video";
@@ -13,13 +20,26 @@ type ImgLargeProps = {
   handleZoom: () => void;
 };
 
-function ImgLarge(props: ImgLargeProps) {
+export type ImgLargeHandle = {
+  toggleMobileZoom: () => void;
+};
+
+const ImgLarge = forwardRef<ImgLargeHandle, ImgLargeProps>((props, ref) => {
   const [position, setPosition] = useState({ x: 50, y: 50 });
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
   const [isLandscape, setIsLandscape] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [mobileZoomed, setMobileZoomed] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useImperativeHandle(ref, () => ({
+    toggleMobileZoom: () => {
+      setMobileZoomed((prev) => {
+        if (prev) setTranslate({ x: 0, y: 0 });
+        return !prev;
+      });
+    },
+  }));
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -30,7 +50,6 @@ function ImgLarge(props: ImgLargeProps) {
   const isZoomed = isMobile ? mobileZoomed : props.mediaSize === "zoomed";
   const zoomedSize = isLandscape ? "absolute w-2/3" : "absolute w-1/2";
 
-  // Desktop mouse move
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isZoomed || isMobile) return;
     const { left, top, width, height } =
@@ -40,7 +59,6 @@ function ImgLarge(props: ImgLargeProps) {
     setPosition({ x, y });
   };
 
-  // Mobile touch drag — registered manually with passive:false to allow preventDefault
   useEffect(() => {
     const el = containerRef.current;
     if (!el || !isMobile) return;
@@ -122,6 +140,6 @@ function ImgLarge(props: ImgLargeProps) {
       />
     </div>
   );
-}
+});
 
 export default ImgLarge;

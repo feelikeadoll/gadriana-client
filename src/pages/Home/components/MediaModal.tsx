@@ -1,5 +1,5 @@
-import { useState } from "react";
-import ImgLarge from "./ImgLarge";
+import { useState, useRef } from "react";
+import ImgLarge, { ImgLargeHandle } from "./ImgLarge";
 import VideoLarge from "./VideoLarge";
 
 type MediaItem = {
@@ -21,28 +21,28 @@ function MediaModal(props: MediaModalProps) {
     "relative h-full contain",
   );
   const [mediaSize, setMediaSize] = useState<string>("h-full");
+  const imgLargeRef = useRef<ImgLargeHandle>(null);
   const position: number = props.id;
   const totalItems: number = props.filteredItemsLength - 1;
 
   function previousImg() {
-    if (position <= 0) {
-      return;
-    } else {
-      props.closeModal();
-      props.openModal(position - 1);
-    }
+    if (position <= 0) return;
+    props.closeModal();
+    props.openModal(position - 1);
   }
 
   function nextImg() {
-    if (position >= totalItems) {
-      return;
-    } else {
-      props.closeModal();
-      props.openModal(position + 1);
-    }
+    if (position >= totalItems) return;
+    props.closeModal();
+    props.openModal(position + 1);
   }
 
   function handleZoom() {
+    // On mobile, delegate to ImgLarge's internal zoom
+    if (window.innerWidth < 768) {
+      imgLargeRef.current?.toggleMobileZoom();
+      return;
+    }
     if (
       containerSize === "relative w-screen h-screen" &&
       mediaSize === "zoomed"
@@ -111,7 +111,7 @@ function MediaModal(props: MediaModalProps) {
           </svg>
         </button>
       </div>
-      <div className="h-full pb-20 flex justify-between items-center">
+      <div className="h-5/6 flex justify-between items-center">
         {position <= 0 ? (
           <button></button>
         ) : (
@@ -134,6 +134,7 @@ function MediaModal(props: MediaModalProps) {
         )}
         {props.mediaItems[props.id].type == "image" ? (
           <ImgLarge
+            ref={imgLargeRef}
             id={props.id}
             containerSize={containerSize}
             mediaSize={mediaSize}
@@ -148,7 +149,6 @@ function MediaModal(props: MediaModalProps) {
             mediaItems={props.mediaItems}
           />
         )}
-
         {position >= totalItems ? (
           <button></button>
         ) : (
