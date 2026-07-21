@@ -64,7 +64,7 @@ function MediaModal(props: MediaModalProps) {
         ) : (
           <button
             onClick={handleZoom}
-            className="btn btn-circle btn-ghost fixed top-3 left-4">
+            className="hidden md:block btn btn-circle btn-ghost fixed top-3 left-4">
             <svg
               width="35px"
               height="35px"

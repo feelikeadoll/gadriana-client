@@ -115,7 +115,7 @@ const ImgLarge = forwardRef<ImgLargeHandle, ImgLargeProps>((props, ref) => {
                   left: "50%",
                   width: isLandscape ? "66vw" : "50vw",
                   height: "auto",
-                  transform: `translate(calc(-50% + ${translate.x}vw), calc(-50% + ${translate.y}vw)) scale(2.2)`,
+                  transform: `translate(calc(-50% + ${translate.x}vw), calc(-50% + ${translate.y}vw)) scale(2)`,
                   transformOrigin: "center center",
                   cursor: "move",
                   zIndex: 60,
