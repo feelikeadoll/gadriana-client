@@ -8,7 +8,7 @@ function ClientsSection() {
   return (
     <section
       id="clients"
-      className="w-full flex flex-col items-center mt-32 mb-24 md:mt-40 md:mb-28">
+      className="w-full bg-white flex flex-col items-center pt-32 pb-24 md:pt-40 md:pb-28">
       <h3 className="text-lg font-medium">OUR CLIENTS</h3>
       <div
         id="logos"

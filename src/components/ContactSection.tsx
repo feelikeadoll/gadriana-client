@@ -13,7 +13,7 @@ function ContactSection() {
             href="https://www.instagram.com/gadrianastudio/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-circle ml-2"
+            className="btn btn-circle ml-2 bg-white"
             style={{ width: "32px", height: "32px", minHeight: "32px" }}>
             <svg
               width="22px"
@@ -41,7 +41,7 @@ function ContactSection() {
             href="https://www.linkedin.com/company/gadriana/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-circle ml-2"
+            className="btn btn-circle bg-white ml-2"
             style={{ width: "32px", height: "32px", minHeight: "32px" }}>
             <svg
               fill="#000000"
@@ -74,7 +74,7 @@ function ContactSection() {
             href="https://www.pinterest.es/gadrianastudio/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-circle ml-2"
+            className="btn btn-circle bg-white ml-2"
             style={{ width: "32px", height: "32px", minHeight: "32px" }}>
             <svg
               fill="#000000"
